@@ -1,4 +1,5 @@
 import 'package:caffeine/core/utils/app_images.dart';
+import 'package:caffeine/featuers/auth/presentation/views/get_started_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' as g;
 
@@ -42,10 +43,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
     Future.delayed(
       const Duration(milliseconds: 3500),
       () {
-        // g.Get.off(() => const HomeView(),
-        //     transition: g.Transition.fade,
-        //     duration: const Duration(milliseconds: 1400));
-        // Navigate to the HomeView after the splash screen
+        g.Get.off(() => const GetStartedView(),
+            transition: g.Transition.fade,
+            duration: const Duration(milliseconds: 800));
       },
     );
   }
