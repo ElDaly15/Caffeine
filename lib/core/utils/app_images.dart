@@ -14,6 +14,19 @@ class Assets {
   /// assets/images/deleivry.svg
   static const String imagesDeleivry = "assets/images/deleivry.svg";
 
+  /// Assets for imagesIcLauncher
+  /// assets/images/ic_launcher.png
+  static const String imagesIcLauncher = "assets/images/ic_launcher.png";
+
+  /// Assets for imagesLogoCaffeine
+  /// assets/images/logo_caffeine.png
+  static const String imagesLogoCaffeine = "assets/images/logo_caffeine.png";
+
+  /// Assets for imagesLogoCaffeineErased
+  /// assets/images/logo_caffeine_erased.png
+  static const String imagesLogoCaffeineErased =
+      "assets/images/logo_caffeine_erased.png";
+
   /// Assets for imagesMilk
   /// assets/images/milk.svg
   static const String imagesMilk = "assets/images/milk.svg";
