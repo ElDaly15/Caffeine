@@ -6,7 +6,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 11),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w400);
   }
 
@@ -14,7 +14,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 11),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w500);
   }
 
@@ -22,7 +22,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 11),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w600);
   }
 
@@ -30,7 +30,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 11),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.bold);
   }
 
@@ -38,7 +38,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 11),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w800);
   }
 
@@ -47,7 +47,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 12),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w400);
   }
 
@@ -55,7 +55,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 12),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w500);
   }
 
@@ -63,7 +63,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 12),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w600);
   }
 
@@ -71,7 +71,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 12),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.bold);
   }
 
@@ -79,7 +79,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 12),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w800);
   }
   // 12 Reguler And Bold Style --------------------------------------------------------------------------------------------------->
@@ -88,7 +88,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 14),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w400);
   }
 
@@ -96,7 +96,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 14),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w500);
   }
 
@@ -104,7 +104,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 14),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w600);
   }
 
@@ -112,7 +112,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 14),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.bold);
   }
 
@@ -120,7 +120,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 14),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w800);
   }
 
@@ -130,7 +130,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 18),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w400);
   }
 
@@ -138,7 +138,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 18),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w500);
   }
 
@@ -146,7 +146,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 18),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w600);
   }
 
@@ -154,7 +154,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 18),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.bold);
   }
 
@@ -162,7 +162,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 18),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w800);
   }
 
@@ -172,7 +172,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 20),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w400);
   }
 
@@ -180,7 +180,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 20),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w500);
   }
 
@@ -188,7 +188,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 20),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w600);
   }
 
@@ -196,7 +196,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 20),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.bold);
   }
 
@@ -204,7 +204,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 20),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w800);
   }
 
@@ -214,7 +214,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 22),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w400);
   }
 
@@ -222,7 +222,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 22),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w500);
   }
 
@@ -230,7 +230,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 22),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w600);
   }
 
@@ -238,7 +238,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 22),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.bold);
   }
 
@@ -246,7 +246,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 22),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w800);
   }
 
@@ -256,7 +256,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 24),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w400);
   }
 
@@ -264,7 +264,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 24),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w500);
   }
 
@@ -272,7 +272,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 24),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w600);
   }
 
@@ -280,7 +280,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 24),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.bold);
   }
 
@@ -288,7 +288,7 @@ abstract class TextStyles {
     return TextStyle(
         fontSize: getResponsiveFontSize(context, fontSize: 24),
         color: Colors.black,
-        fontFamily: 'Poppins',
+        fontFamily: 'Sora',
         fontWeight: FontWeight.w800);
   }
 
