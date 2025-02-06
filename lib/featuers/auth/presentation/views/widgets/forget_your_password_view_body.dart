@@ -60,7 +60,7 @@ class _ForgetYourPasswordViewBodyState
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 22),
             child: CustomBigElvatedButtom(
-              colorCode: 0xff616A6B,
+              colorCode: 0xff411900,
               colorOfTextCode: 0xffffffff,
               title: 'Reset Password',
               onPressed: () async {

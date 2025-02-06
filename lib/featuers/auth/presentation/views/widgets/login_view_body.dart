@@ -72,7 +72,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 height: MediaQuery.of(context).size.height * 0.024,
               ),
               CustomTextField(
-                isInLogin: true,
+                isInLogin: false,
                 onChanged: (value) {
                   password = value;
                 },
