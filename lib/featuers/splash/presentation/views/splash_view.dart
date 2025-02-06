@@ -1,4 +1,3 @@
-import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/splash/presentation/views/widgets/splash_view_body.dart';
 import 'package:flutter/material.dart';
 
