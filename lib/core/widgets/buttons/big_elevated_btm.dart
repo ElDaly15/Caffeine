@@ -15,7 +15,7 @@ class BigElevatedBtm extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
             minimumSize: const Size(double.infinity, 55),
             backgroundColor: AppColors.secondaryColorTheme),
-        onPressed: () {},
+        onPressed: onPressed,
         child: Text(
           text,
           style: TextStyles.font22SemiBold(context)

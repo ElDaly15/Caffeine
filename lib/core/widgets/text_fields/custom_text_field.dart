@@ -9,9 +9,11 @@ class CustomTextField extends StatefulWidget {
       required this.hintTitle,
       required this.isPassword,
       required this.isObscureText,
-      this.onChanged});
+      this.onChanged,
+      required this.isInLogin});
   final String hintTitle;
   final bool isPassword;
+  final bool isInLogin;
   late bool isObscureText;
   final Function(String)? onChanged;
   @override
@@ -27,7 +29,18 @@ class _CustomTextFieldState extends State<CustomTextField> {
         selectionColor: AppColors.mainColorTheme,
         selectionHandleColor: AppColors.mainColorTheme,
       ),
-      child: TextField(
+      child: TextFormField(
+        validator: (value) {
+          if (value == null || value.isEmpty) {
+            return 'This Field Is Required';
+          }
+          if (widget.isPassword) {
+            if (value.length < 8 && widget.isInLogin == true) {
+              return 'Password must be at least 8 characters';
+            }
+          }
+          return null;
+        },
         onChanged: widget.onChanged,
         cursorColor: AppColors.mainColorTheme,
         decoration: InputDecoration(
@@ -59,17 +72,28 @@ class _CustomTextFieldState extends State<CustomTextField> {
           focusedBorder: const OutlineInputBorder(
               borderSide: BorderSide(
                 color: AppColors.secondaryColorTheme,
-                strokeAlign: 2,
-                width: 1.8,
+                width: 1.2,
               ),
               borderRadius: BorderRadius.all(Radius.circular(8))),
           enabledBorder: const OutlineInputBorder(
               borderSide: BorderSide.none,
               borderRadius: BorderRadius.all(Radius.circular(8))),
           border: const OutlineInputBorder(
+            borderRadius: BorderRadius.all(Radius.circular(8)),
             borderSide: BorderSide(
-                color: AppColors.secondaryColorTheme, strokeAlign: 2),
+              color: AppColors.secondaryColorTheme,
+              strokeAlign: 1.2,
+              width: 1.2,
+            ),
           ),
+          errorBorder: const OutlineInputBorder(
+              borderSide: BorderSide(
+                width: 1.2,
+                color: Color.fromARGB(255, 212, 48, 36),
+              ),
+              borderRadius: BorderRadius.all(Radius.circular(8))),
+          errorStyle: TextStyles.font14Medium(context)
+              .copyWith(color: const Color.fromARGB(255, 212, 48, 36)),
         ),
         style: TextStyles.font18Medium(context),
         obscureText: widget.isObscureText,
