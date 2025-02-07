@@ -17,10 +17,12 @@ class ContainerOfCategoryItem extends StatelessWidget {
           color: isActive ? AppColors.mainColorTheme : Colors.white,
           borderRadius: BorderRadius.circular(10)),
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-      child: Text(
-        categoryTitle,
-        style: TextStyles.font20SemiBold(context)
-            .copyWith(color: isActive ? Colors.white : Colors.black),
+      child: Center(
+        child: Text(
+          categoryTitle,
+          style: TextStyles.font20SemiBold(context)
+              .copyWith(color: isActive ? Colors.white : Colors.black),
+        ),
       ),
     );
   }
