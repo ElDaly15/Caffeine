@@ -6,6 +6,10 @@ class Assets {
   /// assets/images/apple.svg
   static const String imagesApple = "assets/images/apple.svg";
 
+  /// Assets for imagesBanner
+  /// assets/images/banner.png
+  static const String imagesBanner = "assets/images/banner.png";
+
   /// Assets for imagesBean
   /// assets/images/bean.svg
   static const String imagesBean = "assets/images/bean.svg";

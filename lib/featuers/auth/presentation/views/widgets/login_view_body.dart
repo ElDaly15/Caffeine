@@ -7,6 +7,7 @@ import 'package:caffeine/featuers/auth/presentation/views/forget_your_password_v
 import 'package:caffeine/featuers/auth/presentation/views/register_view.dart';
 import 'package:caffeine/featuers/auth/presentation/views/widgets/custom_text_field.dart';
 import 'package:caffeine/featuers/auth/presentation/views/widgets/row_of_social_reg.dart';
+import 'package:caffeine/featuers/home/presentation/views/home_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' as g;
 
@@ -100,6 +101,9 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
+                    g.Get.to(() => const HomeView(),
+                        transition: g.Transition.fade,
+                        duration: const Duration(milliseconds: 400));
                   } else {
                     setState(() {
                       _autovalidateMode = AutovalidateMode.always;
