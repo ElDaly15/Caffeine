@@ -22,7 +22,7 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 42,
+      height: MediaQuery.of(context).size.height * 0.045,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,
@@ -35,7 +35,7 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
                       });
                     },
                     child: Padding(
-                      padding: const EdgeInsets.only(left: 22, right: 8),
+                      padding: const EdgeInsets.only(left: 15, right: 8),
                       child: ContainerOfCategoryItem(
                         isActive: indexOfItem == index,
                         categoryTitle: categories[index],
@@ -50,7 +50,7 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
                           });
                         },
                         child: Padding(
-                          padding: const EdgeInsets.only(right: 22, left: 8),
+                          padding: const EdgeInsets.only(right: 15, left: 8),
                           child: ContainerOfCategoryItem(
                             isActive: indexOfItem == index,
                             categoryTitle: categories[index],
