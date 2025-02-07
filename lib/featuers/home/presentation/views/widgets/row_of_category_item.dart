@@ -22,7 +22,7 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: MediaQuery.of(context).size.height * 0.045,
+      height: 40,
       child: ListView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: categories.length,

@@ -73,17 +73,21 @@ class ContainerOfProduct extends StatelessWidget {
                     ),
                     const Spacer(),
                     IconButton(
-                        style: IconButton.styleFrom(
-                          backgroundColor: AppColors.mainColorTheme,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                          ),
+                      style: IconButton.styleFrom(
+                        backgroundColor: AppColors.mainColorTheme,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(12),
                         ),
-                        onPressed: () {},
-                        icon: Icon(
-                          Icons.add,
-                          color: Colors.white,
-                        ))
+                      ),
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
+                    SizedBox(
+                      width: 4,
+                    ),
                   ],
                 ),
               ],

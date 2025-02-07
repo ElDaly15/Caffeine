@@ -28,9 +28,9 @@ class GridViewOfProducts extends StatelessWidget {
             mainAxisSpacing: 15,
             childAspectRatio: w <= 400
                 ? 2 / 3.3
-                : w > 400 && w < 800
-                    ? 2.4 / 3.7
-                    : w >= 800 && w < 1200
+                : w > 400 && w < 700
+                    ? 2.4 / 3.75
+                    : w >= 700 && w < 1200
                         ? 2.4 / 3.5
                         : 2.4 / 3.4,
           ),
