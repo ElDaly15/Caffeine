@@ -37,6 +37,7 @@ dependencies:
   flutter_svg: ^2.0.17
   get: ^4.6.6
   iconly: ^1.0.1
+  parsed_readmore: ^1.0.0
 
 dev_dependencies:
   flutter_lints: ^5.0.0

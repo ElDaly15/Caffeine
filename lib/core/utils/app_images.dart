@@ -34,6 +34,10 @@ class Assets {
   /// assets/images/ic_launcher.png
   static const String imagesIcLauncher = "assets/images/ic_launcher.png";
 
+  /// Assets for imagesIce
+  /// assets/images/ice.svg
+  static const String imagesIce = "assets/images/ice.svg";
+
   /// Assets for imagesLatte
   /// assets/images/latte.png
   static const String imagesLatte = "assets/images/latte.png";
