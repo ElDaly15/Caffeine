@@ -10,7 +10,7 @@ class ContainerOfProductDetails extends StatelessWidget {
     return Container(
       padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(4), color: Color(0xffEDEDED)),
+          borderRadius: BorderRadius.circular(8), color: Color(0xffEDEDED)),
       child: SvgPicture.asset(
         image,
         height: 40,
