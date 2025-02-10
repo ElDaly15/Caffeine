@@ -74,6 +74,7 @@ class _HomeViewState extends State<HomeView> {
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         decoration: BoxDecoration(
           color: isSelected
+              // ignore: deprecated_member_use
               ? AppColors.mainColorTheme.withOpacity(0.2)
               : Colors.transparent,
           borderRadius: BorderRadius.circular(12),
