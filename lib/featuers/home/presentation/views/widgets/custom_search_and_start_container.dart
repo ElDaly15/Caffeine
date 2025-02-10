@@ -41,7 +41,7 @@ class CustomSearchAndStartContainer extends StatelessWidget {
             ),
             GestureDetector(
               onTap: () {
-                g.Get.off(() => const SearchView(),
+                g.Get.to(() => const SearchView(),
                     transition: g.Transition.fade,
                     duration: const Duration(milliseconds: 300));
               },
