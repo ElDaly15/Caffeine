@@ -16,6 +16,7 @@ class CustomSearchTextField extends StatelessWidget {
         selectionHandleColor: Colors.white,
       ),
       child: TextField(
+        enabled: false,
         onChanged: onChanged,
         decoration: InputDecoration(
           filled: true,

@@ -4,6 +4,7 @@ import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/featuers/product/presentation/views/product_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' as g;
+import 'package:iconly/iconly.dart';
 
 class ContainerOfProduct extends StatelessWidget {
   const ContainerOfProduct({super.key});
@@ -46,10 +47,48 @@ class ContainerOfProduct extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(12),
-                      child: Image.asset(
-                        Assets.imagesLatte,
-                        width: double.infinity,
-                        fit: BoxFit.cover,
+                      child: Stack(
+                        children: [
+                          Image.asset(
+                            Assets.imagesLatte,
+                            width: double.infinity,
+                            fit: BoxFit.cover,
+                          ),
+                          Positioned(
+                            right: 0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  // ignore: deprecated_member_use
+                                  color: Colors.black.withOpacity(0.5),
+                                  borderRadius: BorderRadius.only(
+                                    bottomLeft: Radius.circular(12),
+                                  )),
+                              child: Padding(
+                                padding: const EdgeInsets.only(
+                                    right: 8, top: 4, bottom: 8),
+                                child: SizedBox(
+                                  width: 60,
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      Icon(
+                                        IconlyBold.star,
+                                        color: AppColors.mainColorTheme,
+                                        size: 22,
+                                      ),
+                                      const SizedBox(width: 2),
+                                      Text(
+                                        '4.8',
+                                        style: TextStyles.font18Medium(context)
+                                            .copyWith(color: Colors.white),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),

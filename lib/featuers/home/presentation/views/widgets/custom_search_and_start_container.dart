@@ -1,7 +1,9 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_search_text_field.dart';
+import 'package:caffeine/featuers/search/presentation/views/search_view.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart' as g;
 
 class CustomSearchAndStartContainer extends StatelessWidget {
   const CustomSearchAndStartContainer({super.key});
@@ -37,8 +39,15 @@ class CustomSearchAndStartContainer extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            CustomSearchTextField(
-              onChanged: (value) {},
+            GestureDetector(
+              onTap: () {
+                g.Get.off(() => const SearchView(),
+                    transition: g.Transition.fade,
+                    duration: const Duration(milliseconds: 300));
+              },
+              child: CustomSearchTextField(
+                onChanged: (value) {},
+              ),
             ),
             SizedBox(
               height: 20,
