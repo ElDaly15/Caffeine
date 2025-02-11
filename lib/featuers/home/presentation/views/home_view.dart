@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/home_view_body.dart';
+import 'package:caffeine/featuers/notification/presentation/views/notification_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -23,7 +24,7 @@ class _HomeViewState extends State<HomeView> {
         controller: pageController,
         children: [
           HomeViewBody(),
-          HomeViewBody(),
+          NotificationView(),
           HomeViewBody(),
           HomeViewBody(),
         ],
