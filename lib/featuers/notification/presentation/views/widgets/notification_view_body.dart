@@ -1,4 +1,5 @@
 import 'package:caffeine/core/utils/app_colors.dart';
+import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/headers/custom_header_of_main_caffeine_app.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +18,18 @@ class NotificationViewBody extends StatelessWidget {
         ),
         SliverToBoxAdapter(
           child: CustomHeaderOfCaffeieApp(),
+        ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 10,
+          ),
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: 16),
+          sliver: SliverToBoxAdapter(
+            child:
+                Text('Notification', style: TextStyles.font24SemiBold(context)),
+          ),
         ),
       ],
     );
