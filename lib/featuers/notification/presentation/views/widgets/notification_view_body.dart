@@ -1,6 +1,8 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/headers/custom_header_of_main_caffeine_app.dart';
+import 'package:caffeine/featuers/notification/presentation/views/widgets/notification_container.dart';
+import 'package:caffeine/featuers/notification/presentation/views/widgets/sliver_list_view_of_notifaction.dart';
 import 'package:flutter/material.dart';
 
 class NotificationViewBody extends StatelessWidget {
@@ -9,6 +11,7 @@ class NotificationViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
+      physics: ClampingScrollPhysics(),
       slivers: [
         SliverToBoxAdapter(
           child: Container(
@@ -31,6 +34,12 @@ class NotificationViewBody extends StatelessWidget {
                 Text('Notification', style: TextStyles.font24SemiBold(context)),
           ),
         ),
+        SliverToBoxAdapter(
+          child: SizedBox(
+            height: 10,
+          ),
+        ),
+        SliverListViewOfNotifications(),
       ],
     );
   }

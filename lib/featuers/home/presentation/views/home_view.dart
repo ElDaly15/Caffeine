@@ -51,7 +51,7 @@ class _HomeViewState extends State<HomeView> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             _buildNavItem(0, IconlyBold.home, IconlyLight.home),
-            _buildNavItem(1, IconlyBold.heart, IconlyLight.heart),
+            _buildNavItem(1, IconlyBold.notification, IconlyLight.notification),
             _buildNavItem(2, IconlyBold.bag, IconlyLight.bag),
             _buildNavItem(3, IconlyBold.profile, IconlyLight.profile),
           ],
