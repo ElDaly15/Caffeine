@@ -18,7 +18,7 @@ class _DeleiverAndPickUpCheckState extends State<DeleiverAndPickUpCheck> {
       padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
       decoration: BoxDecoration(
         // ignore: deprecated_member_use
-        color: Colors.grey.withOpacity(0.3),
+        color: Color(0xffEDEDED),
         borderRadius: BorderRadius.circular(12),
       ),
       child: Row(
@@ -38,7 +38,7 @@ class _DeleiverAndPickUpCheckState extends State<DeleiverAndPickUpCheck> {
                   color: index == 0
                       ? AppColors.mainColorTheme
                       // ignore: deprecated_member_use
-                      : Colors.grey.withOpacity(0.1),
+                      : Color(0xffEDEDED),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Center(
@@ -67,7 +67,7 @@ class _DeleiverAndPickUpCheckState extends State<DeleiverAndPickUpCheck> {
                   color: index == 1
                       ? AppColors.mainColorTheme
                       // ignore: deprecated_member_use
-                      : Colors.grey.withOpacity(0.1),
+                      : Color(0xffEDEDED),
                 ),
                 child: Center(
                   child: Text(
