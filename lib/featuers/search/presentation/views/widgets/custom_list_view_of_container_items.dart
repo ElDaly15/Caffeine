@@ -6,15 +6,13 @@ class CustomListViewOfContainerItems extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: SliverList.builder(
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            return Padding(
-              padding: const EdgeInsets.only(bottom: 15, left: 4, right: 4),
-              child: ContainerOfSearchItem(),
-            );
-          }),
-    );
+    return SliverList.builder(
+        itemCount: 10,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.only(bottom: 15, left: 16, right: 16),
+            child: ContainerOfSearchItem(),
+          );
+        });
   }
 }

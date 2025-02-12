@@ -32,31 +32,36 @@ class _SearchViewState extends State<SearchView> {
         leadingWidth: 60,
         leading: Padding(
           padding: const EdgeInsets.only(left: 22),
-          child: SizedBox(
-            height: 20,
-            width: 20,
-            child: CircleAvatar(
-              radius: 10,
-              backgroundColor: AppColors.mainColorTheme,
-              child: IconButton(
-                alignment: Alignment.center,
-                icon: const Icon(IconlyLight.arrow_left_2),
-                color: Colors.white,
-                onPressed: () => Navigator.pop(context),
-              ),
+          child: CircleAvatar(
+            radius: 10,
+            backgroundColor: AppColors.mainColorTheme,
+            child: IconButton(
+              alignment: Alignment.center,
+              icon: const Icon(IconlyLight.arrow_left_2),
+              color: Colors.white,
+              onPressed: () => Navigator.pop(context),
             ),
           ),
         ),
-        title: TextField(
-          focusNode: focusNode,
-          onChanged: (value) {},
-          cursorColor: AppColors.mainColorTheme,
-          decoration: InputDecoration(
-            border: OutlineInputBorder(
-              borderSide: BorderSide.none,
+        title: TextSelectionTheme(
+          data: const TextSelectionThemeData(
+            cursorColor: AppColors.mainColorTheme,
+            selectionColor: AppColors.mainColorTheme,
+            selectionHandleColor: AppColors.mainColorTheme,
+          ),
+          child: TextField(
+            focusNode: focusNode,
+            onChanged: (value) {},
+            cursorColor: AppColors.mainColorTheme,
+            decoration: InputDecoration(
+              border: OutlineInputBorder(
+                borderSide: BorderSide.none,
+              ),
+              hintText: 'Search Coffee',
+              hintStyle: TextStyles.font20Medium(context)
+                  .copyWith(color: AppColors.darkTheme),
             ),
-            hintText: 'Search Coffee',
-            hintStyle: TextStyles.font20Medium(context)
+            style: TextStyles.font20Medium(context)
                 .copyWith(color: AppColors.darkTheme),
           ),
         ),
