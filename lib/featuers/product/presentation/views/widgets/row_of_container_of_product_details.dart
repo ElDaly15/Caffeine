@@ -1,5 +1,7 @@
+import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:iconly/iconly.dart';
@@ -59,16 +61,23 @@ class _RowOfContainersOfProductDetailsState
               ),
             ),
             TextButton(
+              style: TextButton.styleFrom(
+                backgroundColor: AppColors.mainColorTheme,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
+                ),
+              ),
               onPressed: () {
                 Navigator.pop(context);
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text("You rated $_rating stars!")),
-                );
+                CustomSnackBar().showCustomSnackBar(
+                    context: context,
+                    message: 'You Rated $_rating Successfully',
+                    type: AnimatedSnackBarType.success);
               },
               child: Text(
                 "Submit",
                 style: TextStyles.font18Medium(context)
-                    .copyWith(color: AppColors.mainColorTheme),
+                    .copyWith(color: Colors.white),
               ),
             ),
           ],
