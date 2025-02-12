@@ -27,6 +27,7 @@ class _ForgetYourPasswordViewBodyState
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: const CustomHeaderWithTitleAndBackBtm(
+              color: Colors.white,
               title: 'Forgot Your Password ',
             ),
           ),

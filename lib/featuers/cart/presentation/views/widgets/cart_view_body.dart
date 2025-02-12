@@ -1,8 +1,10 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/widgets/headers/custom_header_of_main_caffeine_app.dart';
+import 'package:caffeine/featuers/cart/presentation/views/checkout_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_total_price_and_checkout.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/sliver_list_of_cart_item.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart' as g;
 
 class CartViewBody extends StatelessWidget {
   const CartViewBody({super.key});
@@ -29,7 +31,11 @@ class CartViewBody extends StatelessWidget {
           ),
         ),
         ContainerOfTotalPriceAndProcessCheckOut(
-          onPressed: () {},
+          onPressed: () {
+            g.Get.to(() => const CheckoutView(),
+                transition: g.Transition.fade,
+                duration: const Duration(milliseconds: 800));
+          },
         ),
       ],
     );
