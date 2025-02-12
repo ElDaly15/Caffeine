@@ -28,7 +28,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
         offset: const Offset(0, 1), // changes position of shadow
       ),
       horizontalPadding: 0,
-      verticalPadding: 12,
+      verticalPadding: 8,
       direction: SwipeDirection.endToStart,
       onSwiped: widget.onSwiped,
       backgroundBuilder: (context, direction, progress) {
