@@ -1,7 +1,7 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/headers/custom_header_of_main_caffeine_app.dart';
-import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_cart_item.dart';
+import 'package:caffeine/featuers/cart/presentation/views/widgets/sliver_list_of_cart_item.dart';
 import 'package:flutter/material.dart';
 
 class CartViewBody extends StatelessWidget {
@@ -35,15 +35,7 @@ class CartViewBody extends StatelessWidget {
             ),
           ),
         ),
-        SliverPadding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          sliver: SliverToBoxAdapter(
-            child: ContainerOfCartItem(
-              counterOfProduct: (value) {},
-              onSwiped: (value) {},
-            ),
-          ),
-        ),
+        SliverListOfCartItems(),
       ],
     );
   }
