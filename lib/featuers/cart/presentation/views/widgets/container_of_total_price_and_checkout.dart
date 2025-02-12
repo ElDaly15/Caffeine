@@ -31,7 +31,7 @@ class ContainerOfTotalPriceAndProcessCheckOut extends StatelessWidget {
           ),
           Spacer(),
           SizedBox(
-            height: 50,
+            height: 55,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: AppColors.mainColorTheme,

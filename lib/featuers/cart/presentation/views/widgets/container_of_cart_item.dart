@@ -22,8 +22,8 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
       borderRadius: 12,
       shadow: BoxShadow(
         // ignore: deprecated_member_use
-        color: Colors.grey.withOpacity(0.3),
-        spreadRadius: 2,
+        color: Colors.grey.withOpacity(0.1),
+        spreadRadius: 3,
         blurRadius: 2,
         offset: const Offset(0, 1), // changes position of shadow
       ),
