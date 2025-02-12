@@ -1,11 +1,8 @@
-import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_edit_address_and_add_note.dart';
-import 'package:caffeine/featuers/cart/presentation/views/widgets/container_with_icon_and_text.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/deleiver_and_pick_up_check.dart';
 import 'package:flutter/material.dart';
-import 'package:iconly/iconly.dart';
 
 class CheckoutViewBody extends StatelessWidget {
   const CheckoutViewBody({super.key});
