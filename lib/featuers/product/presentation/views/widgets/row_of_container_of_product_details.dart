@@ -1,10 +1,81 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:iconly/iconly.dart';
 
-class RowOfContainersOfProductDetails extends StatelessWidget {
+class RowOfContainersOfProductDetails extends StatefulWidget {
   const RowOfContainersOfProductDetails({super.key});
+
+  @override
+  State<RowOfContainersOfProductDetails> createState() =>
+      _RowOfContainersOfProductDetailsState();
+}
+
+class _RowOfContainersOfProductDetailsState
+    extends State<RowOfContainersOfProductDetails> {
+  double _rating = 0.0;
+
+  void _showRatingDialog(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) {
+        return AlertDialog(
+          backgroundColor: Colors.white,
+          title:
+              Text("Rate this item", style: TextStyles.font22SemiBold(context)),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Tap on the stars to give a rating",
+                style: TextStyles.font18Medium(context),
+              ),
+              SizedBox(height: 10),
+              RatingBar.builder(
+                initialRating: _rating,
+                minRating: 1,
+                direction: Axis.horizontal,
+                allowHalfRating: true,
+                itemCount: 5,
+                itemPadding: EdgeInsets.symmetric(horizontal: 4.0),
+                itemBuilder: (context, _) =>
+                    Icon(IconlyBold.star, color: Colors.amber),
+                onRatingUpdate: (rating) {
+                  setState(() {
+                    _rating = rating;
+                  });
+                },
+              ),
+            ],
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.pop(context),
+              child: Text(
+                "Cancel",
+                style: TextStyles.font18Medium(context)
+                    .copyWith(color: AppColors.mainColorTheme),
+              ),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(content: Text("You rated $_rating stars!")),
+                );
+              },
+              child: Text(
+                "Submit",
+                style: TextStyles.font18Medium(context)
+                    .copyWith(color: AppColors.mainColorTheme),
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,22 +86,27 @@ class RowOfContainersOfProductDetails extends StatelessWidget {
           style: TextStyles.font18Medium(context).copyWith(color: Colors.grey),
         ),
         Spacer(),
-        Row(
-          children: [
-            Icon(
-              IconlyBold.star,
-              color: AppColors.mainColorTheme,
-              size: 22,
-            ),
-            const SizedBox(width: 2),
-            Text(
-              '4.8',
-              style: TextStyles.font18Medium(context).copyWith(),
-            ),
-            SizedBox(
-              width: 6,
-            ),
-          ],
+        GestureDetector(
+          onTap: () {
+            _showRatingDialog(context);
+          },
+          child: Row(
+            children: [
+              Icon(
+                IconlyBold.star,
+                color: AppColors.mainColorTheme,
+                size: 22,
+              ),
+              const SizedBox(width: 2),
+              Text(
+                '4.8',
+                style: TextStyles.font18Medium(context).copyWith(),
+              ),
+              SizedBox(
+                width: 6,
+              ),
+            ],
+          ),
         ),
       ],
     );
