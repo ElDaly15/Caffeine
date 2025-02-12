@@ -38,6 +38,7 @@ dependencies:
   get: ^4.6.6
   iconly: ^1.0.1
   parsed_readmore: ^1.0.0
+  swipeable_tile: ^2.0.1
 
 dev_dependencies:
   flutter_lints: ^5.0.0
