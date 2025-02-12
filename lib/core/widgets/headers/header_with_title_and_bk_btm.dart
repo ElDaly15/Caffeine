@@ -25,6 +25,9 @@ class CustomHeaderWithTitleAndBackBtm extends StatelessWidget {
           title,
           style: TextStyles.font20SemiBold(context).copyWith(color: color),
         ),
+        SizedBox(
+          width: 20,
+        ),
         const Spacer(),
       ],
     );

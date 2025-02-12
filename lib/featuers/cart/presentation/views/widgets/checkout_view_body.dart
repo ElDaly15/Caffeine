@@ -86,7 +86,20 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                     iconData: IconlyBold.plus,
                   ),
                 ),
-              )
+              ),
+        SliverToBoxAdapter(
+          child: const SizedBox(
+            height: 10,
+          ),
+        ),
+        SliverToBoxAdapter(
+          child: Divider(
+            thickness: 1.5,
+            color: Color(0xffECECEC),
+            endIndent: 40,
+            indent: 40,
+          ),
+        ),
       ],
     );
   }
