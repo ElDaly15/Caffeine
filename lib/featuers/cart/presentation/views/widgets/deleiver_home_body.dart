@@ -1,4 +1,3 @@
-import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/big_elevated_btm_with_icon.dart';
 import 'package:caffeine/core/widgets/text_fields/text_field_of_copon.dart';
@@ -6,7 +5,6 @@ import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_edit
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_payment_summary.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_coupon_applies.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_process_to_payment.dart';
-import 'package:caffeine/featuers/cart/presentation/views/widgets/row_of_price.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/your_order_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -126,6 +124,11 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                 padding: const EdgeInsets.symmetric(horizontal: 22),
                 sliver: SliverToBoxAdapter(
                   child: ColumnOfPaymentSummary(),
+                ),
+              ),
+              SliverToBoxAdapter(
+                child: const SizedBox(
+                  height: 20,
                 ),
               ),
             ],
