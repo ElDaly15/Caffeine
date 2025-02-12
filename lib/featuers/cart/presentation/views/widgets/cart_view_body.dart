@@ -34,7 +34,7 @@ class CartViewBody extends StatelessWidget {
           onPressed: () {
             g.Get.to(() => const CheckoutView(),
                 transition: g.Transition.fade,
-                duration: const Duration(milliseconds: 800));
+                duration: const Duration(milliseconds: 400));
           },
         ),
       ],

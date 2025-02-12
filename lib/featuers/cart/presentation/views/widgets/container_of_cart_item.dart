@@ -83,7 +83,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                       style: TextStyles.font20SemiBold(context),
                     ),
                     Text(
-                      'Hot/Cold',
+                      'Size : Regular',
                       style: TextStyles.font18Medium(context)
                           .copyWith(color: Colors.grey),
                     ),

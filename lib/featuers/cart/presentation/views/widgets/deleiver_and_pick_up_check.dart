@@ -31,7 +31,9 @@ class _DeleiverAndPickUpCheckState extends State<DeleiverAndPickUpCheck> {
                   widget.onChanged(index);
                 });
               },
-              child: Container(
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
@@ -59,7 +61,9 @@ class _DeleiverAndPickUpCheckState extends State<DeleiverAndPickUpCheck> {
                   widget.onChanged(index);
                 });
               },
-              child: Container(
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 300),
+                curve: Curves.easeInOut,
                 padding:
                     const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
                 decoration: BoxDecoration(
