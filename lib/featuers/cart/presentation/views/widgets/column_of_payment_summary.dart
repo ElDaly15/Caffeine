@@ -11,7 +11,7 @@ class ColumnOfPaymentSummary extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Delivery Address',
+          'Payment Summary',
           style: TextStyles.font20SemiBold(context),
         ),
         const SizedBox(

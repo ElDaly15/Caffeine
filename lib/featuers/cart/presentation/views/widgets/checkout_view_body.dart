@@ -1,6 +1,7 @@
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/deleiver_and_pick_up_check.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/deleiver_home_body.dart';
+import 'package:caffeine/featuers/cart/presentation/views/widgets/pickup_body.dart';
 import 'package:flutter/material.dart';
 
 class CheckoutViewBody extends StatefulWidget {
@@ -43,7 +44,7 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
             controller: pageController,
             children: [
               DeleiverToHomeBody(),
-              DeleiverToHomeBody(),
+              PickupBody(),
             ],
           ),
         ),
