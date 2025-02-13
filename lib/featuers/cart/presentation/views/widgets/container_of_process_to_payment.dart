@@ -4,7 +4,7 @@ import 'package:iconly/iconly.dart';
 
 class ContainerOfProcessToPayment extends StatelessWidget {
   const ContainerOfProcessToPayment({super.key, required this.onPressed});
-  final void Function() onPressed;
+  final void Function()? onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class ContainerOfProcessToPayment extends StatelessWidget {
         ],
         color: Colors.white,
       ),
-      height: 100,
+      height: 95,
       child: CustomBigElevatedBtmWithIcon(
           onPressed: onPressed,
           title: 'Proceed to Payment',

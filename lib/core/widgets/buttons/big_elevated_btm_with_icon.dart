@@ -8,9 +8,10 @@ class CustomBigElevatedBtmWithIcon extends StatelessWidget {
       required this.onPressed,
       required this.title,
       required this.iconData});
-  final void Function() onPressed;
+  final void Function()? onPressed;
   final String title;
   final IconData iconData;
+
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(

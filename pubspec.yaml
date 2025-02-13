@@ -39,6 +39,7 @@ dependencies:
   flutter_svg: ^2.0.17
   get: ^4.6.6
   iconly: ^1.0.1
+  msh_checkbox: ^2.0.1
   parsed_readmore: ^1.0.0
   swipeable_tile: ^2.0.1
 

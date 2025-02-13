@@ -5,6 +5,7 @@ import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_paym
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_coupon_applies.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_process_to_payment.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_with_icon_and_text.dart';
+import 'package:caffeine/featuers/cart/presentation/views/widgets/sliver_list_of_container_pick_up.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/your_order_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -18,6 +19,7 @@ class PickupBody extends StatefulWidget {
 
 class _PickupBodyState extends State<PickupBody> {
   bool coponApplied = false;
+  bool checkPickUp = false;
 
   @override
   Widget build(BuildContext context) {
@@ -159,6 +161,18 @@ class _PickupBodyState extends State<PickupBody> {
               ),
               SliverToBoxAdapter(
                 child: const SizedBox(
+                  height: 20,
+                ),
+              ),
+              SliverOfContainerOfPickUpCafe(
+                onChanged: (value) {
+                  setState(() {
+                    checkPickUp = value;
+                  });
+                },
+              ),
+              SliverToBoxAdapter(
+                child: const SizedBox(
                   height: 10,
                 ),
               ),
@@ -166,7 +180,7 @@ class _PickupBodyState extends State<PickupBody> {
           ),
         ),
         ContainerOfProcessToPayment(
-          onPressed: () {},
+          onPressed: checkPickUp ? () {} : null,
         ),
       ],
     );
