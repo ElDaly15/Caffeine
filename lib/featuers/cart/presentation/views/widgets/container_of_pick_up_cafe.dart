@@ -9,7 +9,6 @@ class ContainerOfCafePickUp extends StatefulWidget {
       {super.key, required this.isChecked, required this.onChanged});
   final bool isChecked;
   final VoidCallback onChanged;
-
   @override
   State<ContainerOfCafePickUp> createState() => _ContainerOfCafePickUpState();
 }
@@ -17,11 +16,16 @@ class ContainerOfCafePickUp extends StatefulWidget {
 class _ContainerOfCafePickUpState extends State<ContainerOfCafePickUp> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+    return AnimatedContainer(
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 8),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color: Color(0xffEDEDED), width: 2),
+        border: Border.all(
+            color:
+                widget.isChecked ? AppColors.mainColorTheme : Color(0xffEDEDED),
+            width: widget.isChecked ? 1.5 : 2),
       ),
       child: Row(
         children: [
