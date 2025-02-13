@@ -6,8 +6,10 @@ import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_paym
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_coupon_applies.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_process_to_payment.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/your_order_list_view.dart';
+import 'package:caffeine/featuers/payment/presentation/views/payment_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:get/get.dart' as g;
 
 class DeleiverToHomeBody extends StatefulWidget {
   const DeleiverToHomeBody({super.key});
@@ -135,7 +137,11 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
           ),
         ),
         ContainerOfProcessToPayment(
-          onPressed: () {},
+          onPressed: () {
+            g.Get.to(() => const PaymentView(),
+                transition: g.Transition.fade,
+                duration: const Duration(milliseconds: 350));
+          },
         ),
       ],
     );

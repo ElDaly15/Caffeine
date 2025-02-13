@@ -7,8 +7,10 @@ import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_p
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_with_icon_and_text.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/sliver_list_of_container_pick_up.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/your_order_list_view.dart';
+import 'package:caffeine/featuers/payment/presentation/views/payment_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
+import 'package:get/get.dart' as g;
 
 class PickupBody extends StatefulWidget {
   const PickupBody({super.key});
@@ -180,7 +182,13 @@ class _PickupBodyState extends State<PickupBody> {
           ),
         ),
         ContainerOfProcessToPayment(
-          onPressed: checkPickUp ? () {} : null,
+          onPressed: checkPickUp
+              ? () {
+                  g.Get.to(() => const PaymentView(),
+                      transition: g.Transition.fade,
+                      duration: const Duration(milliseconds: 350));
+                }
+              : null,
         ),
       ],
     );
