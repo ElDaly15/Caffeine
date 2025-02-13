@@ -14,6 +14,10 @@ class Assets {
   /// assets/images/bean.svg
   static const String imagesBean = "assets/images/bean.svg";
 
+  /// Assets for imagesCod
+  /// assets/images/cod.png
+  static const String imagesCod = "assets/images/cod.png";
+
   /// Assets for imagesCoffeeBk
   /// assets/images/coffee_bk.png
   static const String imagesCoffeeBk = "assets/images/coffee_bk.png";
@@ -53,5 +57,13 @@ class Assets {
   /// Assets for imagesMilk
   /// assets/images/milk.svg
   static const String imagesMilk = "assets/images/milk.svg";
+
+  /// Assets for imagesVisaCard
+  /// assets/images/visaCard.png
+  static const String imagesVisaCard = "assets/images/visaCard.png";
+
+  /// Assets for imagesWallets
+  /// assets/images/wallets.jpg
+  static const String imagesWallets = "assets/images/wallets.jpg";
 }
 
