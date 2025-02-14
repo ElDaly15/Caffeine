@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
+import 'package:caffeine/featuers/settings/settings_section/presentation/views/select_language_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // ignore: unused_import
@@ -34,9 +35,9 @@ class _ContainerOfSettingsSectionsState
             icon: FontAwesomeIcons.earthAmericas,
             title: 'Select Language',
             onTap: () {
-              // g.Get.to(() => const PersonalInformationView(),
-              //     transition: g.Transition.leftToRightWithFade,
-              //     duration: const Duration(milliseconds: 600));
+              g.Get.to(() => const SelectLanguageView(),
+                  transition: g.Transition.leftToRightWithFade,
+                  duration: const Duration(milliseconds: 600));
             },
           ),
           const SizedBox(
