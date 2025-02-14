@@ -2,6 +2,7 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/cart/presentation/views/cart_view.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/home_view_body.dart';
 import 'package:caffeine/featuers/notification/presentation/views/notification_view.dart';
+import 'package:caffeine/featuers/profile/presentation/views/profile_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -28,7 +29,7 @@ class _HomeViewState extends State<HomeView> {
           HomeViewBody(),
           NotificationView(),
           CartView(),
-          HomeViewBody(),
+          ProfileView(),
         ],
       ),
       bottomNavigationBar: Container(
