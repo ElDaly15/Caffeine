@@ -7,6 +7,7 @@ import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_c
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_process_to_payment.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/your_order_list_view.dart';
 import 'package:caffeine/featuers/payment/presentation/views/payment_view.dart';
+import 'package:caffeine/featuers/settings/shipping_address/presentation/views/edit_address_view.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:get/get.dart' as g;
@@ -52,7 +53,11 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                       padding: const EdgeInsets.symmetric(horizontal: 22),
                       sliver: SliverToBoxAdapter(
                         child: ColumnOfAddressAndEditAndAddNote(
-                          editAddress: () {},
+                          editAddress: () {
+                            g.Get.to(() => const EditAddressView(),
+                                transition: g.Transition.fade,
+                                duration: const Duration(milliseconds: 350));
+                          },
                           addNote: () {},
                         ),
                       ),

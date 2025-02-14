@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
+import 'package:caffeine/featuers/settings/shipping_address/presentation/views/shipping_address_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // ignore: unused_import
@@ -57,9 +58,9 @@ class ContainerOfListTileSettings extends StatelessWidget {
             icon: Icons.local_shipping,
             title: 'Shipping Address',
             onTap: () {
-              // g.Get.to(() => const ShippingAddressView(),
-              //     transition: g.Transition.leftToRightWithFade,
-              //     duration: const Duration(milliseconds: 600));
+              g.Get.to(() => const ShippingAddressView(),
+                  transition: g.Transition.leftToRightWithFade,
+                  duration: const Duration(milliseconds: 600));
             },
           ),
           const SizedBox(
