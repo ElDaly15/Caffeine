@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
+import 'package:caffeine/featuers/settings/settings_section/presentation/views/settings_section_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/shipping_address_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -19,6 +20,10 @@ class ContainerOfListTileSettings extends StatelessWidget {
       child: Column(
         children: [
           CustomProfileListTile(
+            statusOfNotification: false,
+            onChangedSwitch: (value) {},
+            hasSwitch: false,
+            hasTrailling: false,
             icon: Icons.person,
             title: 'Personal Information',
             onTap: () {
@@ -31,6 +36,10 @@ class ContainerOfListTileSettings extends StatelessWidget {
             height: 8,
           ),
           CustomProfileListTile(
+            statusOfNotification: false,
+            onChangedSwitch: (value) {},
+            hasSwitch: false,
+            hasTrailling: false,
             icon: FontAwesomeIcons.box,
             title: 'My Orders',
             onTap: () {
@@ -43,6 +52,10 @@ class ContainerOfListTileSettings extends StatelessWidget {
             height: 8,
           ),
           CustomProfileListTile(
+            statusOfNotification: false,
+            onChangedSwitch: (value) {},
+            hasSwitch: false,
+            hasTrailling: false,
             icon: FontAwesomeIcons.solidHeart,
             title: 'Whishlist',
             onTap: () {
@@ -55,6 +68,10 @@ class ContainerOfListTileSettings extends StatelessWidget {
             height: 8,
           ),
           CustomProfileListTile(
+            statusOfNotification: false,
+            onChangedSwitch: (value) {},
+            hasSwitch: false,
+            hasTrailling: false,
             icon: Icons.local_shipping,
             title: 'Shipping Address',
             onTap: () {
@@ -67,12 +84,16 @@ class ContainerOfListTileSettings extends StatelessWidget {
             height: 8,
           ),
           CustomProfileListTile(
+            statusOfNotification: false,
+            onChangedSwitch: (value) {},
+            hasSwitch: false,
+            hasTrailling: false,
             icon: Icons.settings,
             title: 'Settings',
             onTap: () {
-              // g.Get.to(() => const SettingsView(),
-              //     transition: g.Transition.leftToRightWithFade,
-              //     duration: const Duration(milliseconds: 600));
+              g.Get.to(() => const SettingsSectionView(),
+                  transition: g.Transition.leftToRightWithFade,
+                  duration: const Duration(milliseconds: 600));
             },
           ),
         ],

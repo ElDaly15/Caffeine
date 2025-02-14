@@ -7,28 +7,49 @@ class CustomProfileListTile extends StatelessWidget {
       {super.key,
       required this.title,
       required this.icon,
-      required this.onTap});
+      required this.onTap,
+      required this.hasSwitch,
+      required this.hasTrailling,
+      required this.onChangedSwitch,
+      required this.statusOfNotification});
   final String title;
   final IconData icon;
   final Function()? onTap;
+  final bool hasSwitch;
+  final bool hasTrailling;
+  final void Function(bool)? onChangedSwitch;
+  final bool statusOfNotification;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: onTap,
-      contentPadding: EdgeInsets.zero,
-      leading: Container(
-        width: 50,
-        height: 50,
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(8),
-          color: AppColors.mainColorTheme,
+        onTap: onTap,
+        contentPadding: EdgeInsets.zero,
+        leading: Container(
+          width: 50,
+          height: 50,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(8),
+            color: AppColors.mainColorTheme,
+          ),
+          child: Icon(icon, color: Colors.white),
         ),
-        child: Icon(icon, color: Colors.white),
-      ),
-      title: Text(title,
+        title: Text(
+          title,
           style: TextStyles.font20Medium(context)
-              .copyWith(color: AppColors.darkTheme)),
-    );
+              .copyWith(color: AppColors.darkTheme),
+        ),
+        trailing: hasTrailling
+            ? hasSwitch
+                ? Switch(
+                    activeColor: AppColors.mainColorTheme,
+                    value: statusOfNotification,
+                    onChanged: onChangedSwitch)
+                : Icon(
+                    Icons.arrow_forward_ios,
+                    color: AppColors.darkTheme,
+                    size: 20,
+                  )
+            : null);
   }
 }

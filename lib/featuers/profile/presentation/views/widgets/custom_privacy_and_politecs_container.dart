@@ -17,6 +17,10 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
       child: Column(
         children: [
           CustomProfileListTile(
+            statusOfNotification: false,
+            onChangedSwitch: (value) {},
+            hasSwitch: false,
+            hasTrailling: false,
             icon: Icons.chat,
             title: 'Contact Us',
             onTap: () {
@@ -29,6 +33,10 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
             height: 8,
           ),
           CustomProfileListTile(
+            statusOfNotification: false,
+            onChangedSwitch: (value) {},
+            hasSwitch: false,
+            hasTrailling: false,
             icon: Icons.privacy_tip,
             title: 'Privacy & Policy',
             onTap: () {
@@ -41,6 +49,10 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
             height: 8,
           ),
           CustomProfileListTile(
+            statusOfNotification: false,
+            onChangedSwitch: (value) {},
+            hasSwitch: false,
+            hasTrailling: false,
             icon: Icons.logout,
             title: 'Logout',
             onTap: () {
