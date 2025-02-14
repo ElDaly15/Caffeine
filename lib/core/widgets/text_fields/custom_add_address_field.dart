@@ -1,4 +1,5 @@
 import 'package:caffeine/core/utils/app_colors.dart';
+import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class CustomAddAddressField extends StatefulWidget {
@@ -21,8 +22,8 @@ class _CustomEditTextFieldState extends State<CustomAddAddressField> {
     return Theme(
       data: Theme.of(context).copyWith(
         textSelectionTheme: const TextSelectionThemeData(
-          selectionColor: Color.fromARGB(255, 168, 68, 72),
-          selectionHandleColor: Color(0xffAE1F24),
+          selectionColor: AppColors.mainColorTheme,
+          selectionHandleColor: AppColors.mainColorTheme,
         ),
       ),
       child: TextFormField(
@@ -36,17 +37,21 @@ class _CustomEditTextFieldState extends State<CustomAddAddressField> {
         onChanged: widget.onChanged,
         decoration: InputDecoration(
           filled: true,
-          fillColor: AppColors.secondaryColorTheme,
+          // ignore: deprecated_member_use
+          fillColor: AppColors.secondaryColorTheme.withOpacity(0.2),
           focusColor: AppColors.mainColorTheme,
           focusedBorder: customOutlineBorder(),
           enabledBorder: customOutlineBorder(),
           border: customOutlineBorder(),
           hintText: widget.title,
+          hintStyle:
+              TextStyles.font18Medium(context).copyWith(color: Colors.grey),
           labelStyle: const TextStyle(
             color: AppColors.mainColorTheme,
           ),
         ),
         cursorColor: AppColors.mainColorTheme,
+        style: TextStyles.font18Medium(context),
       ),
     );
   }

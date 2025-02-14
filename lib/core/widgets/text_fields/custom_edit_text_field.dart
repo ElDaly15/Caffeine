@@ -40,7 +40,8 @@ class _CustomEditTextFieldState extends State<CustomEditTextField> {
           enabledBorder: customOutlineBorder(),
           border: customOutlineBorder(),
           hintText: widget.title,
-          hintStyle: TextStyles.font18Medium(context),
+          hintStyle:
+              TextStyles.font18Medium(context).copyWith(color: Colors.grey),
           labelStyle: const TextStyle(
             color: AppColors.mainColorTheme,
           ),

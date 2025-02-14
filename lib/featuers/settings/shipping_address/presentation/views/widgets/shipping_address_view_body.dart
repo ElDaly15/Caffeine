@@ -1,6 +1,7 @@
 import 'package:caffeine/core/widgets/buttons/big_elevated_btm_with_icon.dart';
 import 'package:caffeine/core/widgets/buttons/icon_btm_of_edit.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
+import 'package:caffeine/featuers/settings/shipping_address/presentation/views/add_address_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/edit_address_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/widgets/container_of_address.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,11 @@ class _ShippingAddressViewBodyState extends State<ShippingAddressViewBody> {
               ? ContainerOfAddress()
               : CustomBigElevatedBtmWithIcon(
                   onPressed: () {
+                    g.Get.to(
+                      () => const AddAddressView(),
+                      transition: g.Transition.leftToRightWithFade,
+                      duration: const Duration(milliseconds: 600),
+                    );
                     setState(() {
                       hasAddress = true;
                     });
