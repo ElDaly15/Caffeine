@@ -21,15 +21,9 @@ class CustomOrderItemInOptions extends StatelessWidget {
               Icons.local_shipping_outlined,
               color: AppColors.mainColorTheme,
             ),
-            title:
-                Text('Caffeine Order', style: TextStyles.font18Medium(context)),
-            subtitle: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                'Order ID : exP123456789S23-12-2023',
-                style: TextStyles.font14Medium(context),
-                textAlign: TextAlign.start,
-              ),
+            title: Text(
+              'Caffeine Order',
+              style: TextStyles.font18Medium(context),
             ),
             trailing: Text(
               'Under Processing',
@@ -43,6 +37,8 @@ class CustomOrderItemInOptions extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
+                Text('Order ID : exP123456789S23-12-2023',
+                    style: TextStyles.font14Medium(context)),
                 Text('Date : 12-12-2023',
                     style: TextStyles.font14Medium(context)),
                 Text('Order Time : 12:00 PM',

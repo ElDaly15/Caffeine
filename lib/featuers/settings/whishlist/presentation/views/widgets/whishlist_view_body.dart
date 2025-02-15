@@ -10,6 +10,7 @@ class WhishlistViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 22),
       child: CustomScrollView(
+        physics: const ClampingScrollPhysics(),
         slivers: [
           const SliverToBoxAdapter(
             child: SafeArea(
