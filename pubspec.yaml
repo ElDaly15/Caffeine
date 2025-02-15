@@ -31,6 +31,7 @@ dependencies:
   animated_snack_bar: ^0.4.0
   cupertino_icons: ^1.0.8
   device_preview: ^1.2.0
+  easy_stepper: ^0.8.5+1
   flutter:
     sdk: flutter
   flutter_launcher_icons: ^0.14.3

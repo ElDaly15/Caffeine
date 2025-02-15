@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
+import 'package:caffeine/featuers/settings/my_orders/presentation/views/my_orders_view.dart';
 import 'package:caffeine/featuers/settings/personal_information/presentation/views/personal_information.dart';
 import 'package:caffeine/featuers/settings/settings_section/presentation/views/settings_section_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/shipping_address_view.dart';
@@ -44,9 +45,9 @@ class ContainerOfListTileSettings extends StatelessWidget {
             icon: FontAwesomeIcons.box,
             title: 'My Orders',
             onTap: () {
-              // g.Get.to(() => const OrdersView(),
-              //     transition: g.Transition.leftToRightWithFade,
-              //     duration: const Duration(milliseconds: 600));
+              g.Get.to(() => const MyOrdersView(),
+                  transition: g.Transition.leftToRightWithFade,
+                  duration: const Duration(milliseconds: 600));
             },
           ),
           const SizedBox(
