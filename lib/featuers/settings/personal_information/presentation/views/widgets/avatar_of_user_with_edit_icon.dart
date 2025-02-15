@@ -1,3 +1,4 @@
+import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
@@ -44,7 +45,7 @@ class AvatarOfUserImageWithEditIcon extends StatelessWidget {
               child: const Icon(
                 IconlyLight.edit,
                 size: 20,
-                color: Colors.black,
+                color: AppColors.mainColorTheme,
               ),
             ),
           ),
