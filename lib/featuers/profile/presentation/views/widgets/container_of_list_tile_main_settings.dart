@@ -4,6 +4,7 @@ import 'package:caffeine/featuers/settings/my_orders/presentation/views/my_order
 import 'package:caffeine/featuers/settings/personal_information/presentation/views/personal_information.dart';
 import 'package:caffeine/featuers/settings/settings_section/presentation/views/settings_section_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/shipping_address_view.dart';
+import 'package:caffeine/featuers/settings/whishlist/presentation/views/whishlist_view.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // ignore: unused_import
@@ -61,9 +62,9 @@ class ContainerOfListTileSettings extends StatelessWidget {
             icon: FontAwesomeIcons.solidHeart,
             title: 'Whishlist',
             onTap: () {
-              // g.Get.to(() => const WhishlistView(),
-              //     transition: g.Transition.leftToRightWithFade,
-              //     duration: const Duration(milliseconds: 600));
+              g.Get.to(() => const WhishlistView(),
+                  transition: g.Transition.leftToRightWithFade,
+                  duration: const Duration(milliseconds: 600));
             },
           ),
           const SizedBox(
