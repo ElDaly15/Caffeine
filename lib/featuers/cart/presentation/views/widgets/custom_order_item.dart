@@ -40,7 +40,7 @@ class CustomOrderItem extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  'Size : Regular',
+                  'Size : Regular | Qunaitity: 1',
                   style: TextStyles.font14Regular(context),
                 ),
                 Text(
