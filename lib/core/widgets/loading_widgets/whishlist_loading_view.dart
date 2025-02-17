@@ -1,6 +1,5 @@
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/core/widgets/loading_widgets/list_view_of_loading_whishlist.dart';
-import 'package:caffeine/featuers/settings/whishlist/presentation/views/widgets/sliver_list_of_whishlist_items.dart';
 import 'package:flutter/material.dart';
 
 class WhishlistLoadingView extends StatelessWidget {
