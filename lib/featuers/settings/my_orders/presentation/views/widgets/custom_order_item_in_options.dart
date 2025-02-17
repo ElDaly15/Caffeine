@@ -10,7 +10,8 @@ class CustomOrderItemInOptions extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: AppColors.secondaryColorTheme,
+        // ignore: deprecated_member_use
+        color: AppColors.secondaryColorTheme.withOpacity(0.5),
         borderRadius: BorderRadius.circular(16),
       ),
       child: Column(
