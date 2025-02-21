@@ -1,0 +1,2 @@
+D:/Flutter/Projects/caffeine/android/app/.cxx/Debug/6r272p54/armeabi-v7a/CMakeFiles/edit_cache.dir
+D:/Flutter/Projects/caffeine/android/app/.cxx/Debug/6r272p54/armeabi-v7a/CMakeFiles/rebuild_cache.dir
