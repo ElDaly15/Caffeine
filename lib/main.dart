@@ -1,3 +1,4 @@
+import 'package:caffeine/core/controller/depency_injection.dart';
 import 'package:caffeine/featuers/splash/presentation/views/splash_view.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +7,7 @@ import 'package:get/get.dart';
 void main() {
   runApp(
       DevicePreview(enabled: true, builder: (context) => const CaffeineApp()));
+  DependencyInjection.init();
 }
 
 class CaffeineApp extends StatelessWidget {

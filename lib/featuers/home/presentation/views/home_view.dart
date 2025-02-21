@@ -1,9 +1,12 @@
+import 'package:caffeine/core/screens/no_connection_screen.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/cart/presentation/views/cart_view.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/home_view_body.dart';
 import 'package:caffeine/featuers/notification/presentation/views/notification_view.dart';
 import 'package:caffeine/featuers/profile/presentation/views/profile_view.dart';
+import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_offline/flutter_offline.dart';
 import 'package:iconly/iconly.dart';
 
 class HomeView extends StatefulWidget {
@@ -20,44 +23,51 @@ class _HomeViewState extends State<HomeView> {
   final pageController = PageController(initialPage: 0);
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: PageView(
-        physics: const NeverScrollableScrollPhysics(),
-        controller: pageController,
-        children: [
-          HomeViewBody(),
-          NotificationView(),
-          CartView(),
-          ProfileView(),
-        ],
-      ),
-      bottomNavigationBar: Container(
-        height: 80,
-        decoration: BoxDecoration(
-          color: Colors.white,
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(20),
-            topRight: Radius.circular(20),
-          ),
-          boxShadow: [
-            BoxShadow(
-              // ignore: deprecated_member_use
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 5,
-              blurRadius: 7,
-              offset: const Offset(0, 3),
-            ),
+    return OfflineBuilder(
+      connectivityBuilder: (context, value, child) {
+        final bool connection = value.first != ConnectivityResult.none;
+        return connection ? child : const NoconnectionScreen();
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: PageView(
+          physics: const NeverScrollableScrollPhysics(),
+          controller: pageController,
+          children: [
+            HomeViewBody(),
+            NotificationView(),
+            CartView(),
+            ProfileView(),
           ],
         ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            _buildNavItem(0, IconlyBold.home, IconlyLight.home),
-            _buildNavItem(1, IconlyBold.notification, IconlyLight.notification),
-            _buildNavItem(2, IconlyBold.bag, IconlyLight.bag),
-            _buildNavItem(3, IconlyBold.profile, IconlyLight.profile),
-          ],
+        bottomNavigationBar: Container(
+          height: 80,
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(20),
+              topRight: Radius.circular(20),
+            ),
+            boxShadow: [
+              BoxShadow(
+                // ignore: deprecated_member_use
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 5,
+                blurRadius: 7,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              _buildNavItem(0, IconlyBold.home, IconlyLight.home),
+              _buildNavItem(
+                  1, IconlyBold.notification, IconlyLight.notification),
+              _buildNavItem(2, IconlyBold.bag, IconlyLight.bag),
+              _buildNavItem(3, IconlyBold.profile, IconlyLight.profile),
+            ],
+          ),
         ),
       ),
     );
