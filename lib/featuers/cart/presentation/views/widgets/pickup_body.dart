@@ -1,6 +1,7 @@
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/text_fields/search_pick_up_cafe_text_field.dart';
 import 'package:caffeine/core/widgets/text_fields/text_field_of_copon.dart';
+import 'package:caffeine/featuers/cart/presentation/views/add_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_payment_summary.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_coupon_applies.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_process_to_payment.dart';
@@ -57,7 +58,11 @@ class _PickupBodyState extends State<PickupBody> {
                         CustomContainerWithIconAndText(
                           title: 'Add Note',
                           iconData: IconlyLight.paper,
-                          onTap: () {},
+                          onTap: () {
+                            g.Get.to(() => const AddNoteView(),
+                                transition: g.Transition.fade,
+                                duration: const Duration(milliseconds: 350));
+                          },
                         ),
                       ],
                     ),

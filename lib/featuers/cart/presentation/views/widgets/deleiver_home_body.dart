@@ -1,6 +1,7 @@
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/big_elevated_btm_with_icon.dart';
 import 'package:caffeine/core/widgets/text_fields/text_field_of_copon.dart';
+import 'package:caffeine/featuers/cart/presentation/views/add_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_edit_address_and_add_note.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_payment_summary.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_coupon_applies.dart';
@@ -59,7 +60,11 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                                 transition: g.Transition.fade,
                                 duration: const Duration(milliseconds: 350));
                           },
-                          addNote: () {},
+                          addNote: () {
+                            g.Get.to(() => const AddNoteView(),
+                                transition: g.Transition.fade,
+                                duration: const Duration(milliseconds: 350));
+                          },
                         ),
                       ),
                     )

@@ -38,6 +38,8 @@ class AddAddressViewBody extends StatelessWidget {
                   height: 7,
                 ),
                 CustomAddAddressField(
+                  controller: TextEditingController(),
+                  maxLines: 1,
                   keyBoardType: TextInputType.streetAddress,
                   title: 'Street',
                   onChanged: (value) {},
@@ -59,6 +61,8 @@ class AddAddressViewBody extends StatelessWidget {
                   height: 7,
                 ),
                 CustomAddAddressField(
+                  controller: TextEditingController(),
+                  maxLines: 1,
                   keyBoardType: TextInputType.streetAddress,
                   title: 'City',
                   onChanged: (value) {},
@@ -80,6 +84,8 @@ class AddAddressViewBody extends StatelessWidget {
                   height: 7,
                 ),
                 CustomAddAddressField(
+                  controller: TextEditingController(),
+                  maxLines: 1,
                   keyBoardType: TextInputType.streetAddress,
                   title: 'Phone Number',
                   onChanged: (value) {},
@@ -101,6 +107,8 @@ class AddAddressViewBody extends StatelessWidget {
                   height: 7,
                 ),
                 CustomAddAddressField(
+                  controller: TextEditingController(),
+                  maxLines: 1,
                   keyBoardType: TextInputType.streetAddress,
                   title: 'Country',
                   onChanged: (value) {},

@@ -4,6 +4,7 @@ import 'package:caffeine/featuers/cart/presentation/views/cart_view.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/home_view_body.dart';
 import 'package:caffeine/featuers/notification/presentation/views/notification_view.dart';
 import 'package:caffeine/featuers/profile/presentation/views/profile_view.dart';
+// ignore: unnecessary_import
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
