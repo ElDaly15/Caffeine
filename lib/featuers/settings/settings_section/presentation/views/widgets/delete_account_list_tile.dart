@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class DeleteAccount extends StatefulWidget {
@@ -31,7 +32,7 @@ class _NotificationOnAndOffState extends State<DeleteAccount> {
           width: 15,
         ),
         Text(
-          'Delete Account',
+          S.of(context).delete_account,
           style: TextStyles.font18SemiBold(context)
               .copyWith(color: AppColors.darkTheme),
         ),
@@ -45,7 +46,7 @@ class _NotificationOnAndOffState extends State<DeleteAccount> {
             ),
             onPressed: widget.onPressed,
             child: Text(
-              'Delete Account',
+              S.of(context).delete_account,
               style: TextStyles.font14SemiBold(context)
                   .copyWith(color: Colors.white),
             ))

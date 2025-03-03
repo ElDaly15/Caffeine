@@ -1,9 +1,11 @@
 import 'package:caffeine/core/helper/cached_helper.dart';
 import 'package:caffeine/core/manager/manage_language_cubit/manage_language_cubit.dart';
 import 'package:caffeine/core/utils/app_images.dart';
+import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/featuers/settings/settings_section/data/models/language_item_model.dart';
 import 'package:caffeine/featuers/settings/settings_section/presentation/views/widgets/custom_language_list_tile.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -28,6 +30,18 @@ class _SelectLanaguageViewBodyState extends State<SelectLanaguageViewBody> {
       image: Assets.imagesAr,
     ),
   ];
+  List<LanguageItemModel> languageItemModelArabic = [
+    LanguageItemModel(
+      title: 'انجليزي',
+      languageCode: 'en',
+      image: Assets.imagesEn,
+    ),
+    LanguageItemModel(
+      title: 'عربي',
+      languageCode: 'ar',
+      image: Assets.imagesAr,
+    ),
+  ];
   int index = 0;
   @override
   Widget build(BuildContext context) {
@@ -39,12 +53,14 @@ class _SelectLanaguageViewBodyState extends State<SelectLanaguageViewBody> {
             child: SizedBox(),
           ),
           CustomHeaderWithTitleAndBackBtm(
-              title: 'Select Language', color: Colors.black),
+              title: S.of(context).select_language, color: Colors.black),
           SizedBox(
             height: 15,
           ),
           CustomLanguageListTile(
-              languageItemModel: languageItemModel[0],
+              languageItemModel: isArabic()
+                  ? languageItemModelArabic[0]
+                  : languageItemModel[0],
               isChecked: CacheHelper().getDataString(key: 'lang') == 'en',
               onChanged: () {
                 BlocProvider.of<ManageLanguageCubit>(context)
@@ -57,7 +73,9 @@ class _SelectLanaguageViewBodyState extends State<SelectLanaguageViewBody> {
             height: 15,
           ),
           CustomLanguageListTile(
-              languageItemModel: languageItemModel[1],
+              languageItemModel: isArabic()
+                  ? languageItemModelArabic[1]
+                  : languageItemModel[1],
               isChecked: CacheHelper().getDataString(key: 'lang') == 'ar',
               onChanged: () {
                 BlocProvider.of<ManageLanguageCubit>(context)

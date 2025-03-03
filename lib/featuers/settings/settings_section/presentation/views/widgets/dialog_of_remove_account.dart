@@ -3,6 +3,7 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_text_field.dart';
+import 'package:caffeine/generated/l10n.dart';
 
 import 'package:flutter/material.dart';
 
@@ -34,14 +35,14 @@ class _DeleteConfirmDialogState extends State<DeleteConfirmDialog> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Deleting Account',
+                S.of(context).deleting_account,
                 style: TextStyles.font18Bold(context),
               ),
               const SizedBox(
                 height: 10,
               ),
               Text(
-                'Deleting your account will remove all of your information from our database. This cannot be undone.',
+                S.of(context).delete_warning,
                 style: TextStyles.font14SemiBold(context),
               ),
               const SizedBox(
@@ -49,7 +50,7 @@ class _DeleteConfirmDialogState extends State<DeleteConfirmDialog> {
               ),
               const Spacer(),
               Text(
-                'To Confirm, type "DELETE" in the field below.',
+                S.of(context).delete_confirmation,
                 style: TextStyles.font18Bold(context).copyWith(
                   color: AppColors.mainColorTheme,
                 ),
@@ -62,7 +63,7 @@ class _DeleteConfirmDialogState extends State<DeleteConfirmDialog> {
                   Flexible(
                     child: CustomTextField(
                       isObscureText: false,
-                      hintTitle: 'DELETE',
+                      hintTitle: S.of(context).delete_hint,
                       onChanged: (value) {
                         deleteText = value;
                       },
@@ -86,13 +87,13 @@ class _DeleteConfirmDialogState extends State<DeleteConfirmDialog> {
                       } else {
                         CustomSnackBar().showCustomSnackBar(
                           context: context,
-                          message: 'Please type "DELETE"',
+                          message: S.of(context).delete_error,
                           type: AnimatedSnackBarType.error,
                         );
                       }
                     },
                     child: Text(
-                      'Delete Account',
+                      S.of(context).delete_account,
                       style: TextStyles.font14Medium(context).copyWith(
                         color: AppColors.secondaryColorTheme,
                       ),

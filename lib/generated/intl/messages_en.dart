@@ -55,7 +55,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "Create new account",
     ),
+    "dark_mode": MessageLookupByLibrary.simpleMessage("Dark Mode"),
     "date": MessageLookupByLibrary.simpleMessage("Date"),
+    "delete_account": MessageLookupByLibrary.simpleMessage("Delete Account"),
+    "delete_confirmation": MessageLookupByLibrary.simpleMessage(
+      "To Confirm, type \"DELETE\" in the field below.",
+    ),
+    "delete_error": MessageLookupByLibrary.simpleMessage(
+      "Please type \"DELETE\"",
+    ),
+    "delete_hint": MessageLookupByLibrary.simpleMessage("DELETE"),
+    "delete_warning": MessageLookupByLibrary.simpleMessage(
+      "Deleting your account will remove all of your information from our database. This cannot be undone.",
+    ),
+    "deleting_account": MessageLookupByLibrary.simpleMessage(
+      "Deleting Account",
+    ),
     "deliver": MessageLookupByLibrary.simpleMessage("Deliver"),
     "delivery_address": MessageLookupByLibrary.simpleMessage(
       "Delivery Address",
@@ -93,6 +108,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
+    "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "online_wallets": MessageLookupByLibrary.simpleMessage("Online Wallets"),
     "or_continue_with": MessageLookupByLibrary.simpleMessage(
       "Or continue with",
@@ -134,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_cafe": MessageLookupByLibrary.simpleMessage("Search Cafe"),
     "search_coffee": MessageLookupByLibrary.simpleMessage("Search Coffee"),
     "search_result": MessageLookupByLibrary.simpleMessage("Search Result"),
+    "select_language": MessageLookupByLibrary.simpleMessage("Select Language"),
     "select_pickup_cafe": MessageLookupByLibrary.simpleMessage(
       "Select Pickup Cafe",
     ),

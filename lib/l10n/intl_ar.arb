@@ -92,7 +92,15 @@
     "street": "الشارع",
     "city": "المدينة",
     "phone_number": "رقم الهاتف",
-    "country": "الدولة"
-    
+    "country": "الدولة",
+    "select_language": "اختيار اللغة",
+    "notifications": "الإشعارات",
+    "dark_mode": "الوضع الداكن",
+    "delete_account": "حذف الحساب",
+    "deleting_account": "حذف الحساب",
+    "delete_warning": "سيؤدي حذف حسابك إلى إزالة جميع معلوماتك من قاعدة البيانات الخاصة بنا. لا يمكن التراجع عن هذا الإجراء.",
+    "delete_confirmation": "للتأكيد، اكتب \"DELETE\" في الحقل أدناه.",
+    "delete_error": "يرجى كتابة \"DELETE\"",
+    "delete_hint": "DELETE"
   }
   

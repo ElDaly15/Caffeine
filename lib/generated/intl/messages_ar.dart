@@ -55,7 +55,20 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد",
     ),
+    "dark_mode": MessageLookupByLibrary.simpleMessage("الوضع الداكن"),
     "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
+    "delete_account": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
+    "delete_confirmation": MessageLookupByLibrary.simpleMessage(
+      "للتأكيد، اكتب \"DELETE\" في الحقل أدناه.",
+    ),
+    "delete_error": MessageLookupByLibrary.simpleMessage(
+      "يرجى كتابة \"DELETE\"",
+    ),
+    "delete_hint": MessageLookupByLibrary.simpleMessage("DELETE"),
+    "delete_warning": MessageLookupByLibrary.simpleMessage(
+      "سيؤدي حذف حسابك إلى إزالة جميع معلوماتك من قاعدة البيانات الخاصة بنا. لا يمكن التراجع عن هذا الإجراء.",
+    ),
+    "deleting_account": MessageLookupByLibrary.simpleMessage("حذف الحساب"),
     "deliver": MessageLookupByLibrary.simpleMessage("توصيل"),
     "delivery_address": MessageLookupByLibrary.simpleMessage("عنوان التوصيل"),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
@@ -93,6 +106,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "my_orders": MessageLookupByLibrary.simpleMessage("طلباتي"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "online_wallets": MessageLookupByLibrary.simpleMessage(
       "المحافظ الإلكترونية",
     ),
@@ -136,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_cafe": MessageLookupByLibrary.simpleMessage("ابحث عن مقهى"),
     "search_coffee": MessageLookupByLibrary.simpleMessage("ابحث عن القهوة"),
     "search_result": MessageLookupByLibrary.simpleMessage("نتيجة البحث"),
+    "select_language": MessageLookupByLibrary.simpleMessage("اختيار اللغة"),
     "select_pickup_cafe": MessageLookupByLibrary.simpleMessage(
       "اختر المقهى للاستلام",
     ),

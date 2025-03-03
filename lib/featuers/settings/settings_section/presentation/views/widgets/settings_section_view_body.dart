@@ -1,5 +1,6 @@
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/featuers/settings/settings_section/presentation/views/widgets/container_of_settings_sections.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SettingsSectionViewBody extends StatelessWidget {
@@ -13,7 +14,7 @@ class SettingsSectionViewBody extends StatelessWidget {
         children: [
           SafeArea(child: SizedBox()),
           CustomHeaderWithTitleAndBackBtm(
-              title: 'Settings', color: Colors.black),
+              title: S.of(context).settings, color: Colors.black),
           SizedBox(
             height: 15,
           ),

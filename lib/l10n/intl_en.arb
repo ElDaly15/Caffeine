@@ -92,6 +92,16 @@
     "street": "Street",
     "city": "City",
     "phone_number": "Phone Number",
-    "country": "Country"
+    "country": "Country",
+    "select_language": "Select Language",
+    "notifications": "Notifications",
+    "dark_mode": "Dark Mode",
+    "delete_account": "Delete Account",
+    "deleting_account": "Deleting Account",
+    "delete_warning": "Deleting your account will remove all of your information from our database. This cannot be undone.",
+    "delete_confirmation": "To Confirm, type \"DELETE\" in the field below.",
+    "delete_error": "Please type \"DELETE\"",
+    "delete_hint": "DELETE"
+    
   }
   

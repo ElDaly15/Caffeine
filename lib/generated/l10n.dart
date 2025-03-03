@@ -739,6 +739,86 @@ class S {
   String get country {
     return Intl.message('Country', name: 'country', desc: '', args: []);
   }
+
+  /// `Select Language`
+  String get select_language {
+    return Intl.message(
+      'Select Language',
+      name: 'select_language',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Notifications`
+  String get notifications {
+    return Intl.message(
+      'Notifications',
+      name: 'notifications',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Dark Mode`
+  String get dark_mode {
+    return Intl.message('Dark Mode', name: 'dark_mode', desc: '', args: []);
+  }
+
+  /// `Delete Account`
+  String get delete_account {
+    return Intl.message(
+      'Delete Account',
+      name: 'delete_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deleting Account`
+  String get deleting_account {
+    return Intl.message(
+      'Deleting Account',
+      name: 'deleting_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Deleting your account will remove all of your information from our database. This cannot be undone.`
+  String get delete_warning {
+    return Intl.message(
+      'Deleting your account will remove all of your information from our database. This cannot be undone.',
+      name: 'delete_warning',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `To Confirm, type "DELETE" in the field below.`
+  String get delete_confirmation {
+    return Intl.message(
+      'To Confirm, type "DELETE" in the field below.',
+      name: 'delete_confirmation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please type "DELETE"`
+  String get delete_error {
+    return Intl.message(
+      'Please type "DELETE"',
+      name: 'delete_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `DELETE`
+  String get delete_hint {
+    return Intl.message('DELETE', name: 'delete_hint', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -2,6 +2,7 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
 import 'package:caffeine/featuers/settings/settings_section/presentation/views/delete_account_view.dart';
 import 'package:caffeine/featuers/settings/settings_section/presentation/views/select_language_view.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // ignore: unused_import
@@ -34,7 +35,7 @@ class _ContainerOfSettingsSectionsState
             hasSwitch: false,
             hasTrailling: true,
             icon: FontAwesomeIcons.earthAmericas,
-            title: 'Select Language',
+            title: S.of(context).select_language,
             onTap: () {
               g.Get.to(() => const SelectLanguageView(),
                   transition: g.Transition.leftToRightWithFade,
@@ -54,7 +55,7 @@ class _ContainerOfSettingsSectionsState
             hasSwitch: true,
             hasTrailling: true,
             icon: IconlyBold.notification,
-            title: 'Notifications',
+            title: S.of(context).notification,
             onTap: null,
           ),
           const SizedBox(
@@ -70,7 +71,7 @@ class _ContainerOfSettingsSectionsState
             hasSwitch: true,
             hasTrailling: true,
             icon: FontAwesomeIcons.solidMoon,
-            title: 'Dark Mode',
+            title: S.of(context).dark_mode,
             onTap: null,
           ),
           const SizedBox(
@@ -82,7 +83,7 @@ class _ContainerOfSettingsSectionsState
             hasSwitch: false,
             hasTrailling: true,
             icon: IconlyBold.delete,
-            title: 'Delete Account',
+            title: S.of(context).delete_account,
             onTap: () {
               g.Get.to(() => const DeleteAccountView(),
                   transition: g.Transition.leftToRightWithFade,
