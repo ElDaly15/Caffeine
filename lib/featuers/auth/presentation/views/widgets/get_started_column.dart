@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class GetStartedColumn extends StatelessWidget {
@@ -13,14 +14,14 @@ class GetStartedColumn extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            'Fall in Love with Coffee in Blissful Delight!',
+            S.of(context).fall_in_love_with_coffee,
             style: TextStyles.font24SemiBold(context)
                 .copyWith(color: AppColors.whiteColorFirst, fontSize: 34),
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 10),
           Text(
-            'Welcome to our cozy coffee corner, where every cup is a delightful for you.',
+            S.of(context).welcome_message,
             style:
                 TextStyles.font18Medium(context).copyWith(color: Colors.grey),
             textAlign: TextAlign.center,
@@ -34,7 +35,7 @@ class GetStartedColumn extends StatelessWidget {
             color: AppColors.mainColorTheme,
             onPressed: onPressed,
             child: Text(
-              'Get Started',
+              S.of(context).get_started,
               style: TextStyles.font18Medium(context)
                   .copyWith(color: Colors.white),
             ),

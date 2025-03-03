@@ -2,6 +2,7 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_search_text_field.dart';
 import 'package:caffeine/featuers/search/presentation/views/search_view.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' as g;
 
@@ -24,7 +25,7 @@ class CustomSearchAndStartContainer extends StatelessWidget {
               ),
             ),
             Text(
-              'Hello 👋 ,',
+              S.of(context).hello,
               style: TextStyles.font20Regular(context)
                   .copyWith(color: Colors.grey),
             ),

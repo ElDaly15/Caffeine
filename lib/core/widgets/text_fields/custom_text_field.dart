@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
@@ -32,11 +33,11 @@ class _CustomTextFieldState extends State<CustomTextField> {
       child: TextFormField(
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return 'This Field Is Required';
+            return '${widget.hintTitle} ${S.of(context).is_required}';
           }
           if (widget.isPassword) {
             if (value.length < 8 && widget.isInLogin == true) {
-              return 'Password must be at least 8 characters';
+              return S.of(context).password_min_length;
             }
           }
           return null;

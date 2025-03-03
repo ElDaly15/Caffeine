@@ -8,6 +8,7 @@ import 'package:caffeine/featuers/auth/presentation/views/register_view.dart';
 import 'package:caffeine/featuers/auth/presentation/views/widgets/custom_text_field.dart';
 import 'package:caffeine/featuers/auth/presentation/views/widgets/row_of_social_reg.dart';
 import 'package:caffeine/featuers/home/presentation/views/home_view.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' as g;
 
@@ -40,7 +41,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               ),
               Center(
                 child: Text(
-                  'Login here',
+                  S.of(context).login_here,
                   style: TextStyles.font24Bold(context)
                       .copyWith(color: AppColors.whiteColorFirst, fontSize: 28),
                 ),
@@ -51,7 +52,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
               SizedBox(
                 width: 200,
                 child: Text(
-                  'Welcome back you\'ve been missed',
+                  S.of(context).welcome_back,
                   style: TextStyles.font20Bold(context)
                       .copyWith(color: AppColors.whiteColorFirst),
                   textAlign: TextAlign.center,
@@ -65,7 +66,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   email = value;
                 },
                 isObscureText: false,
-                hintTitle: 'Email',
+                hintTitle: S.of(context).email,
                 isInLogin: true,
                 isPassword: false,
               ),
@@ -78,7 +79,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                   password = value;
                 },
                 isObscureText: true,
-                hintTitle: 'Password',
+                hintTitle: S.of(context).password,
                 isPassword: true,
               ),
               const SizedBox(
@@ -110,7 +111,7 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                     });
                   }
                 },
-                text: 'Sign In',
+                text: S.of(context).sign_in,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.02,
@@ -121,13 +122,13 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                       transition: g.Transition.fade,
                       duration: const Duration(milliseconds: 800));
                 },
-                title: 'Create new account',
+                title: S.of(context).create_new_account,
               ),
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.05,
               ),
               Text(
-                'Or continue with',
+                S.of(context).or_continue_with,
                 style: TextStyles.font14SemiBold(context)
                     .copyWith(color: AppColors.secondaryColorTheme),
               ),

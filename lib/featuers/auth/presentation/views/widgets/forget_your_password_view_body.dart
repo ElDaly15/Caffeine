@@ -2,6 +2,7 @@ import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/custom_big_elevated_btm.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_text_field.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ForgetYourPasswordViewBody extends StatefulWidget {
@@ -26,9 +27,9 @@ class _ForgetYourPasswordViewBodyState
           SafeArea(child: SizedBox()),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
-            child: const CustomHeaderWithTitleAndBackBtm(
+            child: CustomHeaderWithTitleAndBackBtm(
               color: Colors.white,
-              title: 'Forgot Your Password ',
+              title: S.of(context).forgot_your_password,
             ),
           ),
           SizedBox(
@@ -37,7 +38,7 @@ class _ForgetYourPasswordViewBodyState
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 22),
             child: Text(
-              'Don\'t worry, just write your email and we will send you a link to reset your password.',
+              S.of(context).forgot_password_message,
               style: TextStyles.font18SemiBold(context)
                   .copyWith(color: Colors.white),
             ),
@@ -48,7 +49,7 @@ class _ForgetYourPasswordViewBodyState
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 22),
             child: CustomTextField(
-              hintTitle: 'Email',
+              hintTitle: S.of(context).email,
               isInLogin: true,
               isPassword: false,
               isObscureText: false,
@@ -63,7 +64,7 @@ class _ForgetYourPasswordViewBodyState
             child: CustomBigElvatedButtom(
               colorCode: 0xff411900,
               colorOfTextCode: 0xffffffff,
-              title: 'Reset Password',
+              title: S.of(context).reset_password,
               onPressed: () async {
                 if (formKeyPasswordEdit.currentState!.validate()) {
                   Navigator.pop(context);

@@ -16,7 +16,7 @@ class ContainerOfCategoryItem extends StatelessWidget {
       decoration: BoxDecoration(
           color: isActive ? AppColors.mainColorTheme : Colors.white,
           borderRadius: BorderRadius.circular(10)),
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 8),
       child: Center(
         child: Text(
           categoryTitle,

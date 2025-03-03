@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -22,7 +23,7 @@ class SearchForPickUpCafeTextField extends StatelessWidget {
             IconlyLight.search,
             color: AppColors.mainColorTheme,
           ),
-          hintText: 'Search Cafe',
+          hintText: S.of(context).search_cafe,
           hintStyle: TextStyles.font18SemiBold(context).copyWith(
             color: Color(0xffA2A2A2),
           ),

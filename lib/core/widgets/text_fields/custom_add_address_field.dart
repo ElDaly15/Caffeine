@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class CustomAddAddressField extends StatefulWidget {
@@ -36,7 +37,7 @@ class _CustomEditTextFieldState extends State<CustomAddAddressField> {
         keyboardType: widget.keyBoardType,
         validator: (value) {
           if (value == null || value.isEmpty) {
-            return 'This Field Is Required';
+            return '${widget.title} ${S.of(context).is_required}';
           }
           return null;
         },

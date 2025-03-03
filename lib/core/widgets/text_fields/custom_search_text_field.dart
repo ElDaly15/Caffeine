@@ -1,3 +1,4 @@
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -25,7 +26,7 @@ class CustomSearchTextField extends StatelessWidget {
             IconlyLight.search,
             color: Colors.white,
           ),
-          hintText: 'Search Coffee',
+          hintText: S.of(context).search_coffee,
           hintStyle:
               TextStyles.font20Regular(context).copyWith(color: Colors.grey),
           border: OutlineInputBorder(

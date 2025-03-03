@@ -69,7 +69,9 @@ class ContainerOfProduct extends StatelessWidget {
                                 child: SizedBox(
                                   width: 60,
                                   child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    mainAxisAlignment: isArabic()
+                                        ? MainAxisAlignment.start
+                                        : MainAxisAlignment.end,
                                     children: [
                                       Icon(
                                         IconlyBold.star,

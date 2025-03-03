@@ -1,3 +1,4 @@
+import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/container_of_category_item.dart';
 import 'package:flutter/material.dart';
 
@@ -16,6 +17,15 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
     'Espresso',
     'Americano',
     'Macchiato'
+  ];
+
+  final List<String> categoriesArabic = [
+    "كل القهوة",
+    "كابتشينو",
+    "لاتيه",
+    "إسبريسو",
+    "أمريكانو",
+    "ماكياتو"
   ];
   int indexOfItem = 0;
 
@@ -38,7 +48,9 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
                       padding: const EdgeInsets.only(left: 15, right: 8),
                       child: ContainerOfCategoryItem(
                         isActive: indexOfItem == index,
-                        categoryTitle: categories[index],
+                        categoryTitle: isArabic()
+                            ? categoriesArabic[index]
+                            : categories[index],
                       ),
                     ),
                   )
@@ -53,7 +65,9 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
                           padding: const EdgeInsets.only(right: 15, left: 8),
                           child: ContainerOfCategoryItem(
                             isActive: indexOfItem == index,
-                            categoryTitle: categories[index],
+                            categoryTitle: isArabic()
+                                ? categoriesArabic[index]
+                                : categories[index],
                           ),
                         ),
                       )
@@ -67,7 +81,9 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
                           padding: const EdgeInsets.symmetric(horizontal: 8),
                           child: ContainerOfCategoryItem(
                             isActive: indexOfItem == index,
-                            categoryTitle: categories[index],
+                            categoryTitle: isArabic()
+                                ? categoriesArabic[index]
+                                : categories[index],
                           ),
                         ),
                       );
