@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "choose_payment_method": MessageLookupByLibrary.simpleMessage(
       "اختر طريقة الدفع الخاصة بك",
     ),
+    "contact_us": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(
       "تم تطبيق الكوبون بنجاح",
     ),
@@ -80,6 +81,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "items": MessageLookupByLibrary.simpleMessage("منتجات"),
     "login_here": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "my_orders": MessageLookupByLibrary.simpleMessage("طلباتي"),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "online_wallets": MessageLookupByLibrary.simpleMessage(
       "المحافظ الإلكترونية",
@@ -91,12 +94,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
     "payment_summary": MessageLookupByLibrary.simpleMessage("ملخص الدفع"),
+    "personal_information": MessageLookupByLibrary.simpleMessage(
+      "المعلومات الشخصية",
+    ),
     "pickup": MessageLookupByLibrary.simpleMessage("استلام"),
     "pickup_from_cafe": MessageLookupByLibrary.simpleMessage(
       "الاستلام من المقهى",
     ),
     "place_order": MessageLookupByLibrary.simpleMessage("إتمام الطلب"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
+    "privacy_policy": MessageLookupByLibrary.simpleMessage("الخصوصية والسياسة"),
     "proceed_to_checkout": MessageLookupByLibrary.simpleMessage(
       "المتابعة إلى الدفع",
     ),
@@ -117,6 +124,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_pickup_cafe": MessageLookupByLibrary.simpleMessage(
       "اختر المقهى للاستلام",
     ),
+    "settings": MessageLookupByLibrary.simpleMessage("الإعدادات"),
+    "shipping_address": MessageLookupByLibrary.simpleMessage("عنوان الشحن"),
     "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "sign_up": MessageLookupByLibrary.simpleMessage("سجل الآن"),
     "size": MessageLookupByLibrary.simpleMessage("الحجم"),
@@ -134,6 +143,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome_message_register": MessageLookupByLibrary.simpleMessage(
       "مرحبًا بك في ركن القهوة لدينا، حيث كل فنجان هو متعة لك.",
     ),
+    "wishlist": MessageLookupByLibrary.simpleMessage("قائمة الرغبات"),
     "your_orders": MessageLookupByLibrary.simpleMessage("طلباتك"),
   };
 }

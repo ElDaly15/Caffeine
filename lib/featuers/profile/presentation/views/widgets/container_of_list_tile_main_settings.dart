@@ -5,6 +5,7 @@ import 'package:caffeine/featuers/settings/personal_information/presentation/vie
 import 'package:caffeine/featuers/settings/settings_section/presentation/views/settings_section_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/shipping_address_view.dart';
 import 'package:caffeine/featuers/settings/whishlist/presentation/views/whishlist_view.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 // ignore: unused_import
@@ -28,7 +29,7 @@ class ContainerOfListTileSettings extends StatelessWidget {
             hasSwitch: false,
             hasTrailling: false,
             icon: Icons.person,
-            title: 'Personal Information',
+            title: S.of(context).personal_information,
             onTap: () {
               g.Get.to(() => const PersonalInformation(),
                   transition: g.Transition.leftToRightWithFade,
@@ -44,7 +45,7 @@ class ContainerOfListTileSettings extends StatelessWidget {
             hasSwitch: false,
             hasTrailling: false,
             icon: FontAwesomeIcons.box,
-            title: 'My Orders',
+            title: S.of(context).my_orders,
             onTap: () {
               g.Get.to(() => const MyOrdersView(),
                   transition: g.Transition.leftToRightWithFade,
@@ -60,7 +61,7 @@ class ContainerOfListTileSettings extends StatelessWidget {
             hasSwitch: false,
             hasTrailling: false,
             icon: FontAwesomeIcons.solidHeart,
-            title: 'Whishlist',
+            title: S.of(context).wishlist,
             onTap: () {
               g.Get.to(() => const WhishlistView(),
                   transition: g.Transition.leftToRightWithFade,
@@ -76,7 +77,7 @@ class ContainerOfListTileSettings extends StatelessWidget {
             hasSwitch: false,
             hasTrailling: false,
             icon: Icons.local_shipping,
-            title: 'Shipping Address',
+            title: S.of(context).shipping_address,
             onTap: () {
               g.Get.to(() => const ShippingAddressView(),
                   transition: g.Transition.leftToRightWithFade,
@@ -92,7 +93,7 @@ class ContainerOfListTileSettings extends StatelessWidget {
             hasSwitch: false,
             hasTrailling: false,
             icon: Icons.settings,
-            title: 'Settings',
+            title: S.of(context).settings,
             onTap: () {
               g.Get.to(() => const SettingsSectionView(),
                   transition: g.Transition.leftToRightWithFade,

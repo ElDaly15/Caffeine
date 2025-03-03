@@ -41,6 +41,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "choose_payment_method": MessageLookupByLibrary.simpleMessage(
       "Choose Your Payment Method",
     ),
+    "contact_us": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(
       "Coupon Applied Successfully",
     ),
@@ -78,6 +79,8 @@ class MessageLookup extends MessageLookupByLibrary {
     "is_required": MessageLookupByLibrary.simpleMessage("is required"),
     "items": MessageLookupByLibrary.simpleMessage("items"),
     "login_here": MessageLookupByLibrary.simpleMessage("Login here"),
+    "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "online_wallets": MessageLookupByLibrary.simpleMessage("Online Wallets"),
     "or_continue_with": MessageLookupByLibrary.simpleMessage(
@@ -89,12 +92,16 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
     "payment_summary": MessageLookupByLibrary.simpleMessage("Payment Summary"),
+    "personal_information": MessageLookupByLibrary.simpleMessage(
+      "Personal Information",
+    ),
     "pickup": MessageLookupByLibrary.simpleMessage("Pickup"),
     "pickup_from_cafe": MessageLookupByLibrary.simpleMessage(
       "Pickup From Cafe",
     ),
     "place_order": MessageLookupByLibrary.simpleMessage("Place Order"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
+    "privacy_policy": MessageLookupByLibrary.simpleMessage("Privacy & Policy"),
     "proceed_to_checkout": MessageLookupByLibrary.simpleMessage(
       "Proceed to Checkout",
     ),
@@ -113,6 +120,10 @@ class MessageLookup extends MessageLookupByLibrary {
     "select_pickup_cafe": MessageLookupByLibrary.simpleMessage(
       "Select Pickup Cafe",
     ),
+    "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+    "shipping_address": MessageLookupByLibrary.simpleMessage(
+      "Shipping Address",
+    ),
     "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "size": MessageLookupByLibrary.simpleMessage("Size"),
@@ -130,6 +141,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome_message_register": MessageLookupByLibrary.simpleMessage(
       "Welcome to our coffee corner, where every cup is a delightful for you.",
     ),
+    "wishlist": MessageLookupByLibrary.simpleMessage("Wishlist"),
     "your_orders": MessageLookupByLibrary.simpleMessage("Your Orders"),
   };
 }

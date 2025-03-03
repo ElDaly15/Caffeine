@@ -68,7 +68,15 @@
     "place_order": "إتمام الطلب",
     "card": "بطاقة",
     "online_wallets": "المحافظ الإلكترونية",
-    "cash": "الدفع نقدًا"
+    "cash": "الدفع نقدًا",
+    "personal_information": "المعلومات الشخصية",
+    "my_orders": "طلباتي",
+    "wishlist": "قائمة الرغبات",
+    "shipping_address": "عنوان الشحن",
+    "settings": "الإعدادات",
+    "contact_us": "اتصل بنا",
+    "privacy_policy": "الخصوصية والسياسة",
+    "logout": "تسجيل الخروج"
 
   }
   

@@ -68,6 +68,14 @@
     "place_order": "Place Order",
     "card": "Card",
     "online_wallets": "Online Wallets",
-    "cash": "Cash"
+    "cash": "Cash",
+    "personal_information": "Personal Information",
+    "my_orders": "My Orders",
+    "wishlist": "Wishlist",
+    "shipping_address": "Shipping Address",
+    "settings": "Settings",
+    "contact_us": "Contact Us",
+    "privacy_policy": "Privacy & Policy",
+    "logout": "Logout"
   }
   

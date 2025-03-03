@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:get/get.dart' as g;
@@ -22,7 +23,7 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
             hasSwitch: false,
             hasTrailling: false,
             icon: Icons.chat,
-            title: 'Contact Us',
+            title: S.of(context).contact_us,
             onTap: () {
               // g.Get.to(() => const CustomerView(),
               //     transition: g.Transition.leftToRightWithFade,
@@ -38,7 +39,7 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
             hasSwitch: false,
             hasTrailling: false,
             icon: Icons.privacy_tip,
-            title: 'Privacy & Policy',
+            title: S.of(context).privacy_policy,
             onTap: () {
               // g.Get.to(() => const PrivacyView(),
               //     transition: g.Transition.leftToRightWithFade,
@@ -54,7 +55,7 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
             hasSwitch: false,
             hasTrailling: false,
             icon: Icons.logout,
-            title: 'Logout',
+            title: S.of(context).logout,
             onTap: () {
               // getIt<FireBaseServices>().signOut();
               // Navigator.of(context).pushAndRemoveUntil(

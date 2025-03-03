@@ -564,6 +564,61 @@ class S {
   String get cash {
     return Intl.message('Cash', name: 'cash', desc: '', args: []);
   }
+
+  /// `Personal Information`
+  String get personal_information {
+    return Intl.message(
+      'Personal Information',
+      name: 'personal_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `My Orders`
+  String get my_orders {
+    return Intl.message('My Orders', name: 'my_orders', desc: '', args: []);
+  }
+
+  /// `Wishlist`
+  String get wishlist {
+    return Intl.message('Wishlist', name: 'wishlist', desc: '', args: []);
+  }
+
+  /// `Shipping Address`
+  String get shipping_address {
+    return Intl.message(
+      'Shipping Address',
+      name: 'shipping_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Settings`
+  String get settings {
+    return Intl.message('Settings', name: 'settings', desc: '', args: []);
+  }
+
+  /// `Contact Us`
+  String get contact_us {
+    return Intl.message('Contact Us', name: 'contact_us', desc: '', args: []);
+  }
+
+  /// `Privacy & Policy`
+  String get privacy_policy {
+    return Intl.message(
+      'Privacy & Policy',
+      name: 'privacy_policy',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Logout`
+  String get logout {
+    return Intl.message('Logout', name: 'logout', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
