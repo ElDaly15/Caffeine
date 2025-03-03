@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -24,7 +25,7 @@ class ContainerOfCouponSuccessApplied extends StatelessWidget {
             width: 15,
           ),
           Text(
-            '1 Discount is Applies',
+            S.of(context).coupon_applied_success,
             style: TextStyles.font18SemiBold(context).copyWith(
               color: AppColors.darkTheme,
             ),

@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -30,7 +31,7 @@ class CustomTextFieldOfCopons extends StatelessWidget {
                 Icons.add,
                 color: AppColors.mainColorTheme,
               )),
-          hintText: 'Enter Your Coupon Code Here',
+          hintText: S.of(context).enter_coupon_code,
           hintStyle: TextStyles.font18SemiBold(context).copyWith(
             color: Color(0xffA2A2A2),
           ),

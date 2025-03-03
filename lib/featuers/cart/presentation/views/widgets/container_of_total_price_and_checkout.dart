@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ContainerOfTotalPriceAndProcessCheckOut extends StatelessWidget {
@@ -17,7 +18,7 @@ class ContainerOfTotalPriceAndProcessCheckOut extends StatelessWidget {
           Row(
             children: [
               Text(
-                'Total (3 item) : ',
+                '${S.of(context).Total} (3 ${S.of(context).items}) : ',
                 style: TextStyles.font18SemiBold(context).copyWith(
                   color: Colors.grey,
                 ),
@@ -42,7 +43,7 @@ class ContainerOfTotalPriceAndProcessCheckOut extends StatelessWidget {
               child: Row(
                 children: [
                   Text(
-                    'Proceed to Checkout',
+                    S.of(context).proceed_to_checkout,
                     style: TextStyles.font18SemiBold(context).copyWith(
                       color: Colors.white,
                     ),

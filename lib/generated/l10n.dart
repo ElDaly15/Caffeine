@@ -344,6 +344,186 @@ class S {
       args: [],
     );
   }
+
+  /// `Notification`
+  String get notification {
+    return Intl.message(
+      'Notification',
+      name: 'notification',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proceed to Checkout`
+  String get proceed_to_checkout {
+    return Intl.message(
+      'Proceed to Checkout',
+      name: 'proceed_to_checkout',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Total`
+  String get Total {
+    return Intl.message('Total', name: 'Total', desc: '', args: []);
+  }
+
+  /// `items`
+  String get items {
+    return Intl.message('items', name: 'items', desc: '', args: []);
+  }
+
+  /// `Checkout`
+  String get checkout {
+    return Intl.message('Checkout', name: 'checkout', desc: '', args: []);
+  }
+
+  /// `Delivery Address`
+  String get delivery_address {
+    return Intl.message(
+      'Delivery Address',
+      name: 'delivery_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Address`
+  String get add_address {
+    return Intl.message('Add Address', name: 'add_address', desc: '', args: []);
+  }
+
+  /// `Edit Address`
+  String get edit_address {
+    return Intl.message(
+      'Edit Address',
+      name: 'edit_address',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Note`
+  String get add_note {
+    return Intl.message('Add Note', name: 'add_note', desc: '', args: []);
+  }
+
+  /// `Edit Note`
+  String get edit_note {
+    return Intl.message('Edit Note', name: 'edit_note', desc: '', args: []);
+  }
+
+  /// `Your Orders`
+  String get your_orders {
+    return Intl.message('Your Orders', name: 'your_orders', desc: '', args: []);
+  }
+
+  /// `Coupon Applied Successfully`
+  String get coupon_applied_success {
+    return Intl.message(
+      'Coupon Applied Successfully',
+      name: 'coupon_applied_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Summary`
+  String get payment_summary {
+    return Intl.message(
+      'Payment Summary',
+      name: 'payment_summary',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Proceed to Payment`
+  String get proceed_to_payment {
+    return Intl.message(
+      'Proceed to Payment',
+      name: 'proceed_to_payment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delivery Fee`
+  String get delivery_fee {
+    return Intl.message(
+      'Delivery Fee',
+      name: 'delivery_fee',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pickup From Cafe`
+  String get pickup_from_cafe {
+    return Intl.message(
+      'Pickup From Cafe',
+      name: 'pickup_from_cafe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Select Pickup Cafe`
+  String get select_pickup_cafe {
+    return Intl.message(
+      'Select Pickup Cafe',
+      name: 'select_pickup_cafe',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Quantity`
+  String get quantity {
+    return Intl.message('Quantity', name: 'quantity', desc: '', args: []);
+  }
+
+  /// `Deliver`
+  String get deliver {
+    return Intl.message('Deliver', name: 'deliver', desc: '', args: []);
+  }
+
+  /// `Pickup`
+  String get pickup {
+    return Intl.message('Pickup', name: 'pickup', desc: '', args: []);
+  }
+
+  /// `Add a note to your order`
+  String get add_note_to_order {
+    return Intl.message(
+      'Add a note to your order',
+      name: 'add_note_to_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
+
+  /// `Edit a note`
+  String get edit_note_text {
+    return Intl.message(
+      'Edit a note',
+      name: 'edit_note_text',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Update Note`
+  String get update_note {
+    return Intl.message('Update Note', name: 'update_note', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

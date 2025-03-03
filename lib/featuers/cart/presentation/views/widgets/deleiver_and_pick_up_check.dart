@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class DeleiverAndPickUpCheck extends StatefulWidget {
@@ -45,7 +46,7 @@ class _DeleiverAndPickUpCheckState extends State<DeleiverAndPickUpCheck> {
                 ),
                 child: Center(
                   child: Text(
-                    'Deliver',
+                    S.of(context).deliver,
                     style: TextStyles.font18SemiBold(context).copyWith(
                         color: index == 0 ? Colors.white : Colors.black),
                   ),
@@ -75,7 +76,7 @@ class _DeleiverAndPickUpCheckState extends State<DeleiverAndPickUpCheck> {
                 ),
                 child: Center(
                   child: Text(
-                    'Pickup',
+                    S.of(context).pickup,
                     style: TextStyles.font18SemiBold(context).copyWith(
                         color: index == 1 ? Colors.white : Colors.black),
                   ),

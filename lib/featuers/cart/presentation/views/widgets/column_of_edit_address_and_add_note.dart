@@ -1,6 +1,7 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_with_icon_and_text.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -34,7 +35,7 @@ class ColumnOfAddressAndEditAndAddNote extends StatelessWidget {
         Row(
           children: [
             CustomContainerWithIconAndText(
-              title: 'Edit Address',
+              title: S.of(context).edit_address,
               iconData: IconlyLight.edit_square,
               onTap: editAddress,
             ),
@@ -42,7 +43,7 @@ class ColumnOfAddressAndEditAndAddNote extends StatelessWidget {
               width: 12,
             ),
             CustomContainerWithIconAndText(
-              title: 'Add Note',
+              title: S.of(context).add_note,
               iconData: IconlyLight.paper,
               onTap: addNote,
             ),

@@ -1,4 +1,6 @@
+import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/big_elevated_btm_with_icon.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -29,8 +31,9 @@ class ContainerOfProcessToPayment extends StatelessWidget {
       height: 95,
       child: CustomBigElevatedBtmWithIcon(
           onPressed: onPressed,
-          title: 'Proceed to Payment',
-          iconData: IconlyBold.arrow_right_2),
+          title: S.of(context).proceed_to_checkout,
+          iconData:
+              isArabic() ? IconlyBold.arrow_left_2 : IconlyBold.arrow_right_2),
     );
   }
 }

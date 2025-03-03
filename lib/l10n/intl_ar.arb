@@ -38,7 +38,31 @@
     "cancel": "إلغاء",
     "submit": "إرسال",
     "YouRated" : "قيمت",
-    "Successfully" : " بنجاح"
+    "Successfully" : " بنجاح",
+    "notification": "الإشعارات",
+    "proceed_to_checkout": "المتابعة إلى الدفع",
+    "Total" : "الأجمالي",
+    "items" : "منتجات",
+    "checkout": "إتمام الشراء",
+    "delivery_address": "عنوان التوصيل",
+    "add_address": "إضافة عنوان",
+    "edit_address": "تعديل العنوان",
+    "add_note": "إضافة ملاحظة",
+    "edit_note": "تعديل الملاحظة",
+    "your_orders": "طلباتك",
+    "coupon_applied_success": "تم تطبيق الكوبون بنجاح",
+    "payment_summary": "ملخص الدفع",
+    "proceed_to_payment": "المتابعة للدفع",
+    "delivery_fee": "رسوم التوصيل",
+    "pickup_from_cafe": "الاستلام من المقهى",
+    "select_pickup_cafe": "اختر المقهى للاستلام",
+    "quantity": "الكمية",
+    "deliver": "توصيل",
+    "pickup": "استلام",
+    "add_note_to_order": "أضف ملاحظة إلى طلبك",
+    "save": "حفظ",
+    "edit_note_text": "قم بتعديل الملاحظة",
+    "update_note": "تحديث الملاحظة"
 
   }
   

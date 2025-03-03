@@ -23,18 +23,36 @@ class MessageLookup extends MessageLookupByLibrary {
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
     "Successfully": MessageLookupByLibrary.simpleMessage(" بنجاح"),
+    "Total": MessageLookupByLibrary.simpleMessage("الأجمالي"),
     "YouRated": MessageLookupByLibrary.simpleMessage("قيمت"),
+    "add_address": MessageLookupByLibrary.simpleMessage("إضافة عنوان"),
+    "add_note": MessageLookupByLibrary.simpleMessage("إضافة ملاحظة"),
+    "add_note_to_order": MessageLookupByLibrary.simpleMessage(
+      "أضف ملاحظة إلى طلبك",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "هل لديك حساب بالفعل؟",
     ),
     "buy_now": MessageLookupByLibrary.simpleMessage("اشتري الآن"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "checkout": MessageLookupByLibrary.simpleMessage("إتمام الشراء"),
+    "coupon_applied_success": MessageLookupByLibrary.simpleMessage(
+      "تم تطبيق الكوبون بنجاح",
+    ),
     "create_account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد",
     ),
+    "deliver": MessageLookupByLibrary.simpleMessage("توصيل"),
+    "delivery_address": MessageLookupByLibrary.simpleMessage("عنوان التوصيل"),
+    "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
     "description": MessageLookupByLibrary.simpleMessage("الوصف"),
     "detail": MessageLookupByLibrary.simpleMessage("التفاصيل"),
+    "edit_address": MessageLookupByLibrary.simpleMessage("تعديل العنوان"),
+    "edit_note": MessageLookupByLibrary.simpleMessage("تعديل الملاحظة"),
+    "edit_note_text": MessageLookupByLibrary.simpleMessage(
+      "قم بتعديل الملاحظة",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز القسيمة هنا",
@@ -55,22 +73,40 @@ class MessageLookup extends MessageLookupByLibrary {
     "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "hello": MessageLookupByLibrary.simpleMessage("مرحبًا 👋 ,"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
+    "items": MessageLookupByLibrary.simpleMessage("منتجات"),
     "login_here": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
+    "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "or_continue_with": MessageLookupByLibrary.simpleMessage("أو تابع عبر"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "password_min_length": MessageLookupByLibrary.simpleMessage(
       "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
     ),
+    "payment_summary": MessageLookupByLibrary.simpleMessage("ملخص الدفع"),
+    "pickup": MessageLookupByLibrary.simpleMessage("استلام"),
+    "pickup_from_cafe": MessageLookupByLibrary.simpleMessage(
+      "الاستلام من المقهى",
+    ),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
+    "proceed_to_checkout": MessageLookupByLibrary.simpleMessage(
+      "المتابعة إلى الدفع",
+    ),
+    "proceed_to_payment": MessageLookupByLibrary.simpleMessage(
+      "المتابعة للدفع",
+    ),
+    "quantity": MessageLookupByLibrary.simpleMessage("الكمية"),
     "rate_this_item": MessageLookupByLibrary.simpleMessage("قيّم هذا المنتج"),
     "read_less": MessageLookupByLibrary.simpleMessage("اقرأ أقل"),
     "read_more": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
     "reset_password": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
     ),
+    "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "search_cafe": MessageLookupByLibrary.simpleMessage("ابحث عن مقهى"),
     "search_coffee": MessageLookupByLibrary.simpleMessage("ابحث عن القهوة"),
     "search_result": MessageLookupByLibrary.simpleMessage("نتيجة البحث"),
+    "select_pickup_cafe": MessageLookupByLibrary.simpleMessage(
+      "اختر المقهى للاستلام",
+    ),
     "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "sign_up": MessageLookupByLibrary.simpleMessage("سجل الآن"),
     "size": MessageLookupByLibrary.simpleMessage("الحجم"),
@@ -78,6 +114,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(
       "اضغط على النجوم لإعطاء تقييم",
     ),
+    "update_note": MessageLookupByLibrary.simpleMessage("تحديث الملاحظة"),
     "welcome_back": MessageLookupByLibrary.simpleMessage(
       "مرحبًا بعودتك، لقد افتقدناك",
     ),
@@ -87,5 +124,6 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome_message_register": MessageLookupByLibrary.simpleMessage(
       "مرحبًا بك في ركن القهوة لدينا، حيث كل فنجان هو متعة لك.",
     ),
+    "your_orders": MessageLookupByLibrary.simpleMessage("طلباتك"),
   };
 }

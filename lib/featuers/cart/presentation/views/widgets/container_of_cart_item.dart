@@ -2,6 +2,7 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/inc_and_dec_counter_of_cart.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:swipeable_tile/swipeable_tile.dart';
 
@@ -83,7 +84,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                       style: TextStyles.font20SemiBold(context),
                     ),
                     Text(
-                      'Size : Regular',
+                      '${S.of(context).size} : Regular',
                       style: TextStyles.font18Medium(context)
                           .copyWith(color: Colors.grey),
                     ),

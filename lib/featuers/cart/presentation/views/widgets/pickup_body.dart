@@ -9,6 +9,7 @@ import 'package:caffeine/featuers/cart/presentation/views/widgets/container_with
 import 'package:caffeine/featuers/cart/presentation/views/widgets/sliver_list_of_container_pick_up.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/your_order_list_view.dart';
 import 'package:caffeine/featuers/payment/presentation/views/payment_view.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:get/get.dart' as g;
@@ -40,7 +41,7 @@ class _PickupBodyState extends State<PickupBody> {
                 padding: const EdgeInsets.symmetric(horizontal: 22),
                 sliver: SliverToBoxAdapter(
                   child: Text(
-                    'Pickup From Cafe',
+                    S.of(context).pickup_from_cafe,
                     style: TextStyles.font20SemiBold(context),
                   ),
                 ),
@@ -56,7 +57,7 @@ class _PickupBodyState extends State<PickupBody> {
                     child: Row(
                       children: [
                         CustomContainerWithIconAndText(
-                          title: 'Add Note',
+                          title: S.of(context).add_note,
                           iconData: IconlyLight.paper,
                           onTap: () {
                             g.Get.to(() => const AddNoteView(),
@@ -148,7 +149,7 @@ class _PickupBodyState extends State<PickupBody> {
                 padding: const EdgeInsets.symmetric(horizontal: 22),
                 sliver: SliverToBoxAdapter(
                   child: Text(
-                    'Select Pickup Cafe',
+                    S.of(context).select_pickup_cafe,
                     style: TextStyles.font20SemiBold(context),
                   ),
                 ),

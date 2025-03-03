@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -40,7 +41,7 @@ class CustomOrderItem extends StatelessWidget {
                   ],
                 ),
                 Text(
-                  'Size : Regular | Qunaitity: 1',
+                  '${S.of(context).size} : Regular | ${S.of(context).quantity}: 1',
                   style: TextStyles.font14Regular(context),
                 ),
                 Text(

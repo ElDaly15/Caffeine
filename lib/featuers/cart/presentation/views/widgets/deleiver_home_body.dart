@@ -10,6 +10,7 @@ import 'package:caffeine/featuers/cart/presentation/views/widgets/your_order_lis
 import 'package:caffeine/featuers/payment/presentation/views/payment_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/add_address_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/edit_address_view.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:get/get.dart' as g;
@@ -40,7 +41,7 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                 padding: const EdgeInsets.symmetric(horizontal: 22),
                 sliver: SliverToBoxAdapter(
                   child: Text(
-                    'Delivery Address',
+                    S.of(context).delivery_address,
                     style: TextStyles.font20SemiBold(context),
                   ),
                 ),
@@ -77,7 +78,7 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                                 transition: g.Transition.fade,
                                 duration: const Duration(milliseconds: 350));
                           },
-                          title: 'Add Address',
+                          title: S.of(context).add_address,
                           iconData: IconlyBold.plus,
                         ),
                       ),
