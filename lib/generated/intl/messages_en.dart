@@ -22,13 +22,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Successfully": MessageLookupByLibrary.simpleMessage(" Successfully"),
+    "YouRated": MessageLookupByLibrary.simpleMessage("You Rated"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
+    "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
+    "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "create_account": MessageLookupByLibrary.simpleMessage("Create Account"),
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "Create new account",
     ),
+    "description": MessageLookupByLibrary.simpleMessage("Description"),
+    "detail": MessageLookupByLibrary.simpleMessage("Detail"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "Enter Your Coupon Code Here",
@@ -55,11 +61,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "password_min_length": MessageLookupByLibrary.simpleMessage(
       "Password must be at least 8 characters",
     ),
+    "price": MessageLookupByLibrary.simpleMessage("Price"),
+    "rate_this_item": MessageLookupByLibrary.simpleMessage("Rate this item"),
+    "read_less": MessageLookupByLibrary.simpleMessage("Read Less"),
+    "read_more": MessageLookupByLibrary.simpleMessage("Read More"),
     "reset_password": MessageLookupByLibrary.simpleMessage("Reset Password"),
     "search_cafe": MessageLookupByLibrary.simpleMessage("Search Cafe"),
     "search_coffee": MessageLookupByLibrary.simpleMessage("Search Coffee"),
+    "search_result": MessageLookupByLibrary.simpleMessage("Search Result"),
     "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
+    "size": MessageLookupByLibrary.simpleMessage("Size"),
+    "submit": MessageLookupByLibrary.simpleMessage("Submit"),
+    "tap_on_stars": MessageLookupByLibrary.simpleMessage(
+      "Tap on the stars to give a rating",
+    ),
     "welcome_back": MessageLookupByLibrary.simpleMessage(
       "Welcome back you\'ve been missed",
     ),

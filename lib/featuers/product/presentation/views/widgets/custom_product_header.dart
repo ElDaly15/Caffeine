@@ -1,4 +1,5 @@
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
@@ -21,7 +22,7 @@ class CustommProductAppBarWithWhishlistTheItems extends StatelessWidget {
         ),
         const Spacer(),
         Text(
-          'Detail',
+          S.of(context).detail,
           style: TextStyles.font20SemiBold(context).copyWith(),
         ),
         const Spacer(),

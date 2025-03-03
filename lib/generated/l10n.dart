@@ -254,6 +254,96 @@ class S {
   String get hello {
     return Intl.message('Hello 👋 ,', name: 'hello', desc: '', args: []);
   }
+
+  /// `Search Result`
+  String get search_result {
+    return Intl.message(
+      'Search Result',
+      name: 'search_result',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Description`
+  String get description {
+    return Intl.message('Description', name: 'description', desc: '', args: []);
+  }
+
+  /// `Size`
+  String get size {
+    return Intl.message('Size', name: 'size', desc: '', args: []);
+  }
+
+  /// `Price`
+  String get price {
+    return Intl.message('Price', name: 'price', desc: '', args: []);
+  }
+
+  /// `Buy Now`
+  String get buy_now {
+    return Intl.message('Buy Now', name: 'buy_now', desc: '', args: []);
+  }
+
+  /// `Detail`
+  String get detail {
+    return Intl.message('Detail', name: 'detail', desc: '', args: []);
+  }
+
+  /// `Read More`
+  String get read_more {
+    return Intl.message('Read More', name: 'read_more', desc: '', args: []);
+  }
+
+  /// `Read Less`
+  String get read_less {
+    return Intl.message('Read Less', name: 'read_less', desc: '', args: []);
+  }
+
+  /// `Rate this item`
+  String get rate_this_item {
+    return Intl.message(
+      'Rate this item',
+      name: 'rate_this_item',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Tap on the stars to give a rating`
+  String get tap_on_stars {
+    return Intl.message(
+      'Tap on the stars to give a rating',
+      name: 'tap_on_stars',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Submit`
+  String get submit {
+    return Intl.message('Submit', name: 'submit', desc: '', args: []);
+  }
+
+  /// `You Rated`
+  String get YouRated {
+    return Intl.message('You Rated', name: 'YouRated', desc: '', args: []);
+  }
+
+  /// ` Successfully`
+  String get Successfully {
+    return Intl.message(
+      ' Successfully',
+      name: 'Successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

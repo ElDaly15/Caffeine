@@ -2,6 +2,7 @@ import 'package:caffeine/core/screens/no_connection_screen.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/featuers/search/presentation/views/widgets/search_view_body.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 import 'package:iconly/iconly.dart';
@@ -38,13 +39,16 @@ class _SearchViewState extends State<SearchView> {
           backgroundColor: AppColors.mainColorTheme.withOpacity(0.3),
           leadingWidth: 60,
           leading: Padding(
-            padding: const EdgeInsets.only(left: 22),
+            padding: EdgeInsets.only(
+                left: isArabic() ? 0 : 22, right: isArabic() ? 22 : 0),
             child: CircleAvatar(
               radius: 10,
               backgroundColor: AppColors.mainColorTheme,
               child: IconButton(
                 alignment: Alignment.center,
-                icon: const Icon(IconlyLight.arrow_left_2),
+                icon: isArabic()
+                    ? const Icon(IconlyLight.arrow_right_2)
+                    : const Icon(IconlyLight.arrow_left_2),
                 color: Colors.white,
                 onPressed: () => Navigator.pop(context),
               ),
@@ -64,7 +68,7 @@ class _SearchViewState extends State<SearchView> {
                 border: OutlineInputBorder(
                   borderSide: BorderSide.none,
                 ),
-                hintText: 'Search Coffee',
+                hintText: S.of(context).search_coffee,
                 hintStyle: TextStyles.font20Medium(context)
                     .copyWith(color: AppColors.darkTheme),
               ),

@@ -24,7 +24,20 @@
     "search_coffee": "Search Coffee",
     "search_cafe": "Search Cafe",
     "enter_coupon_code": "Enter Your Coupon Code Here",
-    "hello": "Hello 👋 ,"
-
+    "hello": "Hello 👋 ,",
+    "search_result": "Search Result",
+    "description": "Description",
+    "size": "Size",
+    "price": "Price",
+    "buy_now": "Buy Now",
+    "detail": "Detail",
+    "read_more": "Read More",
+    "read_less": "Read Less",
+    "rate_this_item": "Rate this item",
+    "tap_on_stars": "Tap on the stars to give a rating",
+    "cancel": "Cancel",
+    "submit": "Submit",
+    "YouRated" : "You Rated",
+    "Successfully" : " Successfully"
   }
   

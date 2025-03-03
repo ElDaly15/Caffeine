@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ContainerOfPriceAndAddToCart extends StatelessWidget {
@@ -36,7 +37,7 @@ class ContainerOfPriceAndAddToCart extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Text(
-                  'Price',
+                  S.of(context).price,
                   style: TextStyles.font22Medium(context)
                       .copyWith(color: Colors.grey),
                 ),
@@ -63,7 +64,7 @@ class ContainerOfPriceAndAddToCart extends StatelessWidget {
                     )),
                 onPressed: addToCart,
                 child: Text(
-                  'Buy Now',
+                  S.of(context).buy_now,
                   style: TextStyles.font22SemiBold(context)
                       .copyWith(color: Colors.white),
                 ),

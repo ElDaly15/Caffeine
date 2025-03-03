@@ -1,3 +1,4 @@
+import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/featuers/product/presentation/views/widgets/container_of_size.dart';
 import 'package:flutter/material.dart';
 
@@ -23,7 +24,7 @@ class _RowOfContainerSizesState extends State<RowOfContainerSizes> {
           },
           child: ContainerOfSize(
             isActive: index == 0,
-            size: 'S',
+            size: isArabic() ? 'صغير' : 'S',
           ),
         ),
         Spacer(),
@@ -36,7 +37,7 @@ class _RowOfContainerSizesState extends State<RowOfContainerSizes> {
           },
           child: ContainerOfSize(
             isActive: index == 1,
-            size: 'M',
+            size: isArabic() ? 'وسط' : 'M',
           ),
         ),
         Spacer(),
@@ -49,7 +50,7 @@ class _RowOfContainerSizesState extends State<RowOfContainerSizes> {
           },
           child: ContainerOfSize(
             isActive: index == 2,
-            size: 'L',
+            size: isArabic() ? 'كبير' : 'L',
           ),
         ),
       ],

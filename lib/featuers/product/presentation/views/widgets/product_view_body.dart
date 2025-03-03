@@ -5,6 +5,7 @@ import 'package:caffeine/featuers/product/presentation/views/widgets/custom_prod
 import 'package:caffeine/featuers/product/presentation/views/widgets/read_more_and_less_widget.dart';
 import 'package:caffeine/featuers/product/presentation/views/widgets/row_of_container_of_product_details.dart';
 import 'package:caffeine/featuers/product/presentation/views/widgets/row_of_container_size.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ProductViewBody extends StatelessWidget {
@@ -60,7 +61,7 @@ class ProductViewBody extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    'Description',
+                    S.of(context).description,
                     style: TextStyles.font24SemiBold(context).copyWith(),
                   ),
                   SizedBox(
@@ -71,7 +72,7 @@ class ProductViewBody extends StatelessWidget {
                     height: 10,
                   ),
                   Text(
-                    'Size',
+                    S.of(context).size,
                     style: TextStyles.font24SemiBold(context).copyWith(),
                   ),
                   SizedBox(

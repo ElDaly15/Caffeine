@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/featuers/search/presentation/views/widgets/custom_list_view_of_container_items.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -20,7 +21,7 @@ class SearchViewBody extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 16),
             sliver: SliverToBoxAdapter(
               child: Text(
-                'Search Result',
+                S.of(context).search_result,
                 style: TextStyles.font22SemiBold(context),
               ),
             ),

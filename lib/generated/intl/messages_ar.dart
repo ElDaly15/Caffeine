@@ -22,13 +22,19 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "Successfully": MessageLookupByLibrary.simpleMessage(" بنجاح"),
+    "YouRated": MessageLookupByLibrary.simpleMessage("قيمت"),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "هل لديك حساب بالفعل؟",
     ),
+    "buy_now": MessageLookupByLibrary.simpleMessage("اشتري الآن"),
+    "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "create_account": MessageLookupByLibrary.simpleMessage("إنشاء حساب"),
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد",
     ),
+    "description": MessageLookupByLibrary.simpleMessage("الوصف"),
+    "detail": MessageLookupByLibrary.simpleMessage("التفاصيل"),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز القسيمة هنا",
@@ -55,13 +61,23 @@ class MessageLookup extends MessageLookupByLibrary {
     "password_min_length": MessageLookupByLibrary.simpleMessage(
       "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
     ),
+    "price": MessageLookupByLibrary.simpleMessage("السعر"),
+    "rate_this_item": MessageLookupByLibrary.simpleMessage("قيّم هذا المنتج"),
+    "read_less": MessageLookupByLibrary.simpleMessage("اقرأ أقل"),
+    "read_more": MessageLookupByLibrary.simpleMessage("اقرأ المزيد"),
     "reset_password": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
     ),
     "search_cafe": MessageLookupByLibrary.simpleMessage("ابحث عن مقهى"),
     "search_coffee": MessageLookupByLibrary.simpleMessage("ابحث عن القهوة"),
+    "search_result": MessageLookupByLibrary.simpleMessage("نتيجة البحث"),
     "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "sign_up": MessageLookupByLibrary.simpleMessage("سجل الآن"),
+    "size": MessageLookupByLibrary.simpleMessage("الحجم"),
+    "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
+    "tap_on_stars": MessageLookupByLibrary.simpleMessage(
+      "اضغط على النجوم لإعطاء تقييم",
+    ),
     "welcome_back": MessageLookupByLibrary.simpleMessage(
       "مرحبًا بعودتك، لقد افتقدناك",
     ),
