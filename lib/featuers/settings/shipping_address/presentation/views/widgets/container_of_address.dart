@@ -1,4 +1,5 @@
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/widgets/row_of_address_info.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ContainerOfAddress extends StatelessWidget {
@@ -24,28 +25,28 @@ class ContainerOfAddress extends StatelessWidget {
       child: Column(
         children: [
           RowOfAddressInfo(
-            title: 'Street: ',
+            title: '${S.of(context).street}: ',
             subTitle: '9 Street - Giza',
           ),
           const SizedBox(
             height: 10,
           ),
           RowOfAddressInfo(
-            title: 'City: ',
+            title: '${S.of(context).city}: ',
             subTitle: 'Cairo',
           ),
           const SizedBox(
             height: 10,
           ),
           RowOfAddressInfo(
-            title: 'Phone Number: ',
+            title: '${S.of(context).phone_number}: ',
             subTitle: '010005005414',
           ),
           const SizedBox(
             height: 10,
           ),
           RowOfAddressInfo(
-            title: 'Country: ',
+            title: '${S.of(context).country}: ',
             subTitle: 'Egypt',
           ),
         ],

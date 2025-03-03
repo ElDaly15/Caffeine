@@ -45,7 +45,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "choose_payment_method": MessageLookupByLibrary.simpleMessage(
       "اختر طريقة الدفع الخاصة بك",
     ),
+    "city": MessageLookupByLibrary.simpleMessage("المدينة"),
     "contact_us": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
+    "country": MessageLookupByLibrary.simpleMessage("الدولة"),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(
       "تم تطبيق الكوبون بنجاح",
     ),
@@ -108,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "personal_information": MessageLookupByLibrary.simpleMessage(
       "المعلومات الشخصية",
     ),
+    "phone_number": MessageLookupByLibrary.simpleMessage("رقم الهاتف"),
     "pick_up": MessageLookupByLibrary.simpleMessage("استلام من المتجر"),
     "pickup": MessageLookupByLibrary.simpleMessage("استلام"),
     "pickup_from_cafe": MessageLookupByLibrary.simpleMessage(
@@ -141,6 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "sign_up": MessageLookupByLibrary.simpleMessage("سجل الآن"),
     "size": MessageLookupByLibrary.simpleMessage("الحجم"),
+    "street": MessageLookupByLibrary.simpleMessage("الشارع"),
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(
       "اضغط على النجوم لإعطاء تقييم",

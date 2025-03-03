@@ -2,6 +2,7 @@ import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/custom_big_elevated_btm.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_add_address_field.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class AddAddressViewBody extends StatelessWidget {
@@ -20,7 +21,7 @@ class AddAddressViewBody extends StatelessWidget {
           ),
           SliverToBoxAdapter(
             child: CustomHeaderWithTitleAndBackBtm(
-              title: 'Add Address',
+              title: S.of(context).add_address,
               color: Colors.black,
             ),
           ),
@@ -33,7 +34,8 @@ class AddAddressViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Street', style: TextStyles.font18SemiBold(context)),
+                Text(S.of(context).street,
+                    style: TextStyles.font18SemiBold(context)),
                 const SizedBox(
                   height: 7,
                 ),
@@ -41,7 +43,7 @@ class AddAddressViewBody extends StatelessWidget {
                   controller: TextEditingController(),
                   maxLines: 1,
                   keyBoardType: TextInputType.streetAddress,
-                  title: 'Street',
+                  title: S.of(context).street,
                   onChanged: (value) {},
                 ),
               ],
@@ -56,7 +58,8 @@ class AddAddressViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('City', style: TextStyles.font18SemiBold(context)),
+                Text(S.of(context).city,
+                    style: TextStyles.font18SemiBold(context)),
                 const SizedBox(
                   height: 7,
                 ),
@@ -64,7 +67,7 @@ class AddAddressViewBody extends StatelessWidget {
                   controller: TextEditingController(),
                   maxLines: 1,
                   keyBoardType: TextInputType.streetAddress,
-                  title: 'City',
+                  title: S.of(context).city,
                   onChanged: (value) {},
                 ),
               ],
@@ -79,7 +82,8 @@ class AddAddressViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Phone Number', style: TextStyles.font18SemiBold(context)),
+                Text(S.of(context).phone_number,
+                    style: TextStyles.font18SemiBold(context)),
                 const SizedBox(
                   height: 7,
                 ),
@@ -87,7 +91,7 @@ class AddAddressViewBody extends StatelessWidget {
                   controller: TextEditingController(),
                   maxLines: 1,
                   keyBoardType: TextInputType.streetAddress,
-                  title: 'Phone Number',
+                  title: S.of(context).phone_number,
                   onChanged: (value) {},
                 ),
               ],
@@ -102,7 +106,8 @@ class AddAddressViewBody extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Country', style: TextStyles.font18SemiBold(context)),
+                Text(S.of(context).country,
+                    style: TextStyles.font18SemiBold(context)),
                 const SizedBox(
                   height: 7,
                 ),
@@ -110,7 +115,7 @@ class AddAddressViewBody extends StatelessWidget {
                   controller: TextEditingController(),
                   maxLines: 1,
                   keyBoardType: TextInputType.streetAddress,
-                  title: 'Country',
+                  title: S.of(context).country,
                   onChanged: (value) {},
                 ),
               ],
@@ -125,7 +130,7 @@ class AddAddressViewBody extends StatelessWidget {
             child: CustomBigElvatedButtom(
                 colorCode: 0xffC67C4E,
                 colorOfTextCode: 0xffFFFFFF,
-                title: 'Add Address',
+                title: S.of(context).add_address,
                 onPressed: () {
                   Navigator.pop(context);
                 }),

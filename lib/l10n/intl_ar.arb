@@ -88,7 +88,11 @@
     "payment_method": "طريقة الدفع",
     "cash_on_delivery": "الدفع عند الاستلام",
     "order_status": "حالة الطلب",
-    "pick_up": "استلام من المتجر"
+    "pick_up": "استلام من المتجر",
+    "street": "الشارع",
+    "city": "المدينة",
+    "phone_number": "رقم الهاتف",
+    "country": "الدولة"
     
   }
   

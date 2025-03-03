@@ -88,6 +88,10 @@
     "payment_method": "Payment Method",
     "cash_on_delivery": "Cash On Delivery",
     "order_status": "Order Status",
-    "pick_up": "Pick Up"
+    "pick_up": "Pick Up",
+    "street": "Street",
+    "city": "City",
+    "phone_number": "Phone Number",
+    "country": "Country"
   }
   

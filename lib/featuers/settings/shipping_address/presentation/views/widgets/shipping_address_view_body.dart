@@ -4,6 +4,7 @@ import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart'
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/add_address_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/edit_address_view.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/widgets/container_of_address.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:get/get.dart' as g;
@@ -28,7 +29,7 @@ class _ShippingAddressViewBodyState extends State<ShippingAddressViewBody> {
             child: SizedBox(),
           ),
           CustomHeaderWithTitleAndBackBtm(
-            title: 'Shipping Address',
+            title: S.of(context).shipping_address,
             color: Colors.black,
           ),
           const SizedBox(
@@ -47,7 +48,7 @@ class _ShippingAddressViewBodyState extends State<ShippingAddressViewBody> {
                       hasAddress = true;
                     });
                   },
-                  title: 'Add Address',
+                  title: S.of(context).add_address,
                   iconData: IconlyBold.plus,
                 ),
           SizedBox(

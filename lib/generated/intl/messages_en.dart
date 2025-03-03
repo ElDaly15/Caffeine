@@ -45,7 +45,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "choose_payment_method": MessageLookupByLibrary.simpleMessage(
       "Choose Your Payment Method",
     ),
+    "city": MessageLookupByLibrary.simpleMessage("City"),
     "contact_us": MessageLookupByLibrary.simpleMessage("Contact Us"),
+    "country": MessageLookupByLibrary.simpleMessage("Country"),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(
       "Coupon Applied Successfully",
     ),
@@ -108,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "personal_information": MessageLookupByLibrary.simpleMessage(
       "Personal Information",
     ),
+    "phone_number": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "pick_up": MessageLookupByLibrary.simpleMessage("Pick Up"),
     "pickup": MessageLookupByLibrary.simpleMessage("Pickup"),
     "pickup_from_cafe": MessageLookupByLibrary.simpleMessage(
@@ -141,6 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "size": MessageLookupByLibrary.simpleMessage("Size"),
+    "street": MessageLookupByLibrary.simpleMessage("Street"),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(
       "Tap on the stars to give a rating",
