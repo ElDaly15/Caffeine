@@ -35,7 +35,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
+    "card": MessageLookupByLibrary.simpleMessage("Card"),
+    "cash": MessageLookupByLibrary.simpleMessage("Cash"),
     "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
+    "choose_payment_method": MessageLookupByLibrary.simpleMessage(
+      "Choose Your Payment Method",
+    ),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(
       "Coupon Applied Successfully",
     ),
@@ -74,6 +79,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "items": MessageLookupByLibrary.simpleMessage("items"),
     "login_here": MessageLookupByLibrary.simpleMessage("Login here"),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
+    "online_wallets": MessageLookupByLibrary.simpleMessage("Online Wallets"),
     "or_continue_with": MessageLookupByLibrary.simpleMessage(
       "Or continue with",
     ),
@@ -81,11 +87,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "password_min_length": MessageLookupByLibrary.simpleMessage(
       "Password must be at least 8 characters",
     ),
+    "payment": MessageLookupByLibrary.simpleMessage("Payment"),
     "payment_summary": MessageLookupByLibrary.simpleMessage("Payment Summary"),
     "pickup": MessageLookupByLibrary.simpleMessage("Pickup"),
     "pickup_from_cafe": MessageLookupByLibrary.simpleMessage(
       "Pickup From Cafe",
     ),
+    "place_order": MessageLookupByLibrary.simpleMessage("Place Order"),
     "price": MessageLookupByLibrary.simpleMessage("Price"),
     "proceed_to_checkout": MessageLookupByLibrary.simpleMessage(
       "Proceed to Checkout",

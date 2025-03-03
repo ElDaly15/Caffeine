@@ -35,7 +35,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "buy_now": MessageLookupByLibrary.simpleMessage("اشتري الآن"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
+    "card": MessageLookupByLibrary.simpleMessage("بطاقة"),
+    "cash": MessageLookupByLibrary.simpleMessage("الدفع نقدًا"),
     "checkout": MessageLookupByLibrary.simpleMessage("إتمام الشراء"),
+    "choose_payment_method": MessageLookupByLibrary.simpleMessage(
+      "اختر طريقة الدفع الخاصة بك",
+    ),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(
       "تم تطبيق الكوبون بنجاح",
     ),
@@ -76,16 +81,21 @@ class MessageLookup extends MessageLookupByLibrary {
     "items": MessageLookupByLibrary.simpleMessage("منتجات"),
     "login_here": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+    "online_wallets": MessageLookupByLibrary.simpleMessage(
+      "المحافظ الإلكترونية",
+    ),
     "or_continue_with": MessageLookupByLibrary.simpleMessage("أو تابع عبر"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "password_min_length": MessageLookupByLibrary.simpleMessage(
       "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
     ),
+    "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
     "payment_summary": MessageLookupByLibrary.simpleMessage("ملخص الدفع"),
     "pickup": MessageLookupByLibrary.simpleMessage("استلام"),
     "pickup_from_cafe": MessageLookupByLibrary.simpleMessage(
       "الاستلام من المقهى",
     ),
+    "place_order": MessageLookupByLibrary.simpleMessage("إتمام الطلب"),
     "price": MessageLookupByLibrary.simpleMessage("السعر"),
     "proceed_to_checkout": MessageLookupByLibrary.simpleMessage(
       "المتابعة إلى الدفع",

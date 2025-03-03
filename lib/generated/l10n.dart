@@ -524,6 +524,46 @@ class S {
   String get update_note {
     return Intl.message('Update Note', name: 'update_note', desc: '', args: []);
   }
+
+  /// `Payment`
+  String get payment {
+    return Intl.message('Payment', name: 'payment', desc: '', args: []);
+  }
+
+  /// `Choose Your Payment Method`
+  String get choose_payment_method {
+    return Intl.message(
+      'Choose Your Payment Method',
+      name: 'choose_payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Place Order`
+  String get place_order {
+    return Intl.message('Place Order', name: 'place_order', desc: '', args: []);
+  }
+
+  /// `Card`
+  String get card {
+    return Intl.message('Card', name: 'card', desc: '', args: []);
+  }
+
+  /// `Online Wallets`
+  String get online_wallets {
+    return Intl.message(
+      'Online Wallets',
+      name: 'online_wallets',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash`
+  String get cash {
+    return Intl.message('Cash', name: 'cash', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

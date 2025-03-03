@@ -62,7 +62,13 @@
     "add_note_to_order": "أضف ملاحظة إلى طلبك",
     "save": "حفظ",
     "edit_note_text": "قم بتعديل الملاحظة",
-    "update_note": "تحديث الملاحظة"
+    "update_note": "تحديث الملاحظة",
+    "payment": "الدفع",
+    "choose_payment_method": "اختر طريقة الدفع الخاصة بك",
+    "place_order": "إتمام الطلب",
+    "card": "بطاقة",
+    "online_wallets": "المحافظ الإلكترونية",
+    "cash": "الدفع نقدًا"
 
   }
   

@@ -62,6 +62,12 @@
     "add_note_to_order": "Add a note to your order",
     "save": "Save",
     "edit_note_text": "Edit a note",
-    "update_note": "Update Note"
+    "update_note": "Update Note",
+    "payment": "Payment",
+    "choose_payment_method": "Choose Your Payment Method",
+    "place_order": "Place Order",
+    "card": "Card",
+    "online_wallets": "Online Wallets",
+    "cash": "Cash"
   }
   
