@@ -34,9 +34,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "هل لديك حساب بالفعل؟",
     ),
     "buy_now": MessageLookupByLibrary.simpleMessage("اشتري الآن"),
+    "caffeine_order": MessageLookupByLibrary.simpleMessage("كفايـــين اوردر"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "card": MessageLookupByLibrary.simpleMessage("بطاقة"),
     "cash": MessageLookupByLibrary.simpleMessage("الدفع نقدًا"),
+    "cash_on_delivery": MessageLookupByLibrary.simpleMessage(
+      "الدفع عند الاستلام",
+    ),
     "checkout": MessageLookupByLibrary.simpleMessage("إتمام الشراء"),
     "choose_payment_method": MessageLookupByLibrary.simpleMessage(
       "اختر طريقة الدفع الخاصة بك",
@@ -49,12 +53,14 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "إنشاء حساب جديد",
     ),
+    "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
     "deliver": MessageLookupByLibrary.simpleMessage("توصيل"),
     "delivery_address": MessageLookupByLibrary.simpleMessage("عنوان التوصيل"),
     "delivery_fee": MessageLookupByLibrary.simpleMessage("رسوم التوصيل"),
     "description": MessageLookupByLibrary.simpleMessage("الوصف"),
     "detail": MessageLookupByLibrary.simpleMessage("التفاصيل"),
     "edit_address": MessageLookupByLibrary.simpleMessage("تعديل العنوان"),
+    "edit_information": MessageLookupByLibrary.simpleMessage("تعديل المعلومات"),
     "edit_note": MessageLookupByLibrary.simpleMessage("تعديل الملاحظة"),
     "edit_note_text": MessageLookupByLibrary.simpleMessage(
       "قم بتعديل الملاحظة",
@@ -83,20 +89,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_here": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "my_orders": MessageLookupByLibrary.simpleMessage("طلباتي"),
+    "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "online_wallets": MessageLookupByLibrary.simpleMessage(
       "المحافظ الإلكترونية",
     ),
     "or_continue_with": MessageLookupByLibrary.simpleMessage("أو تابع عبر"),
+    "order_id": MessageLookupByLibrary.simpleMessage("رقم الطلب"),
+    "order_status": MessageLookupByLibrary.simpleMessage("حالة الطلب"),
+    "order_time": MessageLookupByLibrary.simpleMessage("وقت الطلب"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
     "password_min_length": MessageLookupByLibrary.simpleMessage(
       "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
     ),
     "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
     "payment_summary": MessageLookupByLibrary.simpleMessage("ملخص الدفع"),
     "personal_information": MessageLookupByLibrary.simpleMessage(
       "المعلومات الشخصية",
     ),
+    "pick_up": MessageLookupByLibrary.simpleMessage("استلام من المتجر"),
     "pickup": MessageLookupByLibrary.simpleMessage("استلام"),
     "pickup_from_cafe": MessageLookupByLibrary.simpleMessage(
       "الاستلام من المقهى",
@@ -133,7 +145,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(
       "اضغط على النجوم لإعطاء تقييم",
     ),
+    "under_processing": MessageLookupByLibrary.simpleMessage("قيد المعالجة"),
     "update_note": MessageLookupByLibrary.simpleMessage("تحديث الملاحظة"),
+    "upload_image": MessageLookupByLibrary.simpleMessage("رفع الصورة"),
     "welcome_back": MessageLookupByLibrary.simpleMessage(
       "مرحبًا بعودتك، لقد افتقدناك",
     ),

@@ -1,6 +1,7 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/featuers/settings/my_orders/presentation/views/widgets/order_steper.dart';
+import 'package:caffeine/generated/l10n.dart';
 
 import 'package:flutter/material.dart';
 
@@ -23,11 +24,11 @@ class CustomOrderItemInOptions extends StatelessWidget {
               color: AppColors.mainColorTheme,
             ),
             title: Text(
-              'Caffeine Order',
+              S.of(context).caffeine_order,
               style: TextStyles.font18Medium(context),
             ),
             trailing: Text(
-              'Under Processing',
+              S.of(context).under_processing,
               style: TextStyles.font14SemiBold(context).copyWith(
                 color: AppColors.mainColorTheme,
               ),
@@ -38,15 +39,15 @@ class CustomOrderItemInOptions extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Order ID : exP123456789S23-12-2023',
+                Text('${S.of(context).order_id} : exP123456789S23-12-2023',
                     style: TextStyles.font14Medium(context)),
-                Text('Date : 12-12-2023',
+                Text('${S.of(context).date} : 12-12-2023',
                     style: TextStyles.font14Medium(context)),
-                Text('Order Time : 12:00 PM',
+                Text('${S.of(context).order_time} : 12:00 PM',
                     style: TextStyles.font14Medium(context)),
-                Text('Payment Method : Cash On Delivery',
+                Text('${S.of(context).payment_method} : Cash On Delivery',
                     style: TextStyles.font14Medium(context)),
-                Text('Order Status  : Pick Up',
+                Text('${S.of(context).order_status} : Pick Up',
                     style: TextStyles.font14Medium(context)),
               ],
             ),

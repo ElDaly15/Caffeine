@@ -76,7 +76,19 @@
     "settings": "الإعدادات",
     "contact_us": "اتصل بنا",
     "privacy_policy": "الخصوصية والسياسة",
-    "logout": "تسجيل الخروج"
-
+    "logout": "تسجيل الخروج",
+    "edit_information": "تعديل المعلومات",
+    "name": "الاسم",
+    "upload_image": "رفع الصورة",
+    "caffeine_order": "كفايـــين اوردر",
+    "under_processing": "قيد المعالجة",
+    "order_id": "رقم الطلب",
+    "date": "التاريخ",
+    "order_time": "وقت الطلب",
+    "payment_method": "طريقة الدفع",
+    "cash_on_delivery": "الدفع عند الاستلام",
+    "order_status": "حالة الطلب",
+    "pick_up": "استلام من المتجر"
+    
   }
   

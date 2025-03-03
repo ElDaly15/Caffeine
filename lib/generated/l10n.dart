@@ -619,6 +619,101 @@ class S {
   String get logout {
     return Intl.message('Logout', name: 'logout', desc: '', args: []);
   }
+
+  /// `Edit Information`
+  String get edit_information {
+    return Intl.message(
+      'Edit Information',
+      name: 'edit_information',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Name`
+  String get name {
+    return Intl.message('Name', name: 'name', desc: '', args: []);
+  }
+
+  /// `Upload Image`
+  String get upload_image {
+    return Intl.message(
+      'Upload Image',
+      name: 'upload_image',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Caffeine Order`
+  String get caffeine_order {
+    return Intl.message(
+      'Caffeine Order',
+      name: 'caffeine_order',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Under Processing`
+  String get under_processing {
+    return Intl.message(
+      'Under Processing',
+      name: 'under_processing',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order ID`
+  String get order_id {
+    return Intl.message('Order ID', name: 'order_id', desc: '', args: []);
+  }
+
+  /// `Date`
+  String get date {
+    return Intl.message('Date', name: 'date', desc: '', args: []);
+  }
+
+  /// `Order Time`
+  String get order_time {
+    return Intl.message('Order Time', name: 'order_time', desc: '', args: []);
+  }
+
+  /// `Payment Method`
+  String get payment_method {
+    return Intl.message(
+      'Payment Method',
+      name: 'payment_method',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash On Delivery`
+  String get cash_on_delivery {
+    return Intl.message(
+      'Cash On Delivery',
+      name: 'cash_on_delivery',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Status`
+  String get order_status {
+    return Intl.message(
+      'Order Status',
+      name: 'order_status',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Pick Up`
+  String get pick_up {
+    return Intl.message('Pick Up', name: 'pick_up', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

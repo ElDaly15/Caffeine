@@ -4,6 +4,7 @@ import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart'
 import 'package:caffeine/featuers/settings/personal_information/presentation/views/edit_information_data_view.dart';
 import 'package:caffeine/featuers/settings/personal_information/presentation/views/widgets/avatar_of_user_with_edit_icon.dart';
 import 'package:caffeine/featuers/settings/personal_information/presentation/views/widgets/container_of_user_info.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:get/get.dart' as g;
@@ -21,7 +22,7 @@ class PersonalInformationBody extends StatelessWidget {
             child: SizedBox(),
           ),
           CustomHeaderWithTitleAndBackBtm(
-              title: 'Personal Information', color: Colors.black),
+              title: S.of(context).personal_information, color: Colors.black),
           SizedBox(
             height: 15,
           ),
@@ -32,7 +33,7 @@ class PersonalInformationBody extends StatelessWidget {
             height: 20,
           ),
           Text(
-            'Upload Image',
+            S.of(context).upload_image,
             style: TextStyles.font20Bold(context),
           ),
           SizedBox(

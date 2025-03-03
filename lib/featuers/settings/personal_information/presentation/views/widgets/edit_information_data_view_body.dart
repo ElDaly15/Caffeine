@@ -1,6 +1,7 @@
 import 'package:caffeine/core/widgets/buttons/custom_big_elevated_btm.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_edit_text_field.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class EditInformationDataViewBody extends StatelessWidget {
@@ -14,12 +15,12 @@ class EditInformationDataViewBody extends StatelessWidget {
         children: [
           SafeArea(child: SizedBox()),
           CustomHeaderWithTitleAndBackBtm(
-              title: 'Edit Information', color: Colors.black),
+              title: S.of(context).personal_information, color: Colors.black),
           SizedBox(
             height: 15,
           ),
           CustomEditTextField(
-            title: 'Name',
+            title: S.of(context).name,
             onChanged: (value) {},
             textEditingController: TextEditingController(text: 'John Doe'),
             textInputType: TextInputType.text,
@@ -30,7 +31,7 @@ class EditInformationDataViewBody extends StatelessWidget {
           CustomBigElvatedButtom(
               colorCode: 0xffC67C4E,
               colorOfTextCode: 0xffFFFFFF,
-              title: 'Save',
+              title: S.of(context).save,
               onPressed: () {
                 Navigator.pop(context);
               }),

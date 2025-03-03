@@ -76,6 +76,18 @@
     "settings": "Settings",
     "contact_us": "Contact Us",
     "privacy_policy": "Privacy & Policy",
-    "logout": "Logout"
+    "logout": "Logout",
+    "edit_information": "Edit Information",
+    "name": "Name",
+    "upload_image": "Upload Image",
+    "caffeine_order": "Caffeine Order",
+    "under_processing": "Under Processing",
+    "order_id": "Order ID",
+    "date": "Date",
+    "order_time": "Order Time",
+    "payment_method": "Payment Method",
+    "cash_on_delivery": "Cash On Delivery",
+    "order_status": "Order Status",
+    "pick_up": "Pick Up"
   }
   

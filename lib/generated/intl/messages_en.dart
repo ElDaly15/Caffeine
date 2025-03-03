@@ -34,9 +34,13 @@ class MessageLookup extends MessageLookupByLibrary {
       "Already have an account?",
     ),
     "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
+    "caffeine_order": MessageLookupByLibrary.simpleMessage("Caffeine Order"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "card": MessageLookupByLibrary.simpleMessage("Card"),
     "cash": MessageLookupByLibrary.simpleMessage("Cash"),
+    "cash_on_delivery": MessageLookupByLibrary.simpleMessage(
+      "Cash On Delivery",
+    ),
     "checkout": MessageLookupByLibrary.simpleMessage("Checkout"),
     "choose_payment_method": MessageLookupByLibrary.simpleMessage(
       "Choose Your Payment Method",
@@ -49,6 +53,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "create_new_account": MessageLookupByLibrary.simpleMessage(
       "Create new account",
     ),
+    "date": MessageLookupByLibrary.simpleMessage("Date"),
     "deliver": MessageLookupByLibrary.simpleMessage("Deliver"),
     "delivery_address": MessageLookupByLibrary.simpleMessage(
       "Delivery Address",
@@ -57,6 +62,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "description": MessageLookupByLibrary.simpleMessage("Description"),
     "detail": MessageLookupByLibrary.simpleMessage("Detail"),
     "edit_address": MessageLookupByLibrary.simpleMessage("Edit Address"),
+    "edit_information": MessageLookupByLibrary.simpleMessage(
+      "Edit Information",
+    ),
     "edit_note": MessageLookupByLibrary.simpleMessage("Edit Note"),
     "edit_note_text": MessageLookupByLibrary.simpleMessage("Edit a note"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
@@ -81,20 +89,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "login_here": MessageLookupByLibrary.simpleMessage("Login here"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),
+    "name": MessageLookupByLibrary.simpleMessage("Name"),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "online_wallets": MessageLookupByLibrary.simpleMessage("Online Wallets"),
     "or_continue_with": MessageLookupByLibrary.simpleMessage(
       "Or continue with",
     ),
+    "order_id": MessageLookupByLibrary.simpleMessage("Order ID"),
+    "order_status": MessageLookupByLibrary.simpleMessage("Order Status"),
+    "order_time": MessageLookupByLibrary.simpleMessage("Order Time"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
     "password_min_length": MessageLookupByLibrary.simpleMessage(
       "Password must be at least 8 characters",
     ),
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
+    "payment_method": MessageLookupByLibrary.simpleMessage("Payment Method"),
     "payment_summary": MessageLookupByLibrary.simpleMessage("Payment Summary"),
     "personal_information": MessageLookupByLibrary.simpleMessage(
       "Personal Information",
     ),
+    "pick_up": MessageLookupByLibrary.simpleMessage("Pick Up"),
     "pickup": MessageLookupByLibrary.simpleMessage("Pickup"),
     "pickup_from_cafe": MessageLookupByLibrary.simpleMessage(
       "Pickup From Cafe",
@@ -131,7 +145,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(
       "Tap on the stars to give a rating",
     ),
+    "under_processing": MessageLookupByLibrary.simpleMessage(
+      "Under Processing",
+    ),
     "update_note": MessageLookupByLibrary.simpleMessage("Update Note"),
+    "upload_image": MessageLookupByLibrary.simpleMessage("Upload Image"),
     "welcome_back": MessageLookupByLibrary.simpleMessage(
       "Welcome back you\'ve been missed",
     ),
