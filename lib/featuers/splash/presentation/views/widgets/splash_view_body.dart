@@ -1,5 +1,7 @@
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/featuers/auth/presentation/views/get_started_view.dart';
+import 'package:caffeine/featuers/home/presentation/views/home_view.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' as g;
 
@@ -41,13 +43,14 @@ class _SplashViewBodyState extends State<SplashViewBody>
     _animationController.forward();
 
     Future.delayed(
-      const Duration(milliseconds: 3500),
-      () {
-        g.Get.off(() => const GetStartedView(),
-            transition: g.Transition.fade,
-            duration: const Duration(milliseconds: 800));
-      },
-    );
+        const Duration(milliseconds: 3500),
+        () => FirebaseAuth.instance.currentUser != null
+            ? g.Get.to(() => const HomeView(),
+                transition: g.Transition.fade,
+                duration: const Duration(milliseconds: 800))
+            : g.Get.off(() => const GetStartedView(),
+                transition: g.Transition.fade,
+                duration: const Duration(milliseconds: 800)));
   }
 
   @override

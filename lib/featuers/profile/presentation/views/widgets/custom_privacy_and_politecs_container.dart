@@ -1,4 +1,7 @@
+import 'package:caffeine/core/helper/singleton_helper.dart';
+import 'package:caffeine/core/service/fire_base_services.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
+import 'package:caffeine/featuers/auth/presentation/views/get_started_view.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -57,10 +60,10 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
             icon: Icons.logout,
             title: S.of(context).logout,
             onTap: () {
-              // getIt<FireBaseServices>().signOut();
-              // Navigator.of(context).pushAndRemoveUntil(
-              //     MaterialPageRoute(builder: (context) => const StartView()),
-              //     (route) => false);
+              getIt<FireBaseServices>().signOut();
+              g.Get.offAll(() => const GetStartedView(),
+                  transition: g.Transition.downToUp,
+                  duration: const Duration(milliseconds: 600));
             },
           ),
         ],
