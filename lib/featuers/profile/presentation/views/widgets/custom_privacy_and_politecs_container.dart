@@ -62,7 +62,7 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
             onTap: () {
               getIt<FireBaseServices>().signOut();
               g.Get.offAll(() => const GetStartedView(),
-                  transition: g.Transition.downToUp,
+                  transition: g.Transition.fade,
                   duration: const Duration(milliseconds: 600));
             },
           ),

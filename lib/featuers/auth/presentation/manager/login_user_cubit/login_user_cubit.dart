@@ -28,7 +28,7 @@ class LoginUserCubit extends Cubit<LoginUserState> {
     );
   }
 
-  Future<void> signInWithGoogle(BuildContext context) async {
+  Future<void> signInWithGoogle() async {
     emit(LoginUserLoading());
     var result = await authRepo.signInWithGoogle();
     result.fold(
