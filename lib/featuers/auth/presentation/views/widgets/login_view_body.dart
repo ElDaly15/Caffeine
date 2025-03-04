@@ -3,13 +3,14 @@ import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/big_elevated_btm.dart';
 import 'package:caffeine/core/widgets/buttons/text_btm.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_text_field.dart';
+import 'package:caffeine/featuers/auth/presentation/manager/login_user_cubit/login_user_cubit.dart';
 import 'package:caffeine/featuers/auth/presentation/views/forget_your_password_view.dart';
 import 'package:caffeine/featuers/auth/presentation/views/register_view.dart';
-import 'package:caffeine/featuers/auth/presentation/views/widgets/custom_text_field.dart';
+import 'package:caffeine/featuers/auth/presentation/views/widgets/custom_text_btm.dart';
 import 'package:caffeine/featuers/auth/presentation/views/widgets/row_of_social_reg.dart';
-import 'package:caffeine/featuers/home/presentation/views/home_view.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart' as g;
 
 class LoginViewBody extends StatefulWidget {
@@ -99,12 +100,14 @@ class _LoginViewBodyState extends State<LoginViewBody> {
                 height: MediaQuery.of(context).size.height * 0.025,
               ),
               BigElevatedBtm(
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     _formKey.currentState!.save();
-                    g.Get.to(() => const HomeView(),
-                        transition: g.Transition.fade,
-                        duration: const Duration(milliseconds: 400));
+                    await BlocProvider.of<LoginUserCubit>(context)
+                        .createUserWithEmailAndPassword(
+                            email: email!,
+                            password: password!,
+                            context: context);
                   } else {
                     setState(() {
                       _autovalidateMode = AutovalidateMode.always;

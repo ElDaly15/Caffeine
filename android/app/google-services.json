@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "971738476715",
+    "project_id": "caffeine-cafe-47df1",
+    "storage_bucket": "caffeine-cafe-47df1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:971738476715:android:0460e798d7d4f18402c7ee",
+        "android_client_info": {
+          "package_name": "com.example.caffeine"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBAjlavLONh6qPL1rjLo99fuq243wNLHAU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

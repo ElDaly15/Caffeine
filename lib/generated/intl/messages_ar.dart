@@ -81,8 +81,17 @@ class MessageLookup extends MessageLookupByLibrary {
       "قم بتعديل الملاحظة",
     ),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
+    "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+      "الحساب موجود بالفعل لهذا البريد الإلكتروني.",
+    ),
+    "email_password_incorrect": MessageLookupByLibrary.simpleMessage(
+      "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+    ),
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز القسيمة هنا",
+    ),
+    "error_occurred": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ. يرجى المحاولة مرة أخرى.",
     ),
     "fall_in_love_with_coffee": MessageLookupByLibrary.simpleMessage(
       "عِشْ حُبَّ القهوة في سعادة غامرة!",
@@ -105,6 +114,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "my_orders": MessageLookupByLibrary.simpleMessage("طلباتي"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
+    "network_error": MessageLookupByLibrary.simpleMessage(
+      "غير متصل بالإنترنت. يرجى المحاولة مرة أخرى.",
+    ),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "online_wallets": MessageLookupByLibrary.simpleMessage(
@@ -146,6 +158,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "reset_password": MessageLookupByLibrary.simpleMessage(
       "إعادة تعيين كلمة المرور",
     ),
+    "reset_password_sent": MessageLookupByLibrary.simpleMessage(
+      "تم إرسال رابط إعادة تعيين كلمة المرور. يرجى التحقق من بريدك الإلكتروني.",
+    ),
     "save": MessageLookupByLibrary.simpleMessage("حفظ"),
     "search_cafe": MessageLookupByLibrary.simpleMessage("ابحث عن مقهى"),
     "search_coffee": MessageLookupByLibrary.simpleMessage("ابحث عن القهوة"),
@@ -164,9 +179,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(
       "اضغط على النجوم لإعطاء تقييم",
     ),
+    "too_many_requests": MessageLookupByLibrary.simpleMessage(
+      "طلبات كثيرة جدًا. يرجى المحاولة لاحقًا.",
+    ),
     "under_processing": MessageLookupByLibrary.simpleMessage("قيد المعالجة"),
+    "unknown_error": MessageLookupByLibrary.simpleMessage("حدث خطأ غير معروف."),
     "update_note": MessageLookupByLibrary.simpleMessage("تحديث الملاحظة"),
     "upload_image": MessageLookupByLibrary.simpleMessage("رفع الصورة"),
+    "user_not_found": MessageLookupByLibrary.simpleMessage(
+      "المستخدم غير موجود. يرجى التحقق من عنوان البريد الإلكتروني.",
+    ),
+    "verify_email": MessageLookupByLibrary.simpleMessage(
+      "يرجى التحقق من بريدك الإلكتروني.",
+    ),
+    "weak_password": MessageLookupByLibrary.simpleMessage(
+      "يجب أن تحتوي كلمة المرور على 8 أحرف على الأقل.",
+    ),
     "welcome_back": MessageLookupByLibrary.simpleMessage(
       "مرحبًا بعودتك، لقد افتقدناك",
     ),

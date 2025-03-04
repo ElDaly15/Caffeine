@@ -62,22 +62,6 @@ class _ContainerOfSettingsSectionsState
             height: 8,
           ),
           CustomProfileListTile(
-            statusOfNotification: darkMode,
-            onChangedSwitch: (value) {
-              setState(() {
-                darkMode = value;
-              });
-            },
-            hasSwitch: true,
-            hasTrailling: true,
-            icon: FontAwesomeIcons.solidMoon,
-            title: S.of(context).dark_mode,
-            onTap: null,
-          ),
-          const SizedBox(
-            height: 8,
-          ),
-          CustomProfileListTile(
             statusOfNotification: false,
             onChangedSwitch: (value) {},
             hasSwitch: false,

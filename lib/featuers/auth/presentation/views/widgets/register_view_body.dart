@@ -3,8 +3,10 @@ import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/big_elevated_btm.dart';
 import 'package:caffeine/core/widgets/buttons/text_btm.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_text_field.dart';
+import 'package:caffeine/featuers/auth/presentation/manager/create_user_cubit/create_user_cubit.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterViewBody extends StatefulWidget {
   const RegisterViewBody({super.key});
@@ -71,7 +73,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 onChanged: (value) {
                   fName = value;
                 },
-                isObscureText: true,
+                isObscureText: false,
                 hintTitle: S.of(context).full_name,
                 isPassword: false,
                 isInLogin: false,
@@ -92,9 +94,12 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 height: MediaQuery.of(context).size.height * 0.025,
               ),
               BigElevatedBtm(
-                  onPressed: () {
+                  onPressed: () async {
                     if (_formKey.currentState!.validate()) {
                       _formKey.currentState!.save();
+                      await BlocProvider.of<CreateUserCubit>(context)
+                          .createUserWithEmailAndPassword(
+                              email!, password!, fName!);
                     } else {
                       setState(() {
                         _autovalidateMode = AutovalidateMode.always;

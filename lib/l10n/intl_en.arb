@@ -101,7 +101,16 @@
     "delete_warning": "Deleting your account will remove all of your information from our database. This cannot be undone.",
     "delete_confirmation": "To Confirm, type \"DELETE\" in the field below.",
     "delete_error": "Please type \"DELETE\"",
-    "delete_hint": "DELETE"
-    
-  }
+    "delete_hint": "DELETE",
+    "error_occurred": "An error occurred. Please try again.",
+    "weak_password": "Password should be at least 8 characters.",
+    "email_already_in_use": "The account already exists for that email.",
+    "network_error": "Not connected to the internet. Please try again.",
+    "unknown_error": "An unknown error occurred.",
+    "email_password_incorrect": "Email or password is incorrect.",
+    "user_not_found": "User not found. Please check your email address.",
+    "too_many_requests": "Too many requests. Please try again later.",
+    "verify_email": "Please verify your email.",
+    "reset_password_sent": "Reset password email sent. Please check your email."
+}
   

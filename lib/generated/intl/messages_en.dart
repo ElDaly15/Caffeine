@@ -85,8 +85,17 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_note": MessageLookupByLibrary.simpleMessage("Edit Note"),
     "edit_note_text": MessageLookupByLibrary.simpleMessage("Edit a note"),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
+    "email_already_in_use": MessageLookupByLibrary.simpleMessage(
+      "The account already exists for that email.",
+    ),
+    "email_password_incorrect": MessageLookupByLibrary.simpleMessage(
+      "Email or password is incorrect.",
+    ),
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "Enter Your Coupon Code Here",
+    ),
+    "error_occurred": MessageLookupByLibrary.simpleMessage(
+      "An error occurred. Please try again.",
     ),
     "fall_in_love_with_coffee": MessageLookupByLibrary.simpleMessage(
       "Fall in Love with Coffee in Blissful Delight!",
@@ -107,6 +116,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
+    "network_error": MessageLookupByLibrary.simpleMessage(
+      "Not connected to the internet. Please try again.",
+    ),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "online_wallets": MessageLookupByLibrary.simpleMessage("Online Wallets"),
@@ -146,6 +158,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "read_less": MessageLookupByLibrary.simpleMessage("Read Less"),
     "read_more": MessageLookupByLibrary.simpleMessage("Read More"),
     "reset_password": MessageLookupByLibrary.simpleMessage("Reset Password"),
+    "reset_password_sent": MessageLookupByLibrary.simpleMessage(
+      "Reset password email sent. Please check your email.",
+    ),
     "save": MessageLookupByLibrary.simpleMessage("Save"),
     "search_cafe": MessageLookupByLibrary.simpleMessage("Search Cafe"),
     "search_coffee": MessageLookupByLibrary.simpleMessage("Search Coffee"),
@@ -166,11 +181,26 @@ class MessageLookup extends MessageLookupByLibrary {
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(
       "Tap on the stars to give a rating",
     ),
+    "too_many_requests": MessageLookupByLibrary.simpleMessage(
+      "Too many requests. Please try again later.",
+    ),
     "under_processing": MessageLookupByLibrary.simpleMessage(
       "Under Processing",
     ),
+    "unknown_error": MessageLookupByLibrary.simpleMessage(
+      "An unknown error occurred.",
+    ),
     "update_note": MessageLookupByLibrary.simpleMessage("Update Note"),
     "upload_image": MessageLookupByLibrary.simpleMessage("Upload Image"),
+    "user_not_found": MessageLookupByLibrary.simpleMessage(
+      "User not found. Please check your email address.",
+    ),
+    "verify_email": MessageLookupByLibrary.simpleMessage(
+      "Please verify your email.",
+    ),
+    "weak_password": MessageLookupByLibrary.simpleMessage(
+      "Password should be at least 8 characters.",
+    ),
     "welcome_back": MessageLookupByLibrary.simpleMessage(
       "Welcome back you\'ve been missed",
     ),

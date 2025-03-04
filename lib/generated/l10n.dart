@@ -819,6 +819,106 @@ class S {
   String get delete_hint {
     return Intl.message('DELETE', name: 'delete_hint', desc: '', args: []);
   }
+
+  /// `An error occurred. Please try again.`
+  String get error_occurred {
+    return Intl.message(
+      'An error occurred. Please try again.',
+      name: 'error_occurred',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password should be at least 8 characters.`
+  String get weak_password {
+    return Intl.message(
+      'Password should be at least 8 characters.',
+      name: 'weak_password',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `The account already exists for that email.`
+  String get email_already_in_use {
+    return Intl.message(
+      'The account already exists for that email.',
+      name: 'email_already_in_use',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Not connected to the internet. Please try again.`
+  String get network_error {
+    return Intl.message(
+      'Not connected to the internet. Please try again.',
+      name: 'network_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An unknown error occurred.`
+  String get unknown_error {
+    return Intl.message(
+      'An unknown error occurred.',
+      name: 'unknown_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Email or password is incorrect.`
+  String get email_password_incorrect {
+    return Intl.message(
+      'Email or password is incorrect.',
+      name: 'email_password_incorrect',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `User not found. Please check your email address.`
+  String get user_not_found {
+    return Intl.message(
+      'User not found. Please check your email address.',
+      name: 'user_not_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Too many requests. Please try again later.`
+  String get too_many_requests {
+    return Intl.message(
+      'Too many requests. Please try again later.',
+      name: 'too_many_requests',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please verify your email.`
+  String get verify_email {
+    return Intl.message(
+      'Please verify your email.',
+      name: 'verify_email',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Reset password email sent. Please check your email.`
+  String get reset_password_sent {
+    return Intl.message(
+      'Reset password email sent. Please check your email.',
+      name: 'reset_password_sent',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
