@@ -1,3 +1,7 @@
+// ignore_for_file: use_build_context_synchronously
+
+import 'package:caffeine/core/helper/singleton_helper.dart';
+import 'package:caffeine/core/service/fire_base_services.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/custom_big_elevated_btm.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
@@ -15,6 +19,7 @@ class ForgetYourPasswordViewBody extends StatefulWidget {
 
 class _ForgetYourPasswordViewBodyState
     extends State<ForgetYourPasswordViewBody> {
+  String? email;
   var formKeyPasswordEdit = GlobalKey<FormState>();
   AutovalidateMode autovalidateMode = AutovalidateMode.disabled;
   @override
@@ -53,7 +58,9 @@ class _ForgetYourPasswordViewBodyState
               isInLogin: true,
               isPassword: false,
               isObscureText: false,
-              onChanged: (value) {},
+              onChanged: (value) {
+                email = value;
+              },
             ),
           ),
           SizedBox(
@@ -67,6 +74,8 @@ class _ForgetYourPasswordViewBodyState
               title: S.of(context).reset_password,
               onPressed: () async {
                 if (formKeyPasswordEdit.currentState!.validate()) {
+                  await getIt<FireBaseServices>()
+                      .sendPasswordResetEmail(email!, context);
                   Navigator.pop(context);
                   FocusScope.of(context).unfocus();
                 } else {
