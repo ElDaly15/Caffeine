@@ -1,11 +1,26 @@
+import 'package:caffeine/core/service/get_user_data.dart';
+import 'package:caffeine/featuers/auth/domain/entity/user_entity.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/custom_page_view_ads.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/custom_search_and_start_container.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/grid_view_of_products.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/row_of_category_item.dart';
 import 'package:flutter/material.dart';
 
-class HomeTabletLayout extends StatelessWidget {
+class HomeTabletLayout extends StatefulWidget {
   const HomeTabletLayout({super.key});
+
+  @override
+  State<HomeTabletLayout> createState() => _HomeTabletLayoutState();
+}
+
+class _HomeTabletLayoutState extends State<HomeTabletLayout> {
+  UserEntity? userModel;
+  @override
+  void initState() {
+    super.initState();
+
+    userModel = getUser();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +28,9 @@ class HomeTabletLayout extends StatelessWidget {
       physics: const ClampingScrollPhysics(),
       child: Column(
         children: [
-          CustomSearchAndStartContainer(),
+          CustomSearchAndStartContainer(
+            name: userModel?.name ?? '',
+          ),
           SizedBox(
             height: 10,
           ),

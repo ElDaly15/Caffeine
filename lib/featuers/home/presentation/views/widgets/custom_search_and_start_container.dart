@@ -7,8 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart' as g;
 
 class CustomSearchAndStartContainer extends StatelessWidget {
-  const CustomSearchAndStartContainer({super.key});
-
+  const CustomSearchAndStartContainer({super.key, required this.name});
+  final String name;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -33,7 +33,7 @@ class CustomSearchAndStartContainer extends StatelessWidget {
               height: 5,
             ),
             Text(
-              'Mazen El Daly ',
+              name,
               style: TextStyles.font24Regular(context)
                   .copyWith(color: Colors.white),
             ),
