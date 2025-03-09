@@ -2,6 +2,7 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/inc_and_dec_counter_of_cart.dart';
+import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_size_in_cart_item.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:swipeable_tile/swipeable_tile.dart';
@@ -16,6 +17,7 @@ class ContainerOfCartItem extends StatefulWidget {
 }
 
 class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
+  int index = 0;
   @override
   Widget build(BuildContext context) {
     return SwipeableTile.card(
@@ -64,6 +66,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
         ),
         child: IntrinsicHeight(
           child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
@@ -98,6 +101,40 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                         Spacer(),
                         IncreaseAndDecreaseContainer(
                           counterOfProduct: widget.counterOfProduct,
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 10),
+                    Row(
+                      children: [
+                        ContainerOfSizeInCartItem(
+                          onTap: () {
+                            setState(() {
+                              index = 0;
+                            });
+                          },
+                          title: 'S',
+                          isActive: index == 0,
+                        ),
+                        SizedBox(width: 5),
+                        ContainerOfSizeInCartItem(
+                          onTap: () {
+                            setState(() {
+                              index = 1;
+                            });
+                          },
+                          title: 'M',
+                          isActive: index == 1,
+                        ),
+                        SizedBox(width: 5),
+                        ContainerOfSizeInCartItem(
+                          onTap: () {
+                            setState(() {
+                              index = 2;
+                            });
+                          },
+                          title: 'L',
+                          isActive: index == 2,
                         ),
                       ],
                     ),
