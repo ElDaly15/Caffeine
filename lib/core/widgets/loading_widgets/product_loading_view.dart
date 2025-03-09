@@ -1,6 +1,7 @@
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/loading_widgets/custom_loading_app_bar.dart';
+import 'package:caffeine/core/widgets/loading_widgets/loding_list.dart';
 import 'package:caffeine/featuers/product/presentation/views/widgets/container_of_price_and_add_to_cart.dart';
 import 'package:caffeine/featuers/product/presentation/views/widgets/read_more_and_less_widget.dart';
 import 'package:caffeine/featuers/product/presentation/views/widgets/row_of_container_of_product_details.dart';
@@ -69,7 +70,9 @@ class ProductLoadingView extends StatelessWidget {
                           style: TextStyles.font24SemiBold(context)
                               .copyWith(fontSize: 28),
                         ),
-                        RowOfContainersOfProductDetails(),
+                        RowOfContainersOfProductDetails(
+                          productModel: loadingList()[0],
+                        ),
                       ],
                     ),
                   ),
@@ -98,7 +101,9 @@ class ProductLoadingView extends StatelessWidget {
                         duration: const Duration(seconds: 1),
                       ),
                       enabled: true,
-                      child: ReadMoreAndLessWidget()),
+                      child: ReadMoreAndLessWidget(
+                        productModel: loadingList()[0],
+                      )),
                   SizedBox(
                     height: 10,
                   ),
@@ -144,6 +149,7 @@ class ProductLoadingView extends StatelessWidget {
           ),
           enabled: true,
           child: ContainerOfPriceAndAddToCart(
+            price: '51',
             addToCart: () {},
           ),
         ),

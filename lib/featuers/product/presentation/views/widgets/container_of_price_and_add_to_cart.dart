@@ -4,8 +4,10 @@ import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ContainerOfPriceAndAddToCart extends StatelessWidget {
-  const ContainerOfPriceAndAddToCart({super.key, required this.addToCart});
+  const ContainerOfPriceAndAddToCart(
+      {super.key, required this.addToCart, required this.price});
   final void Function() addToCart;
+  final String price;
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +47,7 @@ class ContainerOfPriceAndAddToCart extends StatelessWidget {
                   height: 5,
                 ),
                 Text(
-                  r'$ 4.53',
+                  '$price ${S.of(context).le}',
                   style: TextStyles.font22SemiBold(context)
                       .copyWith(color: AppColors.mainColorTheme),
                 ),

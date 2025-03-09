@@ -2,10 +2,13 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/core/utils/global_fun.dart';
 import 'package:caffeine/featuers/product/data/model/product_model.dart';
+import 'package:caffeine/featuers/product/presentation/manager/get_product_by_code/get_product_by_code_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/views/product_view.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart' as g;
 import 'package:iconly/iconly.dart';
 import 'package:skeletonizer/skeletonizer.dart';
@@ -14,21 +17,13 @@ class ContainerOfProduct extends StatelessWidget {
   const ContainerOfProduct({super.key, required this.productModel});
   final ProductModel productModel;
 
-  String checkDescription(String info) {
-    if (info == 'Hot') {
-      return isArabic() ? 'ساخن' : 'Hot';
-    } else if (info == 'Ice') {
-      return isArabic() ? 'بارد' : 'Ice';
-    } else {
-      return isArabic() ? 'ساخن / بارد' : 'Hot/Ice';
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     var w = MediaQuery.sizeOf(context).width;
     return GestureDetector(
       onTap: () {
+        BlocProvider.of<GetProductByCodeCubit>(context)
+            .getProductByCode(code: productModel.productCode);
         g.Get.to(() => const ProductView(),
             transition: g.Transition.fade,
             duration: const Duration(milliseconds: 400));

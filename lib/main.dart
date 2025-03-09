@@ -2,6 +2,8 @@ import 'package:caffeine/core/controller/depency_injection.dart';
 import 'package:caffeine/core/helper/cached_helper.dart';
 import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/manager/manage_language_cubit/manage_language_cubit.dart';
+import 'package:caffeine/featuers/product/presentation/manager/get_product_by_code/get_product_by_code_cubit.dart';
+import 'package:caffeine/featuers/product/presentation/manager/manage_rating/magnage_rating_cubit.dart';
 import 'package:caffeine/featuers/splash/presentation/views/splash_view.dart';
 import 'package:caffeine/firebase_options.dart';
 import 'package:caffeine/generated/l10n.dart';
@@ -38,20 +40,30 @@ class CaffeineApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<ManageLanguageCubit, ManageLanguageState>(
       builder: (context, state) {
-        return GetMaterialApp(
-          key: ValueKey(
-              state.locale.languageCode), // Force rebuild on language change
-          localizationsDelegates: [
-            S.delegate,
-            GlobalMaterialLocalizations.delegate,
-            GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
+        return MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (context) => GetProductByCodeCubit(),
+            ),
+            BlocProvider(
+              create: (context) => MagnageRatingCubit(),
+            ),
           ],
-          supportedLocales: S.delegate.supportedLocales,
-          locale: state.locale,
-          builder: DevicePreview.appBuilder,
-          debugShowCheckedModeBanner: false,
-          home: SplashView(),
+          child: GetMaterialApp(
+            key: ValueKey(
+                state.locale.languageCode), // Force rebuild on language change
+            localizationsDelegates: [
+              S.delegate,
+              GlobalMaterialLocalizations.delegate,
+              GlobalWidgetsLocalizations.delegate,
+              GlobalCupertinoLocalizations.delegate,
+            ],
+            supportedLocales: S.delegate.supportedLocales,
+            locale: state.locale,
+            builder: DevicePreview.appBuilder,
+            debugShowCheckedModeBanner: false,
+            home: SplashView(),
+          ),
         );
       },
     );

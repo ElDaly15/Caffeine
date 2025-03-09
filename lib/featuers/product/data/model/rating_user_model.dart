@@ -1,8 +1,8 @@
 class RatingUserModel {
-  final String id;
-  final String name;
-  final String image;
-  final num rating;
+  String id;
+  String name;
+  String image;
+  num rating;
 
   RatingUserModel({
     required this.id,
