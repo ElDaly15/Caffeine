@@ -43,6 +43,7 @@ class _SelectLanaguageViewBodyState extends State<SelectLanaguageViewBody> {
     ),
   ];
   int index = 0;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -61,7 +62,8 @@ class _SelectLanaguageViewBodyState extends State<SelectLanaguageViewBody> {
               languageItemModel: isArabic()
                   ? languageItemModelArabic[0]
                   : languageItemModel[0],
-              isChecked: CacheHelper().getDataString(key: 'lang') == 'en',
+              isChecked: CacheHelper().getDataString(key: 'lang') == 'en' ||
+                  CacheHelper().getDataString(key: 'lang') == null,
               onChanged: () {
                 BlocProvider.of<ManageLanguageCubit>(context)
                     .changeLanguage('en');
