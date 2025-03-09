@@ -8,7 +8,7 @@ class CustomPageViewOfAds extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 200,
+      height: 210,
       child: PageView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: 5,
@@ -18,9 +18,9 @@ class CustomPageViewOfAds extends StatelessWidget {
               child: ClipRRect(
                 borderRadius: BorderRadius.circular(12),
                 child: Image.asset(
-                  Assets.imagesBanner,
+                  Assets.imagesLogoCaffeine,
                   alignment: Alignment.center,
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
               ),
             );
