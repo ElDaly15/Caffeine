@@ -2,6 +2,7 @@ import 'package:caffeine/core/controller/depency_injection.dart';
 import 'package:caffeine/core/helper/cached_helper.dart';
 import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/manager/manage_language_cubit/manage_language_cubit.dart';
+import 'package:caffeine/core/manager/mange_favourite_products_cubit/manage_favourite_products_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/manager/get_product_by_code/get_product_by_code_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/manager/manage_rating/magnage_rating_cubit.dart';
 import 'package:caffeine/featuers/splash/presentation/views/splash_view.dart';
@@ -42,6 +43,9 @@ class CaffeineApp extends StatelessWidget {
       builder: (context, state) {
         return MultiBlocProvider(
           providers: [
+            BlocProvider(
+              create: (context) => ManageFavouriteProductsCubit(),
+            ),
             BlocProvider(
               create: (context) => GetProductByCodeCubit(),
             ),
