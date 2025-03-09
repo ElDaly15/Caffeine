@@ -148,7 +148,7 @@ class ContainerOfProduct extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                         child: Text(
-                          '${productModel.productPrice} ${S.of(context).le}',
+                          '${productModel.productPriceS} ${S.of(context).le}',
                           style: TextStyles.font22SemiBold(context).copyWith(),
                         ),
                       ),

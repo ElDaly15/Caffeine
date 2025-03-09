@@ -19,9 +19,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
-class ProductViewBody extends StatelessWidget {
+class ProductViewBody extends StatefulWidget {
   const ProductViewBody({super.key});
 
+  @override
+  State<ProductViewBody> createState() => _ProductViewBodyState();
+}
+
+class _ProductViewBodyState extends State<ProductViewBody> {
+  String size = 'S';
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GetProductByCodeCubit, GetProductByCodeState>(
@@ -132,7 +138,11 @@ class ProductViewBody extends StatelessWidget {
                                 height: 10,
                               ),
                               RowOfContainerSizes(
-                                onChangeSize: (value) {},
+                                onChangeSize: (value) {
+                                  setState(() {
+                                    size = value;
+                                  });
+                                },
                               ),
                               SizedBox(
                                 height: 20,
@@ -143,7 +153,11 @@ class ProductViewBody extends StatelessWidget {
                       ),
                     ),
                     ContainerOfPriceAndAddToCart(
-                      price: state.productModel.productPrice,
+                      price: size == 'L'
+                          ? state.productModel.productPriceL
+                          : size == 'M'
+                              ? state.productModel.productPriceM
+                              : state.productModel.productPriceS,
                       addToCart: () {},
                     ),
                   ],
