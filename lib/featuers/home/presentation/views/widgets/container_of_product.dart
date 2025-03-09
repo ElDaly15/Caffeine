@@ -1,13 +1,28 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/featuers/product/data/model/product_model.dart';
 import 'package:caffeine/featuers/product/presentation/views/product_view.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart' as g;
 import 'package:iconly/iconly.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class ContainerOfProduct extends StatelessWidget {
-  const ContainerOfProduct({super.key});
+  const ContainerOfProduct({super.key, required this.productModel});
+  final ProductModel productModel;
+
+  String checkDescription(String info) {
+    if (info == 'Hot') {
+      return isArabic() ? 'ساخن' : 'Hot';
+    } else if (info == 'Ice') {
+      return isArabic() ? 'بارد' : 'Ice';
+    } else {
+      return isArabic() ? 'ساخن / بارد' : 'Hot/Ice';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +64,28 @@ class ContainerOfProduct extends StatelessWidget {
                       borderRadius: BorderRadius.circular(12),
                       child: Stack(
                         children: [
-                          Image.asset(
-                            Assets.imagesLatte,
-                            width: double.infinity,
+                          CachedNetworkImage(
+                            placeholder: (context, url) => Skeletonizer(
+                              effect: ShimmerEffect(
+                                baseColor: Colors.grey[300]!,
+                                highlightColor: Colors.grey[100]!,
+                                duration: const Duration(seconds: 1),
+                              ),
+                              enabled: true,
+                              child: Image.asset(
+                                Assets.imagesLatte,
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                              ),
+                            ),
+                            errorWidget: (context, url, error) => const Icon(
+                              Icons.error,
+                              size: 40,
+                              color: AppColors.mainColorTheme,
+                            ),
+                            imageUrl: productModel.productImage,
                             fit: BoxFit.cover,
+                            width: double.infinity,
                           ),
                           Positioned(
                             right: 0,
@@ -80,7 +113,7 @@ class ContainerOfProduct extends StatelessWidget {
                                       ),
                                       const SizedBox(width: 2),
                                       Text(
-                                        '4.8',
+                                        productModel.rating.toString(),
                                         style: TextStyles.font18Medium(context)
                                             .copyWith(color: Colors.white),
                                       ),
@@ -97,14 +130,16 @@ class ContainerOfProduct extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Text(
-                      'Latte',
+                      isArabic()
+                          ? productModel.productNameAr
+                          : productModel.productNameEn,
                       style: TextStyles.font22SemiBold(context).copyWith(),
                     ),
                   ),
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8),
                     child: Text(
-                      'Deep Foam',
+                      checkDescription(productModel.productInfo),
                       style: TextStyles.font18Medium(context)
                           // ignore: deprecated_member_use
                           .copyWith(color: Colors.grey.withOpacity(0.8)),
@@ -116,7 +151,7 @@ class ContainerOfProduct extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8),
                         child: Text(
-                          r'$ 4.53',
+                          '${productModel.productPrice} ${S.of(context).le}',
                           style: TextStyles.font22SemiBold(context).copyWith(),
                         ),
                       ),

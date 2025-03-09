@@ -1,3 +1,4 @@
+import 'package:caffeine/core/widgets/loading_widgets/loding_list.dart';
 import 'package:caffeine/core/widgets/loading_widgets/page_loading_of_ads.dart';
 import 'package:caffeine/core/widgets/loading_widgets/search_and_start_loading.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/grid_view_of_products.dart';
@@ -42,7 +43,9 @@ class HomePageLoading extends StatelessWidget {
                   duration: const Duration(seconds: 1),
                 ),
                 enabled: true,
-                child: GridViewOfProducts()),
+                child: GridViewOfProducts(
+                  products: loadingList(),
+                )),
           ),
           SizedBox(
             height: 20,

@@ -1,8 +1,10 @@
 import 'package:caffeine/featuers/home/presentation/views/widgets/container_of_product.dart';
+import 'package:caffeine/featuers/product/data/model/product_model.dart';
 import 'package:flutter/material.dart';
 
 class GridViewOfProducts extends StatelessWidget {
-  const GridViewOfProducts({super.key});
+  const GridViewOfProducts({super.key, required this.products});
+  final List<ProductModel> products;
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class GridViewOfProducts extends StatelessWidget {
       child: GridView.builder(
           padding: const EdgeInsets.all(0),
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: 4,
+          itemCount: products.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: w >= 800 && w < 1200
                 ? 3
@@ -35,7 +37,9 @@ class GridViewOfProducts extends StatelessWidget {
                         : 2.4 / 3.4,
           ),
           itemBuilder: (context, index) {
-            return ContainerOfProduct();
+            return ContainerOfProduct(
+              productModel: products[index],
+            );
           }),
     );
   }

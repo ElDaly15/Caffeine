@@ -112,6 +112,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hello": MessageLookupByLibrary.simpleMessage("Hello 👋 ,"),
     "is_required": MessageLookupByLibrary.simpleMessage("is required"),
     "items": MessageLookupByLibrary.simpleMessage("items"),
+    "le": MessageLookupByLibrary.simpleMessage("L.E"),
     "login_here": MessageLookupByLibrary.simpleMessage("Login here"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
     "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),

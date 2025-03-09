@@ -110,6 +110,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "hello": MessageLookupByLibrary.simpleMessage("مرحبًا 👋 ,"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "items": MessageLookupByLibrary.simpleMessage("منتجات"),
+    "le": MessageLookupByLibrary.simpleMessage("ج.م"),
     "login_here": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
     "my_orders": MessageLookupByLibrary.simpleMessage("طلباتي"),

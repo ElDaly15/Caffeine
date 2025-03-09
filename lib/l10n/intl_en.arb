@@ -111,6 +111,7 @@
     "user_not_found": "User not found. Please check your email address.",
     "too_many_requests": "Too many requests. Please try again later.",
     "verify_email": "Please verify your email.",
-    "reset_password_sent": "Reset password email sent. Please check your email."
+    "reset_password_sent": "Reset password email sent. Please check your email.",
+    "le" : "L.E"
 }
   

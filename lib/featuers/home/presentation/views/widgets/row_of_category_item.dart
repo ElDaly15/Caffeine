@@ -1,6 +1,8 @@
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/featuers/home/presentation/manager/get_products/get_products_cubit.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/container_of_category_item.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RowOfCategoryItems extends StatefulWidget {
   const RowOfCategoryItems({super.key});
@@ -29,6 +31,15 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
   ];
   int indexOfItem = 0;
 
+  void triggerCubit(int index) {
+    if (index == 0) {
+      BlocProvider.of<GetProductsCubit>(context).getProducts();
+    } else {
+      BlocProvider.of<GetProductsCubit>(context)
+          .getProductsByCategory(category: categories[index]);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -40,6 +51,7 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
             return index == 0
                 ? GestureDetector(
                     onTap: () {
+                      triggerCubit(index);
                       setState(() {
                         indexOfItem = index;
                       });
@@ -57,6 +69,8 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
                 : index == categories.length - 1
                     ? GestureDetector(
                         onTap: () {
+                          triggerCubit(index);
+
                           setState(() {
                             indexOfItem = index;
                           });
@@ -73,6 +87,8 @@ class _RowOfCategoryItemsState extends State<RowOfCategoryItems> {
                       )
                     : GestureDetector(
                         onTap: () {
+                          triggerCubit(index);
+
                           setState(() {
                             indexOfItem = index;
                           });
