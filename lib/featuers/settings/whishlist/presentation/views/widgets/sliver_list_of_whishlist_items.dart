@@ -9,7 +9,7 @@ class SliverListOfWhishListItem extends StatelessWidget {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
           (context, index) => Padding(
-                padding: const EdgeInsets.only(bottom: 8),
+                padding: const EdgeInsets.only(bottom: 0),
                 child: WhishlistItem(
                   onSwiped: (value) {},
                 ),

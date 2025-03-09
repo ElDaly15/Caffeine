@@ -14,7 +14,7 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 16, right: 8, left: 8, bottom: 16),
+      padding: const EdgeInsets.only(top: 16, right: 16, left: 16, bottom: 16),
       decoration: BoxDecoration(
           border: Border.all(color: AppColors.secondaryColorTheme),
           borderRadius: BorderRadius.circular(16)),
