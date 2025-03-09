@@ -110,9 +110,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "hello": MessageLookupByLibrary.simpleMessage("مرحبًا 👋 ,"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "items": MessageLookupByLibrary.simpleMessage("منتجات"),
+    "large": MessageLookupByLibrary.simpleMessage("كبير"),
     "le": MessageLookupByLibrary.simpleMessage("ج.م"),
     "login_here": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "logout": MessageLookupByLibrary.simpleMessage("تسجيل الخروج"),
+    "medium": MessageLookupByLibrary.simpleMessage("وسط"),
     "my_orders": MessageLookupByLibrary.simpleMessage("طلباتي"),
     "name": MessageLookupByLibrary.simpleMessage("الاسم"),
     "network_error": MessageLookupByLibrary.simpleMessage(
@@ -175,6 +177,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_in": MessageLookupByLibrary.simpleMessage("تسجيل الدخول"),
     "sign_up": MessageLookupByLibrary.simpleMessage("سجل الآن"),
     "size": MessageLookupByLibrary.simpleMessage("الحجم"),
+    "small": MessageLookupByLibrary.simpleMessage("صغير"),
     "street": MessageLookupByLibrary.simpleMessage("الشارع"),
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(

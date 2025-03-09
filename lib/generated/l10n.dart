@@ -924,6 +924,21 @@ class S {
   String get le {
     return Intl.message('L.E', name: 'le', desc: '', args: []);
   }
+
+  /// `S`
+  String get small {
+    return Intl.message('S', name: 'small', desc: '', args: []);
+  }
+
+  /// `M`
+  String get medium {
+    return Intl.message('M', name: 'medium', desc: '', args: []);
+  }
+
+  /// `L`
+  String get large {
+    return Intl.message('L', name: 'large', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

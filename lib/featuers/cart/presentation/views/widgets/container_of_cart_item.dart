@@ -73,6 +73,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                 child: Image.asset(
                   Assets.imagesLatte,
                   scale: 2.5,
+                  fit: BoxFit.cover,
                 ),
               ),
               SizedBox(
@@ -113,7 +114,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                               index = 0;
                             });
                           },
-                          title: 'S',
+                          title: S.of(context).small,
                           isActive: index == 0,
                         ),
                         SizedBox(width: 5),
@@ -123,7 +124,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                               index = 1;
                             });
                           },
-                          title: 'M',
+                          title: S.of(context).medium,
                           isActive: index == 1,
                         ),
                         SizedBox(width: 5),
@@ -133,7 +134,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                               index = 2;
                             });
                           },
-                          title: 'L',
+                          title: S.of(context).large,
                           isActive: index == 2,
                         ),
                       ],

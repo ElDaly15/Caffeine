@@ -112,9 +112,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "hello": MessageLookupByLibrary.simpleMessage("Hello 👋 ,"),
     "is_required": MessageLookupByLibrary.simpleMessage("is required"),
     "items": MessageLookupByLibrary.simpleMessage("items"),
+    "large": MessageLookupByLibrary.simpleMessage("L"),
     "le": MessageLookupByLibrary.simpleMessage("L.E"),
     "login_here": MessageLookupByLibrary.simpleMessage("Login here"),
     "logout": MessageLookupByLibrary.simpleMessage("Logout"),
+    "medium": MessageLookupByLibrary.simpleMessage("M"),
     "my_orders": MessageLookupByLibrary.simpleMessage("My Orders"),
     "name": MessageLookupByLibrary.simpleMessage("Name"),
     "network_error": MessageLookupByLibrary.simpleMessage(
@@ -177,6 +179,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_in": MessageLookupByLibrary.simpleMessage("Sign In"),
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "size": MessageLookupByLibrary.simpleMessage("Size"),
+    "small": MessageLookupByLibrary.simpleMessage("S"),
     "street": MessageLookupByLibrary.simpleMessage("Street"),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(
