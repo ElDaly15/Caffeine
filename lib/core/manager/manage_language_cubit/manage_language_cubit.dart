@@ -11,9 +11,9 @@ class ManageLanguageCubit extends Cubit<ManageLanguageState> {
   ManageLanguageCubit() : super(const ManageLanguageInitial(Locale('en')));
 
   Future<void> loadSavedLanguage() async {
-    final String? savedLang = CacheHelper().getDataString(key: 'lang');
+    final String savedLang = CacheHelper().getDataString(key: 'lang') ?? 'en';
 
-    emit(ManageLanguageChanged(Locale(savedLang ?? 'en')));
+    emit(ManageLanguageChanged(Locale(savedLang)));
   }
 
   Future<void> changeLanguage(String langCode) async {

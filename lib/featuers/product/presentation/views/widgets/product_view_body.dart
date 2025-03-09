@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:caffeine/core/errors/eror_widget_for_caffeine.dart';
 import 'package:caffeine/core/manager/mange_favourite_products_cubit/manage_favourite_products_cubit.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
@@ -151,9 +152,7 @@ class ProductViewBody extends StatelessWidget {
             },
           );
         } else if (state is GetProductsByCodeFailuer) {
-          return Center(
-            child: Text('An error occurred , Try again'),
-          );
+          return ErrorWidgetForCaffeineApp();
         } else {
           return ProductLoadingView();
         }

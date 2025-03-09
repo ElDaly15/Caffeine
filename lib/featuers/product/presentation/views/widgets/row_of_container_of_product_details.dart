@@ -52,7 +52,7 @@ class _RowOfContainersOfProductDetailsState
                     direction: Axis.horizontal,
                     allowHalfRating: true,
                     itemCount: 5,
-                    itemPadding: const EdgeInsets.symmetric(horizontal: 4.0),
+                    itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
                     itemBuilder: (context, _) => const Icon(
                       IconlyBold.star,
                       color: Colors.amber,

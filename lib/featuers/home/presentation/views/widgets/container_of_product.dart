@@ -108,7 +108,9 @@ class ContainerOfProduct extends StatelessWidget {
                                       ),
                                       const SizedBox(width: 2),
                                       Text(
-                                        productModel.rating.toString(),
+                                        (productModel.rating /
+                                                productModel.ratingCount)
+                                            .toString(),
                                         style: TextStyles.font18Medium(context)
                                             .copyWith(color: Colors.white),
                                       ),

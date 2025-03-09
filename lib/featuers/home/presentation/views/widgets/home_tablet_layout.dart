@@ -1,3 +1,4 @@
+import 'package:caffeine/core/errors/eror_widget_for_caffeine.dart';
 import 'package:caffeine/core/service/get_user_data.dart';
 import 'package:caffeine/core/widgets/loading_widgets/loding_list.dart';
 import 'package:caffeine/featuers/auth/domain/entity/user_entity.dart';
@@ -56,9 +57,7 @@ class _HomeTabletLayoutState extends State<HomeTabletLayout> {
                   ),
                 );
               } else if (state is GetProductsFailuer) {
-                return Center(
-                  child: Text(state.error),
-                );
+                return ErrorWidgetForCaffeineApp();
               } else {
                 return Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),

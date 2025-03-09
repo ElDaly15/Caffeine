@@ -1,0 +1,2 @@
+D:/Flutter/Projects/caffeine/android/app/.cxx/RelWithDebInfo/3sf3c51q/x86/CMakeFiles/edit_cache.dir
+D:/Flutter/Projects/caffeine/android/app/.cxx/RelWithDebInfo/3sf3c51q/x86/CMakeFiles/rebuild_cache.dir
