@@ -33,6 +33,7 @@ class CustomPageViewOfAds extends StatelessWidget {
                       Assets.imagesLatte,
                       fit: BoxFit.cover,
                       width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.26,
                     ),
                   ),
                   errorWidget: (context, url, error) => const Icon(
