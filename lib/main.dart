@@ -3,6 +3,7 @@ import 'package:caffeine/core/helper/cached_helper.dart';
 import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/manager/manage_language_cubit/manage_language_cubit.dart';
 import 'package:caffeine/core/manager/mange_favourite_products_cubit/manage_favourite_products_cubit.dart';
+import 'package:caffeine/featuers/home/presentation/manager/get_ads/get_ads_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/manager/get_product_by_code/get_product_by_code_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/manager/manage_rating/magnage_rating_cubit.dart';
 import 'package:caffeine/featuers/splash/presentation/views/splash_view.dart';
@@ -52,6 +53,9 @@ class CaffeineApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => MagnageRatingCubit(),
+            ),
+            BlocProvider(
+              create: (context) => GetAdsCubit()..getAds(),
             ),
           ],
           child: GetMaterialApp(

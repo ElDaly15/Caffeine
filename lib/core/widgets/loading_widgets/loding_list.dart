@@ -1,3 +1,4 @@
+import 'package:caffeine/featuers/home/data/models/ads_model.dart';
 import 'package:caffeine/featuers/product/data/model/product_model.dart';
 
 List<ProductModel> loadingList() => List.generate(
@@ -21,4 +22,12 @@ List<ProductModel> loadingList() => List.generate(
           favIds: [],
           rating: 0,
           ratingCount: 0,
+        ));
+
+List<AdsModel> loadingListAds() => List.generate(
+    4,
+    (index) => AdsModel(
+          id: '',
+          title: '',
+          url: 'https://i.imgur.com/Hveh20Q.png',
         ));

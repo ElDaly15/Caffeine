@@ -2,6 +2,7 @@ import 'package:caffeine/core/errors/eror_widget_for_caffeine.dart';
 import 'package:caffeine/core/service/get_user_data.dart';
 import 'package:caffeine/core/widgets/loading_widgets/loding_list.dart';
 import 'package:caffeine/featuers/auth/domain/entity/user_entity.dart';
+import 'package:caffeine/featuers/home/presentation/manager/get_ads/get_ads_cubit.dart';
 import 'package:caffeine/featuers/home/presentation/manager/get_products/get_products_cubit.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/custom_page_view_ads.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/custom_search_and_start_container.dart';
@@ -39,7 +40,24 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
           SizedBox(
             height: 10,
           ),
-          CustomPageViewOfAds(),
+          BlocBuilder<GetAdsCubit, GetAdsState>(
+            builder: (context, state) {
+              if (state is GetAdsSuccess) {
+                return CustomPageViewOfAds(ads: state.ads);
+              } else if (state is GetAdsFailuer) {
+                return ErrorWidgetForCaffeineApp();
+              } else {
+                return Skeletonizer(
+                    effect: ShimmerEffect(
+                      baseColor: Colors.grey[300]!,
+                      highlightColor: Colors.grey[100]!,
+                      duration: const Duration(seconds: 1),
+                    ),
+                    enabled: true,
+                    child: CustomPageViewOfAds(ads: loadingListAds()));
+              }
+            },
+          ),
           SizedBox(
             height: 10,
           ),

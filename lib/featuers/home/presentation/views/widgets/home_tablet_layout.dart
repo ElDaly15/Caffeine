@@ -39,7 +39,9 @@ class _HomeTabletLayoutState extends State<HomeTabletLayout> {
           SizedBox(
             height: 10,
           ),
-          CustomPageViewOfAds(),
+          CustomPageViewOfAds(
+            ads: [],
+          ),
           SizedBox(
             height: 10,
           ),
