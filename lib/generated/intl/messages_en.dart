@@ -122,6 +122,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "network_error": MessageLookupByLibrary.simpleMessage(
       "Not connected to the internet. Please try again.",
     ),
+    "no_result_found": MessageLookupByLibrary.simpleMessage("No Result Found"),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "online_wallets": MessageLookupByLibrary.simpleMessage("Online Wallets"),
@@ -180,6 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up": MessageLookupByLibrary.simpleMessage("Sign Up"),
     "size": MessageLookupByLibrary.simpleMessage("Size"),
     "small": MessageLookupByLibrary.simpleMessage("S"),
+    "start_searching": MessageLookupByLibrary.simpleMessage("Start Searching"),
     "street": MessageLookupByLibrary.simpleMessage("Street"),
     "submit": MessageLookupByLibrary.simpleMessage("Submit"),
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(

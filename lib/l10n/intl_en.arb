@@ -115,6 +115,8 @@
     "le" : "L.E",
     "small" : "S",
     "medium" : "M",
-    "large" : "L"
+    "large" : "L",
+    "no_result_found": "No Result Found",
+    "start_searching": "Start Searching"
 }
   

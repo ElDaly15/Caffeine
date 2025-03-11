@@ -82,10 +82,18 @@ class _ProductViewBodyState extends State<ProductViewBody> {
                                     ),
                                   ),
                                   errorWidget: (context, url, error) =>
-                                      const Icon(
-                                    Icons.error,
-                                    size: 40,
-                                    color: AppColors.mainColorTheme,
+                                      Skeletonizer(
+                                    effect: ShimmerEffect(
+                                      baseColor: Colors.grey[300]!,
+                                      highlightColor: Colors.grey[100]!,
+                                      duration: const Duration(seconds: 1),
+                                    ),
+                                    enabled: false,
+                                    child: Image.asset(
+                                      Assets.imagesPlaceholderImage,
+                                      fit: BoxFit.cover,
+                                      width: double.infinity,
+                                    ),
                                   ),
                                   imageUrl: state.productModel.productImage,
                                   fit: BoxFit.cover,

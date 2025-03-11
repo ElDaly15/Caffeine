@@ -73,10 +73,18 @@ class ContainerOfProduct extends StatelessWidget {
                                 width: double.infinity,
                               ),
                             ),
-                            errorWidget: (context, url, error) => const Icon(
-                              Icons.error,
-                              size: 40,
-                              color: AppColors.mainColorTheme,
+                            errorWidget: (context, url, error) => Skeletonizer(
+                              effect: ShimmerEffect(
+                                baseColor: Colors.grey[300]!,
+                                highlightColor: Colors.grey[100]!,
+                                duration: const Duration(seconds: 1),
+                              ),
+                              enabled: false,
+                              child: Image.asset(
+                                Assets.imagesPlaceholderImage,
+                                fit: BoxFit.cover,
+                                width: double.infinity,
+                              ),
                             ),
                             imageUrl: productModel.productImage,
                             fit: BoxFit.cover,

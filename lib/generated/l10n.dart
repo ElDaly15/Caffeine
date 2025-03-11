@@ -939,6 +939,26 @@ class S {
   String get large {
     return Intl.message('L', name: 'large', desc: '', args: []);
   }
+
+  /// `No Result Found`
+  String get no_result_found {
+    return Intl.message(
+      'No Result Found',
+      name: 'no_result_found',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Start Searching`
+  String get start_searching {
+    return Intl.message(
+      'Start Searching',
+      name: 'start_searching',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

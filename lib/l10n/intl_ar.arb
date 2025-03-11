@@ -115,6 +115,8 @@
     "le" : "ج.م",
     "small" : "صغير",
     "medium" : "وسط",
-    "large" : "كبير"
+    "large" : "كبير",
+    "no_result_found": "لم يتم العثور على نتائج",
+    "start_searching": "ابدأ البحث"
 }
   

@@ -1,9 +1,11 @@
 import 'package:caffeine/core/screens/no_connection_screen.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/featuers/search/presentation/manager/search_products_cubit/search_products_cubit.dart';
 import 'package:caffeine/featuers/search/presentation/views/widgets/search_view_body.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 import 'package:iconly/iconly.dart';
 
@@ -15,6 +17,7 @@ class SearchView extends StatefulWidget {
 }
 
 class _SearchViewState extends State<SearchView> {
+  String? searchedValue;
   final FocusNode focusNode = FocusNode();
   @override
   void initState() {
@@ -62,7 +65,13 @@ class _SearchViewState extends State<SearchView> {
             ),
             child: TextField(
               focusNode: focusNode,
-              onChanged: (value) {},
+              onChanged: (value) {
+                BlocProvider.of<SearchProductsCubit>(context)
+                    .searchProducts(searchValue: value);
+                setState(() {
+                  searchedValue = value;
+                });
+              },
               cursorColor: AppColors.mainColorTheme,
               decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -77,7 +86,9 @@ class _SearchViewState extends State<SearchView> {
             ),
           ),
         ),
-        body: const SearchViewBody(),
+        body: SearchViewBody(
+          searchValue: searchedValue ?? '',
+        ),
       ),
     );
   }

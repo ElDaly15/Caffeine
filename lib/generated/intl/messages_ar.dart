@@ -120,6 +120,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "network_error": MessageLookupByLibrary.simpleMessage(
       "غير متصل بالإنترنت. يرجى المحاولة مرة أخرى.",
     ),
+    "no_result_found": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على نتائج",
+    ),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "online_wallets": MessageLookupByLibrary.simpleMessage(
@@ -178,6 +181,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "sign_up": MessageLookupByLibrary.simpleMessage("سجل الآن"),
     "size": MessageLookupByLibrary.simpleMessage("الحجم"),
     "small": MessageLookupByLibrary.simpleMessage("صغير"),
+    "start_searching": MessageLookupByLibrary.simpleMessage("ابدأ البحث"),
     "street": MessageLookupByLibrary.simpleMessage("الشارع"),
     "submit": MessageLookupByLibrary.simpleMessage("إرسال"),
     "tap_on_stars": MessageLookupByLibrary.simpleMessage(
