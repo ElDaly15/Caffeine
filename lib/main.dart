@@ -5,6 +5,7 @@ import 'package:caffeine/core/manager/get_user_data/get_user_data_cubit.dart';
 import 'package:caffeine/core/manager/manage_language_cubit/manage_language_cubit.dart';
 import 'package:caffeine/core/manager/mange_favourite_products_cubit/manage_favourite_products_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/add_item_to_cart/add_item_to_cart_cubit.dart';
+import 'package:caffeine/featuers/cart/presentation/manager/manage_cart/manage_cart_cubit.dart';
 import 'package:caffeine/featuers/home/presentation/manager/get_ads/get_ads_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/manager/get_product_by_code/get_product_by_code_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/manager/manage_rating/magnage_rating_cubit.dart';
@@ -68,6 +69,9 @@ class CaffeineApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => GetUserDataCubit()..getUserData(),
+            ),
+            BlocProvider(
+              create: (context) => ManageCartCubit(),
             ),
           ],
           child: GetMaterialApp(

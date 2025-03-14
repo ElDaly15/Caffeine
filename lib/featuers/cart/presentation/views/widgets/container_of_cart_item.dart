@@ -108,6 +108,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                         ),
                         Spacer(),
                         IncreaseAndDecreaseContainer(
+                          productCode: widget.cartModel.orderProductCode,
                           counter: widget.cartModel.quantity,
                           counterOfProduct: widget.counterOfProduct,
                         ),

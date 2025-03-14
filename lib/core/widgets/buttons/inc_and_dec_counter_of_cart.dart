@@ -4,8 +4,12 @@ import 'package:flutter/material.dart';
 // ignore: must_be_immutable
 class IncreaseAndDecreaseContainer extends StatefulWidget {
   IncreaseAndDecreaseContainer(
-      {super.key, required this.counterOfProduct, required this.counter});
+      {super.key,
+      required this.counterOfProduct,
+      required this.counter,
+      required this.productCode});
   final void Function(int value) counterOfProduct;
+  final String productCode;
   int counter;
   @override
   State<IncreaseAndDecreaseContainer> createState() =>
