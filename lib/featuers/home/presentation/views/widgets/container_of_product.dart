@@ -3,6 +3,8 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/utils/global_fun.dart';
+import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
+import 'package:caffeine/featuers/cart/presentation/manager/add_item_to_cart/add_item_to_cart_cubit.dart';
 import 'package:caffeine/featuers/product/data/model/product_model.dart';
 import 'package:caffeine/featuers/product/presentation/manager/get_product_by_code/get_product_by_code_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/views/product_view.dart';
@@ -12,6 +14,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart' as g;
 import 'package:iconly/iconly.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+import 'package:uuid/uuid.dart';
 
 class ContainerOfProduct extends StatelessWidget {
   const ContainerOfProduct({super.key, required this.productModel});
@@ -168,7 +171,23 @@ class ContainerOfProduct extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          var uuid = Uuid();
+                          CartModel cartModel = CartModel(
+                              productNameAr: productModel.productNameAr,
+                              productNameEn: productModel.productNameEn,
+                              productImage: productModel.productImage,
+                              productCode: productModel.productCode,
+                              size: 'S',
+                              orderProductCode: uuid.v4(),
+                              productCategory: productModel.productCategory,
+                              productPriceS: productModel.productPriceS,
+                              productPriceM: productModel.productPriceM,
+                              productPriceL: productModel.productPriceL,
+                              quantity: 1);
+                          BlocProvider.of<AddItemToCartCubit>(context)
+                              .addItemToCart(cartModel: cartModel);
+                        },
                         icon: Icon(
                           Icons.add,
                           color: Colors.white,

@@ -35,7 +35,7 @@ class CustomBlocLoginBodyConsumer extends StatelessWidget {
         return ModalProgressHUD(
           color: AppColors.mainColorTheme,
           progressIndicator: const CircularProgressIndicator(
-            color: AppColors.mainColorTheme,
+            color: Colors.white,
           ),
           inAsyncCall: state is LoginUserLoading,
           child: const LoginViewBody(),

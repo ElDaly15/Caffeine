@@ -12,7 +12,12 @@ class CustomPageViewOfAds extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 210,
+      height: MediaQuery.of(context).size.height < 800
+          ? MediaQuery.of(context).size.height * 0.26
+          : MediaQuery.of(context).size.height > 700 &&
+                  MediaQuery.of(context).size.height < 1000
+              ? MediaQuery.of(context).size.height * 0.22
+              : MediaQuery.of(context).size.height * 0.25,
       child: PageView.builder(
           scrollDirection: Axis.horizontal,
           itemCount: ads.length,
@@ -31,7 +36,7 @@ class CustomPageViewOfAds extends StatelessWidget {
                     enabled: true,
                     child: Image.asset(
                       Assets.imagesLatte,
-                      fit: BoxFit.cover,
+                      fit: BoxFit.fill,
                       width: double.infinity,
                       height: MediaQuery.of(context).size.height * 0.26,
                     ),

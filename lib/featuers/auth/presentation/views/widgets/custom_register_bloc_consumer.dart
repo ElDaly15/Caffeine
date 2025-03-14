@@ -34,7 +34,7 @@ class CustomRegisterBlocConumser extends StatelessWidget {
         return ModalProgressHUD(
           color: AppColors.mainColorTheme,
           progressIndicator: const CircularProgressIndicator(
-            color: AppColors.mainColorTheme,
+            color: Colors.white,
           ),
           inAsyncCall: state is CreateUserLoading,
           child: const RegisterViewBody(),
