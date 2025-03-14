@@ -959,6 +959,36 @@ class S {
       args: [],
     );
   }
+
+  /// `Item added to cart successfully`
+  String get item_added_success {
+    return Intl.message(
+      'Item added to cart successfully',
+      name: 'item_added_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred while adding item to cart`
+  String get item_add_error {
+    return Intl.message(
+      'An error occurred while adding item to cart',
+      name: 'item_add_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your cart is empty`
+  String get cart_empty {
+    return Intl.message(
+      'Your cart is empty',
+      name: 'cart_empty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

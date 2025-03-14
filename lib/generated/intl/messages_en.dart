@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "caffeine_order": MessageLookupByLibrary.simpleMessage("Caffeine Order"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
     "card": MessageLookupByLibrary.simpleMessage("Card"),
+    "cart_empty": MessageLookupByLibrary.simpleMessage("Your cart is empty"),
     "cash": MessageLookupByLibrary.simpleMessage("Cash"),
     "cash_on_delivery": MessageLookupByLibrary.simpleMessage(
       "Cash On Delivery",
@@ -111,6 +112,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
     "hello": MessageLookupByLibrary.simpleMessage("Hello 👋 ,"),
     "is_required": MessageLookupByLibrary.simpleMessage("is required"),
+    "item_add_error": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while adding item to cart",
+    ),
+    "item_added_success": MessageLookupByLibrary.simpleMessage(
+      "Item added to cart successfully",
+    ),
     "items": MessageLookupByLibrary.simpleMessage("items"),
     "large": MessageLookupByLibrary.simpleMessage("L"),
     "le": MessageLookupByLibrary.simpleMessage("L.E"),

@@ -117,6 +117,10 @@
     "medium" : "وسط",
     "large" : "كبير",
     "no_result_found": "لم يتم العثور على نتائج",
-    "start_searching": "ابدأ البحث"
+    "start_searching": "ابدأ البحث",
+    "item_added_success": "تمت إضافة العنصر إلى السلة بنجاح",
+    "item_add_error": "حدث خطأ أثناء إضافة العنصر إلى السلة",
+    "cart_empty": "سلتك فارغة"
+
 }
   

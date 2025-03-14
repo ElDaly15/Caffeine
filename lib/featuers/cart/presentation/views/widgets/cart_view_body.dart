@@ -10,18 +10,35 @@ import 'package:caffeine/featuers/cart/presentation/manager/manage_cart/manage_c
 import 'package:caffeine/featuers/cart/presentation/views/checkout_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_total_price_and_checkout.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/sliver_list_of_cart_item.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart' as g;
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 
-class CartViewBody extends StatelessWidget {
+class CartViewBody extends StatefulWidget {
   const CartViewBody({super.key});
+
+  @override
+  State<CartViewBody> createState() => _CartViewBodyState();
+}
+
+class _CartViewBodyState extends State<CartViewBody> {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<GetUserDataCubit, GetUserDataState>(
       builder: (context, state) {
         if (state is GetUserDataSuccess) {
+          final totalPrice = state.userModel.cartItems.fold<dynamic>(
+            0.0,
+            (sum, item) =>
+                sum +
+                (item.sizeEn == 'L'
+                    ? int.parse(item.productPriceL) * item.quantity
+                    : item.sizeEn == 'M'
+                        ? int.parse(item.productPriceM) * item.quantity
+                        : int.parse(item.productPriceS) * item.quantity),
+          );
           if (state.userModel.cartItems.isEmpty) {
             return const CartEmpty();
           }
@@ -30,19 +47,19 @@ class CartViewBody extends StatelessWidget {
               if (manageCartStates is ManageCartForIncreaseAndDecreaseFailuer) {
                 CustomSnackBar().showCustomSnackBar(
                     context: context,
-                    message: 'An error occurred , Try again',
+                    message: S.of(context).error_occurred,
                     type: AnimatedSnackBarType.error);
               }
               if (manageCartStates is ManageCartForSizeFailuer) {
                 CustomSnackBar().showCustomSnackBar(
                     context: context,
-                    message: 'An error occurred , Try again',
+                    message: S.of(context).error_occurred,
                     type: AnimatedSnackBarType.error);
               }
               if (manageCartStates is ManageCartForDeleteFailuer) {
                 CustomSnackBar().showCustomSnackBar(
                     context: context,
-                    message: 'An error occurred , Try again',
+                    message: S.of(context).error_occurred,
                     type: AnimatedSnackBarType.error);
               }
             },
@@ -79,6 +96,8 @@ class CartViewBody extends StatelessWidget {
                       ),
                     ),
                     ContainerOfTotalPriceAndProcessCheckOut(
+                      items: state.userModel.cartItems.length,
+                      price: totalPrice.toString(),
                       onPressed: () {
                         g.Get.to(() => const CheckoutView(),
                             transition: g.Transition.fade,

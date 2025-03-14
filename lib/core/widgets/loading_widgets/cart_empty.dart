@@ -2,6 +2,7 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/headers/custom_header_of_main_caffeine_app.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class CartEmpty extends StatelessWidget {
@@ -25,7 +26,7 @@ class CartEmpty extends StatelessWidget {
           height: 10,
         ),
         Text(
-          'Your cart is empty',
+          S.of(context).cart_empty,
           style: TextStyles.font24SemiBold(context),
         ),
         Spacer(),

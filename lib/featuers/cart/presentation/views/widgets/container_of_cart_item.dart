@@ -97,7 +97,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                       style: TextStyles.font20SemiBold(context),
                     ),
                     Text(
-                      '${S.of(context).size} : ${widget.cartModel.sizeEn}',
+                      '${S.of(context).size} : ${isArabic() ? widget.cartModel.sizeAr : widget.cartModel.sizeEn}',
                       style: TextStyles.font18Medium(context)
                           .copyWith(color: Colors.grey),
                     ),

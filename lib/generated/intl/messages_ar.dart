@@ -37,6 +37,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "caffeine_order": MessageLookupByLibrary.simpleMessage("كفايـــين اوردر"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
     "card": MessageLookupByLibrary.simpleMessage("بطاقة"),
+    "cart_empty": MessageLookupByLibrary.simpleMessage("سلتك فارغة"),
     "cash": MessageLookupByLibrary.simpleMessage("الدفع نقدًا"),
     "cash_on_delivery": MessageLookupByLibrary.simpleMessage(
       "الدفع عند الاستلام",
@@ -109,6 +110,12 @@ class MessageLookup extends MessageLookupByLibrary {
     "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "hello": MessageLookupByLibrary.simpleMessage("مرحبًا 👋 ,"),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
+    "item_add_error": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء إضافة العنصر إلى السلة",
+    ),
+    "item_added_success": MessageLookupByLibrary.simpleMessage(
+      "تمت إضافة العنصر إلى السلة بنجاح",
+    ),
     "items": MessageLookupByLibrary.simpleMessage("منتجات"),
     "large": MessageLookupByLibrary.simpleMessage("كبير"),
     "le": MessageLookupByLibrary.simpleMessage("ج.م"),

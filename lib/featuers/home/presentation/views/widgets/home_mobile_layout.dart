@@ -12,6 +12,7 @@ import 'package:caffeine/featuers/home/presentation/views/widgets/custom_page_vi
 import 'package:caffeine/featuers/home/presentation/views/widgets/custom_search_and_start_container.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/grid_view_of_products.dart';
 import 'package:caffeine/featuers/home/presentation/views/widgets/row_of_category_item.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -40,7 +41,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
         if (state is AddItemToCarSuccess) {
           CustomSnackBar().showCustomSnackBar(
             context: context,
-            message: 'Item added to cart successfully',
+            message: S.of(context).item_added_success,
             type: AnimatedSnackBarType.success,
           );
         }
@@ -48,7 +49,7 @@ class _HomeMobileLayoutState extends State<HomeMobileLayout> {
         if (state is AddItemToCartFailuer) {
           CustomSnackBar().showCustomSnackBar(
             context: context,
-            message: 'An error occurred while adding item to cart',
+            message: S.of(context).item_add_error,
             type: AnimatedSnackBarType.error,
           );
         }

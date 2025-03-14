@@ -117,6 +117,10 @@
     "medium" : "M",
     "large" : "L",
     "no_result_found": "No Result Found",
-    "start_searching": "Start Searching"
+    "start_searching": "Start Searching",
+    "item_added_success": "Item added to cart successfully",
+    "item_add_error": "An error occurred while adding item to cart",
+    "cart_empty": "Your cart is empty"
+
 }
   

@@ -36,6 +36,8 @@ class CartViewLoading extends StatelessWidget {
           ),
           enabled: true,
           child: ContainerOfTotalPriceAndProcessCheckOut(
+            items: 2,
+            price: "120",
             onPressed: () {
               g.Get.to(() => const CheckoutView(),
                   transition: g.Transition.fade,

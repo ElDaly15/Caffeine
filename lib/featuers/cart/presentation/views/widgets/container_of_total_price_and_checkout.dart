@@ -5,8 +5,13 @@ import 'package:flutter/material.dart';
 
 class ContainerOfTotalPriceAndProcessCheckOut extends StatelessWidget {
   const ContainerOfTotalPriceAndProcessCheckOut(
-      {super.key, required this.onPressed});
+      {super.key,
+      required this.onPressed,
+      required this.price,
+      required this.items});
   final void Function() onPressed;
+  final String price;
+  final int items;
 
   @override
   Widget build(BuildContext context) {
@@ -18,14 +23,14 @@ class ContainerOfTotalPriceAndProcessCheckOut extends StatelessWidget {
           Row(
             children: [
               Text(
-                '${S.of(context).Total} (3 ${S.of(context).items}) : ',
+                '${S.of(context).Total} ($items ${S.of(context).items}) : ',
                 style: TextStyles.font18SemiBold(context).copyWith(
                   color: Colors.grey,
                 ),
               ),
               Spacer(),
               Text(
-                r'$198.00',
+                '$price ${S.of(context).le}',
                 style: TextStyles.font20Bold(context),
               ),
             ],
