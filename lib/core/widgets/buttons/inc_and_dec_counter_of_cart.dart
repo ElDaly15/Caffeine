@@ -1,10 +1,12 @@
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class IncreaseAndDecreaseContainer extends StatefulWidget {
-  const IncreaseAndDecreaseContainer(
-      {super.key, required this.counterOfProduct});
+  IncreaseAndDecreaseContainer(
+      {super.key, required this.counterOfProduct, required this.counter});
   final void Function(int value) counterOfProduct;
+  int counter;
   @override
   State<IncreaseAndDecreaseContainer> createState() =>
       _IncreaseAndDecreaseContainerState();
@@ -12,7 +14,6 @@ class IncreaseAndDecreaseContainer extends StatefulWidget {
 
 class _IncreaseAndDecreaseContainerState
     extends State<IncreaseAndDecreaseContainer> {
-  int counter = 1;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,9 +29,9 @@ class _IncreaseAndDecreaseContainerState
           IconButton(
             onPressed: () {
               setState(() {
-                if (counter > 1) {
-                  counter--;
-                  widget.counterOfProduct(counter);
+                if (widget.counter > 1) {
+                  widget.counter--;
+                  widget.counterOfProduct(widget.counter);
                 }
               });
             },
@@ -43,16 +44,16 @@ class _IncreaseAndDecreaseContainerState
           ),
           const SizedBox(width: 10),
           Text(
-            counter.toString(),
+            widget.counter.toString(),
             style: TextStyles.font18SemiBold(context),
           ),
           const SizedBox(width: 10),
           IconButton(
             onPressed: () {
-              if (counter < 7) {
+              if (widget.counter < 7) {
                 setState(() {
-                  counter++;
-                  widget.counterOfProduct(counter);
+                  widget.counter++;
+                  widget.counterOfProduct(widget.counter);
                 });
               }
             },

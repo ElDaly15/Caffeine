@@ -30,7 +30,8 @@ class AddItemToCartCubit extends Cubit<AddItemToCartState> {
 
       for (int i = 0; i < cartItems.length; i++) {
         if (cartItems[i].productCode == cartModel.productCode &&
-            cartItems[i].size == cartModel.size) {
+            cartItems[i].quantity != 7 &&
+            cartItems[i].sizeEn == cartModel.sizeEn) {
           cartItems[i].quantity += cartModel.quantity;
           checkExist = true;
           break;

@@ -192,7 +192,12 @@ class _ProductViewBodyState extends State<ProductViewBody> {
                               productCode: state.productModel.productCode,
                               orderProductCode: uuid.v4(),
                               quantity: 1,
-                              size: size,
+                              sizeEn: size,
+                              sizeAr: size == 'L'
+                                  ? 'كبير'
+                                  : size == 'M'
+                                      ? 'وسط'
+                                      : 'صغير',
                             );
                             BlocProvider.of<AddItemToCartCubit>(context)
                                 .addItemToCart(

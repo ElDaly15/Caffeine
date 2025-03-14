@@ -9,7 +9,8 @@ class CartModel {
   final String productPriceM;
   final String productPriceL;
   int quantity;
-  final String size;
+  final String sizeEn;
+  final String sizeAr;
 
   CartModel(
       {required this.productNameAr,
@@ -22,7 +23,8 @@ class CartModel {
       required this.productPriceM,
       required this.productPriceL,
       required this.quantity,
-      required this.size});
+      required this.sizeEn,
+      required this.sizeAr});
 
   factory CartModel.fromJson(Map<String, dynamic> json) {
     return CartModel(
@@ -36,7 +38,8 @@ class CartModel {
       productPriceM: json['productPriceM'],
       productPriceL: json['productPriceL'],
       quantity: json['quantity'],
-      size: json['size'],
+      sizeEn: json['sizeEn'],
+      sizeAr: json['sizeAr'],
     );
   }
 
@@ -51,6 +54,7 @@ class CartModel {
         'productPriceM': productPriceM,
         'productPriceL': productPriceL,
         'quantity': quantity,
-        'size': size
+        'sizeEn': sizeEn,
+        'sizeAr': sizeAr,
       };
 }

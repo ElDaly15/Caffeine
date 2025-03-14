@@ -2,6 +2,7 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/inc_and_dec_counter_of_cart.dart';
+import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_size_in_cart_item.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -9,9 +10,13 @@ import 'package:swipeable_tile/swipeable_tile.dart';
 
 class ContainerOfCartItem extends StatefulWidget {
   const ContainerOfCartItem(
-      {super.key, required this.onSwiped, required this.counterOfProduct});
+      {super.key,
+      required this.onSwiped,
+      required this.counterOfProduct,
+      required this.cartModel});
   final void Function(SwipeDirection) onSwiped;
   final void Function(int) counterOfProduct;
+  final CartModel cartModel;
   @override
   State<ContainerOfCartItem> createState() => _ContainerOfCartItemState();
 }
@@ -84,11 +89,13 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Latte Cappuccino',
+                      isArabic()
+                          ? widget.cartModel.productNameAr
+                          : widget.cartModel.productNameEn,
                       style: TextStyles.font20SemiBold(context),
                     ),
                     Text(
-                      '${S.of(context).size} : Regular',
+                      '${S.of(context).size} : ${widget.cartModel.sizeEn}',
                       style: TextStyles.font18Medium(context)
                           .copyWith(color: Colors.grey),
                     ),
@@ -96,11 +103,12 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                     Row(
                       children: [
                         Text(
-                          r'$198.00',
+                          '${widget.cartModel.sizeEn == 'S' ? widget.cartModel.productPriceS : widget.cartModel.sizeEn == 'M' ? widget.cartModel.productPriceM : widget.cartModel.productPriceL} ${S.of(context).le}',
                           style: TextStyles.font20Bold(context),
                         ),
                         Spacer(),
                         IncreaseAndDecreaseContainer(
+                          counter: widget.cartModel.quantity,
                           counterOfProduct: widget.counterOfProduct,
                         ),
                       ],
@@ -115,7 +123,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                             });
                           },
                           title: S.of(context).small,
-                          isActive: index == 0,
+                          isActive: widget.cartModel.sizeEn == 'S',
                         ),
                         SizedBox(width: 5),
                         ContainerOfSizeInCartItem(
@@ -125,7 +133,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                             });
                           },
                           title: S.of(context).medium,
-                          isActive: index == 1,
+                          isActive: widget.cartModel.sizeEn == 'M',
                         ),
                         SizedBox(width: 5),
                         ContainerOfSizeInCartItem(
@@ -135,7 +143,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                             });
                           },
                           title: S.of(context).large,
-                          isActive: index == 2,
+                          isActive: widget.cartModel.sizeEn == 'L',
                         ),
                       ],
                     ),
