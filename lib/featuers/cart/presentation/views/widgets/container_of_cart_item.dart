@@ -3,9 +3,11 @@ import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/inc_and_dec_counter_of_cart.dart';
 import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
+import 'package:caffeine/featuers/cart/presentation/manager/manage_cart/manage_cart_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_size_in_cart_item.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swipeable_tile/swipeable_tile.dart';
 
 class ContainerOfCartItem extends StatefulWidget {
@@ -119,9 +121,12 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                       children: [
                         ContainerOfSizeInCartItem(
                           onTap: () {
-                            setState(() {
-                              index = 0;
-                            });
+                            BlocProvider.of<ManageCartCubit>(context)
+                                .updateSize(
+                              productCode: widget.cartModel.orderProductCode,
+                              sizeEn: 'S',
+                              sizeAr: 'صغير',
+                            );
                           },
                           title: S.of(context).small,
                           isActive: widget.cartModel.sizeEn == 'S',
@@ -129,9 +134,12 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                         SizedBox(width: 5),
                         ContainerOfSizeInCartItem(
                           onTap: () {
-                            setState(() {
-                              index = 1;
-                            });
+                            BlocProvider.of<ManageCartCubit>(context)
+                                .updateSize(
+                              productCode: widget.cartModel.orderProductCode,
+                              sizeEn: 'M',
+                              sizeAr: 'وسط',
+                            );
                           },
                           title: S.of(context).medium,
                           isActive: widget.cartModel.sizeEn == 'M',
@@ -139,9 +147,12 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                         SizedBox(width: 5),
                         ContainerOfSizeInCartItem(
                           onTap: () {
-                            setState(() {
-                              index = 2;
-                            });
+                            BlocProvider.of<ManageCartCubit>(context)
+                                .updateSize(
+                              productCode: widget.cartModel.orderProductCode,
+                              sizeEn: 'L',
+                              sizeAr: 'كبير',
+                            );
                           },
                           title: S.of(context).large,
                           isActive: widget.cartModel.sizeEn == 'L',

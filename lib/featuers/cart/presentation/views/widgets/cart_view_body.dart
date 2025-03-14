@@ -29,10 +29,17 @@ class CartViewBody extends StatelessWidget {
                     message: 'An error occurred , Try again',
                     type: AnimatedSnackBarType.error);
               }
+              if (manageCartStates is ManageCartForSizeFailuer) {
+                CustomSnackBar().showCustomSnackBar(
+                    context: context,
+                    message: 'An error occurred , Try again',
+                    type: AnimatedSnackBarType.error);
+              }
             },
             builder: (context, manageCartStates) {
               return ModalProgressHUD(
-                inAsyncCall: state is ManageCartForIncreaseAndDecreaseLoading,
+                inAsyncCall: state is ManageCartForIncreaseAndDecreaseLoading ||
+                    manageCartStates is ManageCartForSizeLoading,
                 // ignore: deprecated_member_use
                 color: Colors.white.withOpacity(0.5),
                 progressIndicator: const CircularProgressIndicator(

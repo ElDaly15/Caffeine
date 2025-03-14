@@ -9,8 +9,8 @@ class CartModel {
   final String productPriceM;
   final String productPriceL;
   int quantity;
-  final String sizeEn;
-  final String sizeAr;
+  String sizeEn;
+  String sizeAr;
 
   CartModel(
       {required this.productNameAr,
