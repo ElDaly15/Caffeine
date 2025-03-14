@@ -30,6 +30,10 @@ class Assets {
   /// assets/images/deleivry.svg
   static const String imagesDeleivry = "assets/images/deleivry.svg";
 
+  /// Assets for imagesEmptyCart
+  /// assets/images/empty_Cart.jpg
+  static const String imagesEmptyCart = "assets/images/empty_Cart.jpg";
+
   /// Assets for imagesEmptyOrders
   /// assets/images/emptyOrders.png
   static const String imagesEmptyOrders = "assets/images/emptyOrders.png";

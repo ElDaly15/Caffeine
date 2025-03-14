@@ -4,6 +4,7 @@ import 'package:caffeine/core/manager/get_user_data/get_user_data_cubit.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
 import 'package:caffeine/core/widgets/headers/custom_header_of_main_caffeine_app.dart';
+import 'package:caffeine/core/widgets/loading_widgets/cart_empty.dart';
 import 'package:caffeine/core/widgets/loading_widgets/cart_view_loading.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/manage_cart/manage_cart_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/views/checkout_view.dart';
@@ -21,6 +22,9 @@ class CartViewBody extends StatelessWidget {
     return BlocBuilder<GetUserDataCubit, GetUserDataState>(
       builder: (context, state) {
         if (state is GetUserDataSuccess) {
+          if (state.userModel.cartItems.isEmpty) {
+            return const CartEmpty();
+          }
           return BlocConsumer<ManageCartCubit, ManageCartState>(
             listener: (context, manageCartStates) {
               if (manageCartStates is ManageCartForIncreaseAndDecreaseFailuer) {
@@ -35,11 +39,18 @@ class CartViewBody extends StatelessWidget {
                     message: 'An error occurred , Try again',
                     type: AnimatedSnackBarType.error);
               }
+              if (manageCartStates is ManageCartForDeleteFailuer) {
+                CustomSnackBar().showCustomSnackBar(
+                    context: context,
+                    message: 'An error occurred , Try again',
+                    type: AnimatedSnackBarType.error);
+              }
             },
             builder: (context, manageCartStates) {
               return ModalProgressHUD(
                 inAsyncCall: state is ManageCartForIncreaseAndDecreaseLoading ||
-                    manageCartStates is ManageCartForSizeLoading,
+                    manageCartStates is ManageCartForSizeLoading ||
+                    manageCartStates is ManageCartForDeleteLoading,
                 // ignore: deprecated_member_use
                 color: Colors.white.withOpacity(0.5),
                 progressIndicator: const CircularProgressIndicator(

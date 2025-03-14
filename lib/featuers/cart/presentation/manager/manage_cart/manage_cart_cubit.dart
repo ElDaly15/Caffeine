@@ -82,4 +82,41 @@ class ManageCartCubit extends Cubit<ManageCartState> {
       emit(ManageCartForSizeFailuer());
     }
   }
+
+  deleteCartItem({
+    required String productCode,
+  }) async {
+    try {
+      emit(ManageCartForDeleteLoading());
+      QuerySnapshot querySnapshot =
+          await FirebaseFirestore.instance // Get Data You Want To Update First
+              .collection('UsersData')
+              .where('uid', isEqualTo: FirebaseAuth.instance.currentUser!.uid)
+              .limit(1)
+              .get();
+
+      DocumentSnapshot documentSnapshot = querySnapshot.docs.first;
+
+      List<CartModel> cartItems =
+          (documentSnapshot['cartItems'] as List<dynamic>).map((item) {
+        return CartModel.fromJson(item);
+      }).toList();
+
+      for (int i = 0; i < cartItems.length; i++) {
+        if (cartItems[i].orderProductCode == productCode) {
+          cartItems.removeAt(i);
+          break;
+        }
+      }
+
+      DocumentReference docRef = documentSnapshot.reference;
+
+      await docRef.update(
+          {'cartItems': cartItems.map((item) => item.toJson()).toList()});
+
+      emit(ManageCartForDeleteSuccess());
+    } catch (e) {
+      emit(ManageCartForDeleteFailuer());
+    }
+  }
 }

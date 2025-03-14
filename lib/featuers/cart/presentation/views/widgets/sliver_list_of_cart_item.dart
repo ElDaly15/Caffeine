@@ -23,7 +23,10 @@ class SliverListOfCartItems extends StatelessWidget {
                     productCode: cartItems[index].orderProductCode,
                     quantity: value);
               },
-              onSwiped: (value) {},
+              onSwiped: (value) {
+                BlocProvider.of<ManageCartCubit>(context).deleteCartItem(
+                    productCode: cartItems[index].orderProductCode);
+              },
             ),
           );
         });
