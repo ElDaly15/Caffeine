@@ -7,9 +7,13 @@ import 'package:iconly/iconly.dart';
 
 class ColumnOfAddressAndEditAndAddNote extends StatelessWidget {
   const ColumnOfAddressAndEditAndAddNote(
-      {super.key, required this.editAddress, required this.addNote});
+      {super.key,
+      required this.editAddress,
+      required this.addNote,
+      required this.title});
   final void Function() editAddress;
   final void Function() addNote;
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +47,7 @@ class ColumnOfAddressAndEditAndAddNote extends StatelessWidget {
               width: 12,
             ),
             CustomContainerWithIconAndText(
-              title: S.of(context).add_note,
+              title: title,
               iconData: IconlyLight.paper,
               onTap: addNote,
             ),

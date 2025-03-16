@@ -120,7 +120,11 @@
     "start_searching": "ابدأ البحث",
     "item_added_success": "تمت إضافة العنصر إلى السلة بنجاح",
     "item_add_error": "حدث خطأ أثناء إضافة العنصر إلى السلة",
-    "cart_empty": "سلتك فارغة"
+    "cart_empty": "سلتك فارغة",
+    "note_added_success" : "تمت اضافة الملاحظة بنجاح",
+    "note_add_error" : "حدث خطاء اثناء اضافة الملاحظة",
+    "note_edited_success" : "تم تعديل الملاحظة بنجاح",
+    "note_edit_error" : "حدث خطاء اثناء تعديل الملاحظة"
 
 }
   

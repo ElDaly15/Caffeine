@@ -1,4 +1,5 @@
 import 'package:caffeine/core/widgets/loading_widgets/loding_list.dart';
+import 'package:caffeine/featuers/auth/data/models/user_model.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/deleiver_and_pick_up_check.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/deleiver_home_body.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/pickup_body.dart';
@@ -45,8 +46,25 @@ class _SkeltonizerOfPageViewOfCheckoutState
                 physics: NeverScrollableScrollPhysics(),
                 controller: pageController,
                 children: [
-                  DeleiverToHomeBody(cartItems: loadingListCart()),
+                  DeleiverToHomeBody(
+                      userModel: UserModel(
+                          email: 'ads',
+                          name: 'sdad',
+                          uid: 'asdasd',
+                          note: 'sdad',
+                          notificationToken: [],
+                          image: 'sdad',
+                          cartItems: loadingListCart()),
+                      cartItems: loadingListCart()),
                   PickupBody(
+                    userModel: UserModel(
+                        email: 'ads',
+                        name: 'sdad',
+                        uid: 'asdasd',
+                        note: 'sdad',
+                        notificationToken: [],
+                        image: 'sdad',
+                        cartItems: loadingListCart()),
                     cartItems: loadingListCart(),
                   ),
                 ],

@@ -8,13 +8,14 @@ class UserEntity {
   final String image;
   final String uid;
   final List<dynamic> notificationToken;
-
+  final String note;
   final List<CartModel> cartItems;
 
   UserEntity(
       {required this.email,
       required this.name,
       required this.uid,
+      required this.note,
       required this.notificationToken,
       required this.image,
       required this.cartItems});
@@ -26,6 +27,7 @@ class UserEntity {
       "notificationToken": notificationToken,
       "uid": uid,
       'image': image,
+      'note': note,
       'cartItems': cartItems
     };
   }

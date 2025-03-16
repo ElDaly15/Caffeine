@@ -989,6 +989,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Note added successfully`
+  String get note_added_success {
+    return Intl.message(
+      'Note added successfully',
+      name: 'note_added_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred while adding note`
+  String get note_add_error {
+    return Intl.message(
+      'An error occurred while adding note',
+      name: 'note_add_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Note Edited successfully`
+  String get note_edited_success {
+    return Intl.message(
+      'Note Edited successfully',
+      name: 'note_edited_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred while Editing note`
+  String get note_edit_error {
+    return Intl.message(
+      'An error occurred while Editing note',
+      name: 'note_edit_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

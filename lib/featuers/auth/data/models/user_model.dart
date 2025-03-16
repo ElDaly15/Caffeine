@@ -7,6 +7,7 @@ class UserModel extends UserEntity {
       {required super.email,
       required super.name,
       required super.uid,
+      required super.note,
       required super.notificationToken,
       required super.image,
       required super.cartItems});
@@ -16,12 +17,14 @@ class UserModel extends UserEntity {
         email: user.email ?? ' ',
         name: user.displayName ?? ' ',
         uid: user.uid,
+        note: '',
         notificationToken: [notificationToken],
         image: 'https://i.imgur.com/530PyKL.png',
         cartItems: []);
   }
   factory UserModel.fromFireStore(Map<String, dynamic> doc) {
     return UserModel(
+      note: doc['note'],
       notificationToken: doc['notificationToken'],
       email: doc['email'],
       image: doc['image'],

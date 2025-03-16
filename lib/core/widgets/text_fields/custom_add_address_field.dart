@@ -10,13 +10,13 @@ class CustomAddAddressField extends StatefulWidget {
     required this.onChanged,
     required this.keyBoardType,
     required this.maxLines,
-    required this.controller,
+    this.controller,
   });
   final String title;
   final Function(String)? onChanged;
   final TextInputType keyBoardType;
   final int maxLines;
-  final TextEditingController controller;
+  final TextEditingController? controller;
   @override
   State<CustomAddAddressField> createState() => _CustomEditTextFieldState();
 }

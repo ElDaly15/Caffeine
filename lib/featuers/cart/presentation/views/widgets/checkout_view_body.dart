@@ -55,9 +55,11 @@ class _CheckoutViewBodyState extends State<CheckoutViewBody> {
                         controller: pageController,
                         children: [
                           DeleiverToHomeBody(
+                            userModel: state.userModel,
                             cartItems: state.userModel.cartItems,
                           ),
                           PickupBody(
+                            userModel: state.userModel,
                             cartItems: state.userModel.cartItems,
                           ),
                         ],

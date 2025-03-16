@@ -129,7 +129,7 @@ class _ContainerOfCartItemState extends State<ContainerOfCartItem> {
                     Row(
                       children: [
                         Text(
-                          '${widget.cartModel.sizeEn == 'S' ? widget.cartModel.productPriceS : widget.cartModel.sizeEn == 'M' ? widget.cartModel.productPriceM : widget.cartModel.productPriceL} ${S.of(context).le}',
+                          ' ${widget.cartModel.sizeEn == 'S' ? int.parse(widget.cartModel.productPriceS) * widget.cartModel.quantity : widget.cartModel.sizeEn == 'M' ? int.parse(widget.cartModel.productPriceM) * widget.cartModel.quantity : int.parse(widget.cartModel.productPriceL) * widget.cartModel.quantity} ${S.of(context).le}',
                           style: TextStyles.font20Bold(context),
                         ),
                         Spacer(),

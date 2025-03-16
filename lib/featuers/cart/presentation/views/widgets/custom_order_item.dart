@@ -74,7 +74,7 @@ class CustomOrderItem extends StatelessWidget {
                   style: TextStyles.font14Regular(context),
                 ),
                 Text(
-                  ' ${cartModel.sizeEn == 'S' ? cartModel.productPriceS : cartModel.sizeEn == 'M' ? cartModel.productPriceM : cartModel.productPriceL} ${S.of(context).le}',
+                  ' ${cartModel.sizeEn == 'S' ? int.parse(cartModel.productPriceS) * cartModel.quantity : cartModel.sizeEn == 'M' ? int.parse(cartModel.productPriceM) * cartModel.quantity : int.parse(cartModel.productPriceL) * cartModel.quantity} ${S.of(context).le}',
                   style: TextStyles.font18Bold(context),
                 ),
               ],

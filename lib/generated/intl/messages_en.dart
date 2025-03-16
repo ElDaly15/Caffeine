@@ -130,6 +130,18 @@ class MessageLookup extends MessageLookupByLibrary {
       "Not connected to the internet. Please try again.",
     ),
     "no_result_found": MessageLookupByLibrary.simpleMessage("No Result Found"),
+    "note_add_error": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while adding note",
+    ),
+    "note_added_success": MessageLookupByLibrary.simpleMessage(
+      "Note added successfully",
+    ),
+    "note_edit_error": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while Editing note",
+    ),
+    "note_edited_success": MessageLookupByLibrary.simpleMessage(
+      "Note Edited successfully",
+    ),
     "notification": MessageLookupByLibrary.simpleMessage("Notification"),
     "notifications": MessageLookupByLibrary.simpleMessage("Notifications"),
     "online_wallets": MessageLookupByLibrary.simpleMessage("Online Wallets"),

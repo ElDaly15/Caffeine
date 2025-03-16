@@ -120,7 +120,11 @@
     "start_searching": "Start Searching",
     "item_added_success": "Item added to cart successfully",
     "item_add_error": "An error occurred while adding item to cart",
-    "cart_empty": "Your cart is empty"
+    "cart_empty": "Your cart is empty",
+    "note_added_success" : "Note added successfully",
+    "note_add_error" : "An error occurred while adding note",
+    "note_edited_success" : "Note Edited successfully",
+    "note_edit_error" : "An error occurred while Editing note"
 
 }
   

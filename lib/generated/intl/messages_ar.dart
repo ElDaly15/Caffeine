@@ -130,6 +130,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_result_found": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على نتائج",
     ),
+    "note_add_error": MessageLookupByLibrary.simpleMessage(
+      "حدث خطاء اثناء اضافة الملاحظة",
+    ),
+    "note_added_success": MessageLookupByLibrary.simpleMessage(
+      "تمت اضافة الملاحظة بنجاح",
+    ),
+    "note_edit_error": MessageLookupByLibrary.simpleMessage(
+      "حدث خطاء اثناء تعديل الملاحظة",
+    ),
+    "note_edited_success": MessageLookupByLibrary.simpleMessage(
+      "تم تعديل الملاحظة بنجاح",
+    ),
     "notification": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
     "online_wallets": MessageLookupByLibrary.simpleMessage(
