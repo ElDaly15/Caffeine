@@ -1,6 +1,7 @@
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/big_elevated_btm_with_icon.dart';
 import 'package:caffeine/core/widgets/text_fields/text_field_of_copon.dart';
+import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
 import 'package:caffeine/featuers/cart/presentation/views/add_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_edit_address_and_add_note.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_payment_summary.dart';
@@ -16,7 +17,9 @@ import 'package:iconly/iconly.dart';
 import 'package:get/get.dart' as g;
 
 class DeleiverToHomeBody extends StatefulWidget {
-  const DeleiverToHomeBody({super.key});
+  const DeleiverToHomeBody({super.key, required this.cartItems});
+
+  final List<CartModel> cartItems;
 
   @override
   State<DeleiverToHomeBody> createState() => _DeleiverToHomeBodyState();
@@ -101,7 +104,9 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                   height: 10,
                 ),
               ),
-              YourOrdersListView(),
+              YourOrdersListView(
+                cartItems: widget.cartItems,
+              ),
               SliverToBoxAdapter(
                 child: const SizedBox(
                   height: 10,

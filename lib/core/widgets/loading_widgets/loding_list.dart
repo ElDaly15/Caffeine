@@ -1,3 +1,4 @@
+import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
 import 'package:caffeine/featuers/home/data/models/ads_model.dart';
 import 'package:caffeine/featuers/product/data/model/product_model.dart';
 
@@ -31,3 +32,21 @@ List<AdsModel> loadingListAds() => List.generate(
           title: '',
           url: 'https://i.imgur.com/Hveh20Q.png',
         ));
+
+List<CartModel> loadingListCart() => List.generate(
+      4,
+      (index) => CartModel(
+        productCategory: '',
+        productCode: '',
+        orderProductCode: '',
+        productNameAr: 'كافيه لاتيه',
+        productNameEn: 'caffe Latte',
+        productImage: 'https://i.imgur.com/Hveh20Q.png',
+        productPriceL: '120',
+        productPriceM: '120',
+        productPriceS: '120',
+        quantity: 0,
+        sizeAr: 'صغير',
+        sizeEn: 'S',
+      ),
+    );

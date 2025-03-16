@@ -1,6 +1,7 @@
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/text_fields/search_pick_up_cafe_text_field.dart';
 import 'package:caffeine/core/widgets/text_fields/text_field_of_copon.dart';
+import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
 import 'package:caffeine/featuers/cart/presentation/views/add_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_payment_summary.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_of_coupon_applies.dart';
@@ -15,7 +16,8 @@ import 'package:iconly/iconly.dart';
 import 'package:get/get.dart' as g;
 
 class PickupBody extends StatefulWidget {
-  const PickupBody({super.key});
+  const PickupBody({super.key, required this.cartItems});
+  final List<CartModel> cartItems;
 
   @override
   State<PickupBody> createState() => _PickupBodyState();
@@ -86,7 +88,9 @@ class _PickupBodyState extends State<PickupBody> {
                   height: 10,
                 ),
               ),
-              YourOrdersListView(),
+              YourOrdersListView(
+                cartItems: widget.cartItems,
+              ),
               SliverToBoxAdapter(
                 child: const SizedBox(
                   height: 10,
