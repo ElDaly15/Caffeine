@@ -30,6 +30,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_note_to_order": MessageLookupByLibrary.simpleMessage(
       "أضف ملاحظة إلى طلبك",
     ),
+    "address_add_error": MessageLookupByLibrary.simpleMessage(
+      "حدث خطاء اثناء اضافة العنوان",
+    ),
+    "address_added_success": MessageLookupByLibrary.simpleMessage(
+      "تمت اضافة العنوان بنجاح",
+    ),
+    "address_edit_error": MessageLookupByLibrary.simpleMessage(
+      "حدث خطاء اثناء تعديل العنوان",
+    ),
+    "address_edited_success": MessageLookupByLibrary.simpleMessage(
+      "تم تعديل العنوان بنجاح",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "هل لديك حساب بالفعل؟",
     ),

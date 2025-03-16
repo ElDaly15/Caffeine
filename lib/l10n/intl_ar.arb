@@ -124,7 +124,12 @@
     "note_added_success" : "تمت اضافة الملاحظة بنجاح",
     "note_add_error" : "حدث خطاء اثناء اضافة الملاحظة",
     "note_edited_success" : "تم تعديل الملاحظة بنجاح",
-    "note_edit_error" : "حدث خطاء اثناء تعديل الملاحظة"
+    "note_edit_error" : "حدث خطاء اثناء تعديل الملاحظة",
+    "address_add_error" : "حدث خطاء اثناء اضافة العنوان",
+    "address_added_success" : "تمت اضافة العنوان بنجاح",
+    "address_edit_error" : "حدث خطاء اثناء تعديل العنوان",
+    "address_edited_success" : "تم تعديل العنوان بنجاح"
+  
 
 }
   

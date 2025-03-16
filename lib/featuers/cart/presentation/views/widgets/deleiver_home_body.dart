@@ -59,16 +59,20 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                   height: 10,
                 ),
               ),
-              haveAddress
+              widget.userModel.address.isNotEmpty
                   ? SliverPadding(
                       padding: const EdgeInsets.symmetric(horizontal: 22),
                       sliver: SliverToBoxAdapter(
                         child: ColumnOfAddressAndEditAndAddNote(
+                          addressModel: widget.userModel.address[0],
                           title: widget.userModel.note == ''
                               ? S.of(context).add_note
                               : S.of(context).edit_note,
                           editAddress: () {
-                            g.Get.to(() => const EditAddressView(),
+                            g.Get.to(
+                                () => EditAddressView(
+                                      addressModel: widget.userModel.address[0],
+                                    ),
                                 transition: g.Transition.fade,
                                 duration: const Duration(milliseconds: 350));
                           },

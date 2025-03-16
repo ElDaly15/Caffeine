@@ -30,6 +30,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_note_to_order": MessageLookupByLibrary.simpleMessage(
       "Add a note to your order",
     ),
+    "address_add_error": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while adding address",
+    ),
+    "address_added_success": MessageLookupByLibrary.simpleMessage(
+      "Address added successfully",
+    ),
+    "address_edit_error": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while Editing address",
+    ),
+    "address_edited_success": MessageLookupByLibrary.simpleMessage(
+      "Address Edited successfully",
+    ),
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),

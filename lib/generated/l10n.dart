@@ -1029,6 +1029,46 @@ class S {
       args: [],
     );
   }
+
+  /// `An error occurred while adding address`
+  String get address_add_error {
+    return Intl.message(
+      'An error occurred while adding address',
+      name: 'address_add_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address added successfully`
+  String get address_added_success {
+    return Intl.message(
+      'Address added successfully',
+      name: 'address_added_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred while Editing address`
+  String get address_edit_error {
+    return Intl.message(
+      'An error occurred while Editing address',
+      name: 'address_edit_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Address Edited successfully`
+  String get address_edited_success {
+    return Intl.message(
+      'Address Edited successfully',
+      name: 'address_edited_success',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

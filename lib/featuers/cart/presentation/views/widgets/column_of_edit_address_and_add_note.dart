@@ -1,3 +1,4 @@
+import 'package:caffeine/core/models/address_model.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/container_with_icon_and_text.dart';
@@ -10,18 +11,19 @@ class ColumnOfAddressAndEditAndAddNote extends StatelessWidget {
       {super.key,
       required this.editAddress,
       required this.addNote,
-      required this.title});
+      required this.title,
+      required this.addressModel});
   final void Function() editAddress;
   final void Function() addNote;
   final String title;
-
+  final AddressModel addressModel;
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Jl. Kpg Sutoyo',
+          addressModel.city,
           style: TextStyles.font18SemiBold(context)
               .copyWith(color: AppColors.darkTheme),
         ),
@@ -29,7 +31,7 @@ class ColumnOfAddressAndEditAndAddNote extends StatelessWidget {
           height: 5,
         ),
         Text(
-          'Kpg. Sutoyo No. 620, Bilzen, Tanjungbalai.',
+          '${addressModel.street} , ${addressModel.coutry}',
           style: TextStyles.font18SemiBold(context)
               .copyWith(color: Color(0xffA2A2A2)),
         ),

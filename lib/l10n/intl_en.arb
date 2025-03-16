@@ -124,7 +124,12 @@
     "note_added_success" : "Note added successfully",
     "note_add_error" : "An error occurred while adding note",
     "note_edited_success" : "Note Edited successfully",
-    "note_edit_error" : "An error occurred while Editing note"
+    "note_edit_error" : "An error occurred while Editing note",
+    "address_add_error" : "An error occurred while adding address",
+    "address_added_success" : "Address added successfully",
+    "address_edit_error" : "An error occurred while Editing address",
+    "address_edited_success" : "Address Edited successfully"
+
 
 }
   

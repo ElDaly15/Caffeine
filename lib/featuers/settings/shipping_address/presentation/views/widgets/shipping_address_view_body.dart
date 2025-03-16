@@ -1,3 +1,4 @@
+import 'package:caffeine/core/models/address_model.dart';
 import 'package:caffeine/core/widgets/buttons/big_elevated_btm_with_icon.dart';
 import 'package:caffeine/core/widgets/buttons/icon_btm_of_edit.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
@@ -61,7 +62,13 @@ class _ShippingAddressViewBodyState extends State<ShippingAddressViewBody> {
               child: IconBtmOfEdit(
                 onPressed: () {
                   g.Get.to(
-                    () => const EditAddressView(),
+                    () => EditAddressView(
+                      addressModel: AddressModel(
+                          street: 'sd',
+                          city: 'sd',
+                          phoneNumber: '12',
+                          coutry: '13'),
+                    ),
                     transition: g.Transition.leftToRightWithFade,
                     duration: const Duration(milliseconds: 600),
                   );

@@ -48,6 +48,7 @@ class _SkeltonizerOfPageViewOfCheckoutState
                 children: [
                   DeleiverToHomeBody(
                       userModel: UserModel(
+                          address: [],
                           email: 'ads',
                           name: 'sdad',
                           uid: 'asdasd',
@@ -58,6 +59,7 @@ class _SkeltonizerOfPageViewOfCheckoutState
                       cartItems: loadingListCart()),
                   PickupBody(
                     userModel: UserModel(
+                        address: [],
                         email: 'ads',
                         name: 'sdad',
                         uid: 'asdasd',
