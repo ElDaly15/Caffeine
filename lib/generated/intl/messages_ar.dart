@@ -60,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "city": MessageLookupByLibrary.simpleMessage("المدينة"),
     "contact_us": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
+    "copoun_expired": MessageLookupByLibrary.simpleMessage(
+      "الكوبون منتهي الصلاحية",
+    ),
     "copoun_not_found": MessageLookupByLibrary.simpleMessage(
       "الكوبون غير موجود",
     ),

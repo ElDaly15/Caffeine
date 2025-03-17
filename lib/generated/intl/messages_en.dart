@@ -60,6 +60,7 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "city": MessageLookupByLibrary.simpleMessage("City"),
     "contact_us": MessageLookupByLibrary.simpleMessage("Contact Us"),
+    "copoun_expired": MessageLookupByLibrary.simpleMessage("Copoun Expired"),
     "copoun_not_found": MessageLookupByLibrary.simpleMessage(
       "Copoun Not Found",
     ),
