@@ -1089,6 +1089,16 @@ class S {
       args: [],
     );
   }
+
+  /// `Copoun Value`
+  String get copoun_value {
+    return Intl.message(
+      'Copoun Value',
+      name: 'copoun_value',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

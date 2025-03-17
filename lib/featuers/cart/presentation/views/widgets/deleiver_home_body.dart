@@ -1,4 +1,4 @@
-// ignore_for_file: invalid_use_of_visible_for_testing_member
+// ignore_for_file: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
 
 import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
@@ -7,6 +7,7 @@ import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
 import 'package:caffeine/core/widgets/text_fields/text_field_of_copon.dart';
 import 'package:caffeine/featuers/auth/data/models/user_model.dart';
 import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
+import 'package:caffeine/featuers/cart/data/model/coupon_model.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/check_copoun/check_copoun_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/views/add_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/edit_note_view.dart';
@@ -40,6 +41,8 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
   bool haveAddress = true;
   bool coponApplied = false;
   String copounValue = '';
+  CouponModel? couponModel;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -157,11 +160,15 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                         context: context,
                         message: state.msg,
                         type: AnimatedSnackBarType.error);
+                  } else if (state is CheckCopounSuccess) {
+                    setState(() {
+                      couponModel =
+                          state.couponModel; // Update the coupon model
+                      coponApplied = true; // Mark coupon as applied
+                    });
                   }
                 },
                 builder: (context, state) {
-                  coponApplied = state is CheckCopounSuccess ? true : false;
-
                   return SliverPadding(
                     padding: const EdgeInsets.symmetric(horizontal: 22),
                     sliver: SliverToBoxAdapter(
@@ -169,9 +176,12 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                           ? ContainerOfCouponSuccessApplied(
                               onTap: () {
                                 BlocProvider.of<CheckCopounCubit>(context)
-                                    // ignore: invalid_use_of_protected_member
                                     .emit(CheckCopounInitial());
-                                copounValue = '';
+                                setState(() {
+                                  copounValue = '';
+                                  coponApplied = false;
+                                  couponModel = null; // Remove applied coupon
+                                });
                               },
                             )
                           : CustomTextFieldOfCopons(
@@ -204,7 +214,12 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: 22),
                 sliver: SliverToBoxAdapter(
-                  child: ColumnOfPaymentSummary(),
+                  child: ColumnOfPaymentSummary(
+                    checkCoupon: coponApplied,
+                    isDelivery: true,
+                    cartItems: widget.cartItems,
+                    coponModel: couponModel,
+                  ),
                 ),
               ),
               SliverToBoxAdapter(

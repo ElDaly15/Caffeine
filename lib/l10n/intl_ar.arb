@@ -130,7 +130,8 @@
     "address_edit_error" : "حدث خطاء اثناء تعديل العنوان",
     "address_edited_success" : "تم تعديل العنوان بنجاح",
     "enter_copoun_code": "ادخل كود الكوبون",
-    "copoun_not_found": "الكوبون غير موجود"
+    "copoun_not_found": "الكوبون غير موجود",
+    "copoun_value" : "قيمة الكوبون"
   
 
 }

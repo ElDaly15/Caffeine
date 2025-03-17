@@ -130,7 +130,8 @@
     "address_edit_error" : "An error occurred while Editing address",
     "address_edited_success" : "Address Edited successfully",
     "enter_copoun_code": "Enter Copoun Code",
-    "copoun_not_found": "Copoun Not Found"
+    "copoun_not_found": "Copoun Not Found",
+    "copoun_value" : "Copoun Value"
 
 
 }

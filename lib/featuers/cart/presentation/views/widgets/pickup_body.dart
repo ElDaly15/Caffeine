@@ -1,4 +1,4 @@
-// ignore_for_file: invalid_use_of_visible_for_testing_member
+// ignore_for_file: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
 
 import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
@@ -7,6 +7,7 @@ import 'package:caffeine/core/widgets/text_fields/search_pick_up_cafe_text_field
 import 'package:caffeine/core/widgets/text_fields/text_field_of_copon.dart';
 import 'package:caffeine/featuers/auth/data/models/user_model.dart';
 import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
+import 'package:caffeine/featuers/cart/data/model/coupon_model.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/check_copoun/check_copoun_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/views/add_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/edit_note_view.dart';
@@ -36,6 +37,7 @@ class _PickupBodyState extends State<PickupBody> {
   bool coponApplied = false;
   bool checkPickUp = false;
   String copounValue = '';
+  CouponModel? couponModel;
 
   @override
   Widget build(BuildContext context) {
@@ -128,10 +130,21 @@ class _PickupBodyState extends State<PickupBody> {
                 ),
               ),
               BlocConsumer<CheckCopounCubit, CheckCopounState>(
-                listener: (context, state) {},
+                listener: (context, state) {
+                  if (state is CheckCopounFailuer) {
+                    CustomSnackBar().showCustomSnackBar(
+                        context: context,
+                        message: state.msg,
+                        type: AnimatedSnackBarType.error);
+                  } else if (state is CheckCopounSuccess) {
+                    setState(() {
+                      couponModel =
+                          state.couponModel; // Update the coupon model
+                      coponApplied = true; // Mark coupon as applied
+                    });
+                  }
+                },
                 builder: (context, state) {
-                  coponApplied = state is CheckCopounSuccess ? true : false;
-
                   return SliverPadding(
                     padding: const EdgeInsets.symmetric(horizontal: 22),
                     sliver: SliverToBoxAdapter(
@@ -139,9 +152,12 @@ class _PickupBodyState extends State<PickupBody> {
                           ? ContainerOfCouponSuccessApplied(
                               onTap: () {
                                 BlocProvider.of<CheckCopounCubit>(context)
-                                    // ignore: invalid_use_of_protected_member
                                     .emit(CheckCopounInitial());
-                                copounValue = '';
+                                setState(() {
+                                  copounValue = '';
+                                  coponApplied = false;
+                                  couponModel = null; // Remove applied coupon
+                                });
                               },
                             )
                           : CustomTextFieldOfCopons(
@@ -174,7 +190,12 @@ class _PickupBodyState extends State<PickupBody> {
               SliverPadding(
                 padding: const EdgeInsets.symmetric(horizontal: 22),
                 sliver: SliverToBoxAdapter(
-                  child: ColumnOfPaymentSummary(),
+                  child: ColumnOfPaymentSummary(
+                    checkCoupon: coponApplied,
+                    coponModel: couponModel,
+                    isDelivery: false,
+                    cartItems: widget.cartItems,
+                  ),
                 ),
               ),
               SliverToBoxAdapter(
