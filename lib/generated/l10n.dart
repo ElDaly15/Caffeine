@@ -1069,6 +1069,26 @@ class S {
       args: [],
     );
   }
+
+  /// `Enter Copoun Code`
+  String get enter_copoun_code {
+    return Intl.message(
+      'Enter Copoun Code',
+      name: 'enter_copoun_code',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Copoun Not Found`
+  String get copoun_not_found {
+    return Intl.message(
+      'Copoun Not Found',
+      name: 'copoun_not_found',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

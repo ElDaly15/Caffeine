@@ -60,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "city": MessageLookupByLibrary.simpleMessage("City"),
     "contact_us": MessageLookupByLibrary.simpleMessage("Contact Us"),
+    "copoun_not_found": MessageLookupByLibrary.simpleMessage(
+      "Copoun Not Found",
+    ),
     "country": MessageLookupByLibrary.simpleMessage("Country"),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(
       "Coupon Applied Successfully",
@@ -103,6 +106,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "email_password_incorrect": MessageLookupByLibrary.simpleMessage(
       "Email or password is incorrect.",
+    ),
+    "enter_copoun_code": MessageLookupByLibrary.simpleMessage(
+      "Enter Copoun Code",
     ),
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "Enter Your Coupon Code Here",

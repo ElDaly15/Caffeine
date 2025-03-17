@@ -60,6 +60,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "city": MessageLookupByLibrary.simpleMessage("المدينة"),
     "contact_us": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
+    "copoun_not_found": MessageLookupByLibrary.simpleMessage(
+      "الكوبون غير موجود",
+    ),
     "country": MessageLookupByLibrary.simpleMessage("الدولة"),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(
       "تم تطبيق الكوبون بنجاح",
@@ -99,6 +102,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "email_password_incorrect": MessageLookupByLibrary.simpleMessage(
       "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+    ),
+    "enter_copoun_code": MessageLookupByLibrary.simpleMessage(
+      "ادخل كود الكوبون",
     ),
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز القسيمة هنا",

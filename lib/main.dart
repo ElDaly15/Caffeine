@@ -5,6 +5,7 @@ import 'package:caffeine/core/manager/get_user_data/get_user_data_cubit.dart';
 import 'package:caffeine/core/manager/manage_language_cubit/manage_language_cubit.dart';
 import 'package:caffeine/core/manager/mange_favourite_products_cubit/manage_favourite_products_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/add_item_to_cart/add_item_to_cart_cubit.dart';
+import 'package:caffeine/featuers/cart/presentation/manager/check_copoun/check_copoun_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/manage_address/manage_address_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/manage_cart/manage_cart_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/manage_note/manage_note_cubit.dart';
@@ -80,6 +81,9 @@ class CaffeineApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => ManageAddressCubit(),
+            ),
+            BlocProvider(
+              create: (context) => CheckCopounCubit(),
             ),
           ],
           child: GetMaterialApp(

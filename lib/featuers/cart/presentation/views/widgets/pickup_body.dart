@@ -1,8 +1,13 @@
+// ignore_for_file: invalid_use_of_visible_for_testing_member
+
+import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
 import 'package:caffeine/core/widgets/text_fields/search_pick_up_cafe_text_field.dart';
 import 'package:caffeine/core/widgets/text_fields/text_field_of_copon.dart';
 import 'package:caffeine/featuers/auth/data/models/user_model.dart';
 import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
+import 'package:caffeine/featuers/cart/presentation/manager/check_copoun/check_copoun_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/views/add_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/edit_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_payment_summary.dart';
@@ -14,6 +19,7 @@ import 'package:caffeine/featuers/cart/presentation/views/widgets/your_order_lis
 import 'package:caffeine/featuers/payment/presentation/views/payment_view.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:iconly/iconly.dart';
 import 'package:get/get.dart' as g;
 
@@ -29,6 +35,7 @@ class PickupBody extends StatefulWidget {
 class _PickupBodyState extends State<PickupBody> {
   bool coponApplied = false;
   bool checkPickUp = false;
+  String copounValue = '';
 
   @override
   Widget build(BuildContext context) {
@@ -120,20 +127,44 @@ class _PickupBodyState extends State<PickupBody> {
                   height: 10,
                 ),
               ),
-              SliverPadding(
-                padding: const EdgeInsets.symmetric(horizontal: 22),
-                sliver: SliverToBoxAdapter(
-                  child: coponApplied
-                      ? ContainerOfCouponSuccessApplied()
-                      : CustomTextFieldOfCopons(
-                          onSubmitted: (value) {},
-                          onPressed: () {
-                            setState(() {
-                              coponApplied = true;
-                            });
-                          },
-                        ),
-                ),
+              BlocConsumer<CheckCopounCubit, CheckCopounState>(
+                listener: (context, state) {},
+                builder: (context, state) {
+                  coponApplied = state is CheckCopounSuccess ? true : false;
+
+                  return SliverPadding(
+                    padding: const EdgeInsets.symmetric(horizontal: 22),
+                    sliver: SliverToBoxAdapter(
+                      child: coponApplied
+                          ? ContainerOfCouponSuccessApplied(
+                              onTap: () {
+                                BlocProvider.of<CheckCopounCubit>(context)
+                                    // ignore: invalid_use_of_protected_member
+                                    .emit(CheckCopounInitial());
+                                copounValue = '';
+                              },
+                            )
+                          : CustomTextFieldOfCopons(
+                              isLoading: state is CheckCopounLoading,
+                              onSubmitted: (value) {
+                                copounValue = value;
+                              },
+                              onPressed: () {
+                                if (copounValue.isNotEmpty) {
+                                  BlocProvider.of<CheckCopounCubit>(context)
+                                      .checkCopoun(
+                                          code: copounValue, context: context);
+                                } else {
+                                  CustomSnackBar().showCustomSnackBar(
+                                      context: context,
+                                      message: S.of(context).enter_copoun_code,
+                                      type: AnimatedSnackBarType.error);
+                                }
+                              },
+                            ),
+                    ),
+                  );
+                },
               ),
               SliverToBoxAdapter(
                 child: const SizedBox(

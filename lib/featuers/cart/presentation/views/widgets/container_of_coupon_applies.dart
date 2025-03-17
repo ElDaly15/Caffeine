@@ -5,8 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 
 class ContainerOfCouponSuccessApplied extends StatelessWidget {
-  const ContainerOfCouponSuccessApplied({super.key});
-
+  const ContainerOfCouponSuccessApplied({super.key, required this.onTap});
+  final void Function() onTap;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -28,6 +28,14 @@ class ContainerOfCouponSuccessApplied extends StatelessWidget {
             S.of(context).coupon_applied_success,
             style: TextStyles.font18SemiBold(context).copyWith(
               color: AppColors.darkTheme,
+            ),
+          ),
+          const Spacer(),
+          InkWell(
+            onTap: onTap,
+            child: Icon(
+              IconlyLight.close_square,
+              color: Colors.red,
             ),
           ),
         ],

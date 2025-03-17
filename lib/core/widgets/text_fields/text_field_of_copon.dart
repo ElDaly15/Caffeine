@@ -6,9 +6,13 @@ import 'package:iconly/iconly.dart';
 
 class CustomTextFieldOfCopons extends StatelessWidget {
   const CustomTextFieldOfCopons(
-      {super.key, required this.onPressed, required this.onSubmitted});
+      {super.key,
+      required this.onPressed,
+      required this.onSubmitted,
+      required this.isLoading});
   final void Function() onPressed;
   final void Function(String value) onSubmitted;
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +29,24 @@ class CustomTextFieldOfCopons extends StatelessWidget {
             IconlyLight.discount,
             color: AppColors.mainColorTheme,
           ),
-          suffixIcon: IconButton(
-              onPressed: onPressed,
-              icon: Icon(
-                Icons.add,
-                color: AppColors.mainColorTheme,
-              )),
+          suffixIcon: isLoading
+              ? SizedBox(
+                  height: 30,
+                  width: 30,
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: const CircularProgressIndicator(
+                      strokeWidth: 2,
+                      color: AppColors.mainColorTheme,
+                    ),
+                  ),
+                )
+              : IconButton(
+                  onPressed: onPressed,
+                  icon: Icon(
+                    Icons.add,
+                    color: AppColors.mainColorTheme,
+                  )),
           hintText: S.of(context).enter_coupon_code,
           hintStyle: TextStyles.font18SemiBold(context).copyWith(
             color: Color(0xffA2A2A2),
