@@ -33,7 +33,6 @@ void main() async {
   await CacheHelper().init();
 
   setUpSingleton();
-
   runApp(DevicePreview(
       enabled: kReleaseMode ? false : true,
       builder: (context) => BlocProvider(

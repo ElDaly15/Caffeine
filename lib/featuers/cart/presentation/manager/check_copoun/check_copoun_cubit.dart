@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:caffeine/featuers/cart/data/model/coupon_model.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 part 'check_copoun_state.dart';
@@ -26,9 +27,26 @@ class CheckCopounCubit extends Cubit<CheckCopounState> {
             CouponModel.fromJson(doc.data() as Map<String, dynamic>);
 
         if (couponModel.copounCode == code) {
-          emit(CheckCopounSuccess(couponModel: couponModel));
-          found = true;
-          break; // توقف عن البحث بعد العثور على الكوبون
+          if (couponModel.isExpired) {
+            emit(CheckCopounFailuer(
+              msg: S.of(context).copoun_expired,
+            ));
+            found = true;
+            break;
+          }
+
+          if (couponModel.users
+              .contains(FirebaseAuth.instance.currentUser!.uid)) {
+            emit(CheckCopounFailuer(
+              msg: S.of(context).copoun_used,
+            ));
+            found = true;
+            break; // توقف عن البحث بعد العثور على الكوبون
+          } else {
+            emit(CheckCopounSuccess(couponModel: couponModel));
+            found = true;
+            break; // توقف عن البحث بعد العثور على الكوبون
+          }
         }
       }
 

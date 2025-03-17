@@ -63,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "copoun_not_found": MessageLookupByLibrary.simpleMessage(
       "الكوبون غير موجود",
     ),
+    "copoun_used": MessageLookupByLibrary.simpleMessage("الكوبون مستخدم"),
     "copoun_value": MessageLookupByLibrary.simpleMessage("قيمة الكوبون"),
     "country": MessageLookupByLibrary.simpleMessage("الدولة"),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(

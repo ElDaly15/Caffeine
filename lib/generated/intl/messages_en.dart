@@ -63,6 +63,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "copoun_not_found": MessageLookupByLibrary.simpleMessage(
       "Copoun Not Found",
     ),
+    "copoun_used": MessageLookupByLibrary.simpleMessage("Copoun Used"),
     "copoun_value": MessageLookupByLibrary.simpleMessage("Copoun Value"),
     "country": MessageLookupByLibrary.simpleMessage("Country"),
     "coupon_applied_success": MessageLookupByLibrary.simpleMessage(

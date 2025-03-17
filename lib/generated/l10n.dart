@@ -1099,6 +1099,21 @@ class S {
       args: [],
     );
   }
+
+  /// `Copoun Used`
+  String get copoun_used {
+    return Intl.message('Copoun Used', name: 'copoun_used', desc: '', args: []);
+  }
+
+  /// `Copoun Expired`
+  String get copoun_expired {
+    return Intl.message(
+      'Copoun Expired',
+      name: 'copoun_expired',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
