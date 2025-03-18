@@ -46,6 +46,12 @@ class _PickupBodyState extends State<PickupBody> {
   String? searchValue;
 
   @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<GetBranchesCubit>(context).getBranches();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -264,6 +270,10 @@ class _PickupBodyState extends State<PickupBody> {
               BlocBuilder<GetBranchesCubit, GetBranchesState>(
                 builder: (context, state) {
                   if (state is GetBranchesSuccess) {
+                    if (searchValue == null || searchValue!.isEmpty) {
+                      BlocProvider.of<SearchBranchCubit>(context)
+                          .emit(SearchBranchInitial());
+                    }
                     List<BranchModel> originalBranches = state.branches;
 
                     return BlocBuilder<SearchBranchCubit, SearchBranchState>(
@@ -271,49 +281,42 @@ class _PickupBodyState extends State<PickupBody> {
                         List<BranchModel> displayedBranches = originalBranches;
 
                         if (searchState is SearchBranchSuccess) {
-                          displayedBranches =
-                              searchState.branchesList; // Filtered list
+                          displayedBranches = searchState.branchesList;
                         } else if (searchState is SearchBranchFailuer ||
-                            (searchValue != null && searchValue!.isEmpty)) {
-                          displayedBranches =
-                              originalBranches; // Reset list when search is cleared
+                            searchValue == null ||
+                            searchValue!.trim().isEmpty) {
+                          displayedBranches = originalBranches; // Reset list
                         }
 
-                        if (displayedBranches.isEmpty) {
-                          return SliverFillRemaining(
-                            hasScrollBody: false,
-                            child: Padding(
-                              padding: const EdgeInsets.only(bottom: 20),
-                              child: Center(
-                                child: Text(
-                                  S.of(context).no_branches_found,
-                                  style: TextStyles.font20SemiBold(context)
-                                      .copyWith(
-                                          color: AppColors.mainColorTheme),
+                        return displayedBranches.isEmpty
+                            ? SliverFillRemaining(
+                                hasScrollBody: false,
+                                child: Center(
+                                  child: Text(
+                                    S.of(context).no_branches_found,
+                                    style: TextStyles.font20SemiBold(context)
+                                        .copyWith(
+                                            color: AppColors.mainColorTheme),
+                                  ),
                                 ),
-                              ),
-                            ),
-                          );
-                        } else {
-                          return SliverOfContainerOfPickUpCafe(
-                            onBranchSelected: (value) {},
-                            branches: displayedBranches,
-                            onChanged: (value) {
-                              setState(() {
-                                checkPickUp = value;
-                              });
-                            },
-                          );
-                        }
+                              )
+                            : SliverOfContainerOfPickUpCafe(
+                                onBranchSelected: (value) {},
+                                branches: searchState is SearchBranchInitial
+                                    ? state.branches
+                                    : displayedBranches,
+                                onChanged: (value) {
+                                  setState(() {
+                                    checkPickUp = value;
+                                  });
+                                },
+                              );
                       },
                     );
                   } else if (state is GetBranchesFailuer) {
                     return SliverFillRemaining(
                       hasScrollBody: false,
-                      child: Padding(
-                        padding: const EdgeInsets.only(bottom: 20),
-                        child: ErrorWidgetForCaffeineApp(),
-                      ),
+                      child: ErrorWidgetForCaffeineApp(),
                     );
                   } else {
                     return SliverFillRemaining(
