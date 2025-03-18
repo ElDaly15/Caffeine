@@ -150,6 +150,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "network_error": MessageLookupByLibrary.simpleMessage(
       "غير متصل بالإنترنت. يرجى المحاولة مرة أخرى.",
     ),
+    "no_branches_found": MessageLookupByLibrary.simpleMessage(
+      "لم يتم العثور على فروع",
+    ),
     "no_result_found": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على نتائج",
     ),

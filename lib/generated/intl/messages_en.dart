@@ -150,6 +150,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "network_error": MessageLookupByLibrary.simpleMessage(
       "Not connected to the internet. Please try again.",
     ),
+    "no_branches_found": MessageLookupByLibrary.simpleMessage(
+      "No Branches Found",
+    ),
     "no_result_found": MessageLookupByLibrary.simpleMessage("No Result Found"),
     "note_add_error": MessageLookupByLibrary.simpleMessage(
       "An error occurred while adding note",

@@ -1,14 +1,22 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/featuers/cart/data/model/branch_model.dart';
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:msh_checkbox/msh_checkbox.dart';
 
 class ContainerOfCafePickUp extends StatefulWidget {
   const ContainerOfCafePickUp(
-      {super.key, required this.isChecked, required this.onChanged});
+      {super.key,
+      required this.isChecked,
+      required this.onChanged,
+      required this.branchModel,
+      required this.onBranchSelected});
   final bool isChecked;
+  final BranchModel branchModel;
   final VoidCallback onChanged;
+  final void Function(BranchModel branchModel) onBranchSelected;
+
   @override
   State<ContainerOfCafePickUp> createState() => _ContainerOfCafePickUpState();
 }
@@ -42,7 +50,11 @@ class _ContainerOfCafePickUpState extends State<ContainerOfCafePickUp> {
               children: [
                 Row(
                   children: [
-                    Text('Cafe 1', style: TextStyles.font18SemiBold(context)),
+                    Text(
+                        isArabic()
+                            ? widget.branchModel.branchnameAr
+                            : widget.branchModel.branchnameEn,
+                        style: TextStyles.font18SemiBold(context)),
                     Spacer(),
                     MSHCheckbox(
                       size: 22,
@@ -52,7 +64,10 @@ class _ContainerOfCafePickUpState extends State<ContainerOfCafePickUp> {
                         checkedColor: AppColors.mainColorTheme,
                       ),
                       style: MSHCheckboxStyle.stroke,
-                      onChanged: (_) => widget.onChanged(),
+                      onChanged: (_) {
+                        widget.onChanged();
+                        widget.onBranchSelected(widget.branchModel);
+                      },
                     ),
                   ],
                 ),
@@ -60,7 +75,7 @@ class _ContainerOfCafePickUpState extends State<ContainerOfCafePickUp> {
                   height: 5,
                 ),
                 Text(
-                  'Jl. Kpg Sutoyo No. 620, Bilzen, Tanjungbalai.',
+                  '${isArabic() ? widget.branchModel.streetAr : widget.branchModel.streetEn}, ${isArabic() ? widget.branchModel.cityAr : widget.branchModel.cityEn}, ${isArabic() ? widget.branchModel.countryAr : widget.branchModel.countryEn}',
                   style: TextStyles.font14Regular(context),
                 ),
               ],

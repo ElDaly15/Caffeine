@@ -1114,6 +1114,16 @@ class S {
       args: [],
     );
   }
+
+  /// `No Branches Found`
+  String get no_branches_found {
+    return Intl.message(
+      'No Branches Found',
+      name: 'no_branches_found',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

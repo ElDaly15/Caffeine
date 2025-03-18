@@ -133,7 +133,8 @@
     "copoun_not_found": "الكوبون غير موجود",
     "copoun_value" : "قيمة الكوبون",
     "copoun_used" : "الكوبون مستخدم",
-    "copoun_expired" : "الكوبون منتهي الصلاحية"
+    "copoun_expired" : "الكوبون منتهي الصلاحية",
+    "no_branches_found" : "لم يتم العثور على فروع"
   
 
 }

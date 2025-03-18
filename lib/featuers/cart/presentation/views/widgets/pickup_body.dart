@@ -1,14 +1,19 @@
 // ignore_for_file: invalid_use_of_visible_for_testing_member, invalid_use_of_protected_member
 
 import 'package:animated_snack_bar/animated_snack_bar.dart';
+import 'package:caffeine/core/errors/eror_widget_for_caffeine.dart';
+import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
 import 'package:caffeine/core/widgets/text_fields/search_pick_up_cafe_text_field.dart';
 import 'package:caffeine/core/widgets/text_fields/text_field_of_copon.dart';
 import 'package:caffeine/featuers/auth/data/models/user_model.dart';
+import 'package:caffeine/featuers/cart/data/model/branch_model.dart';
 import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
 import 'package:caffeine/featuers/cart/data/model/coupon_model.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/check_copoun/check_copoun_cubit.dart';
+import 'package:caffeine/featuers/cart/presentation/manager/get_branches/get_branches_cubit.dart';
+import 'package:caffeine/featuers/cart/presentation/manager/search_branch/search_branch_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/views/add_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/edit_note_view.dart';
 import 'package:caffeine/featuers/cart/presentation/views/widgets/column_of_payment_summary.dart';
@@ -38,6 +43,7 @@ class _PickupBodyState extends State<PickupBody> {
   bool checkPickUp = false;
   String copounValue = '';
   CouponModel? couponModel;
+  String? searchValue;
 
   @override
   Widget build(BuildContext context) {
@@ -232,7 +238,21 @@ class _PickupBodyState extends State<PickupBody> {
                 padding: const EdgeInsets.symmetric(horizontal: 22),
                 sliver: SliverToBoxAdapter(
                   child: SearchForPickUpCafeTextField(
-                    onSubmitted: (value) {},
+                    onSubmitted: (value) {
+                      setState(() {
+                        searchValue = value;
+                      });
+
+                      if (searchValue == null || searchValue!.isEmpty) {
+                        BlocProvider.of<SearchBranchCubit>(context)
+                            .emit(SearchBranchInitial());
+                        BlocProvider.of<GetBranchesCubit>(context)
+                            .getBranches();
+                      } else {
+                        BlocProvider.of<SearchBranchCubit>(context)
+                            .searchBranches(searchValue: value);
+                      }
+                    },
                   ),
                 ),
               ),
@@ -241,11 +261,70 @@ class _PickupBodyState extends State<PickupBody> {
                   height: 20,
                 ),
               ),
-              SliverOfContainerOfPickUpCafe(
-                onChanged: (value) {
-                  setState(() {
-                    checkPickUp = value;
-                  });
+              BlocBuilder<GetBranchesCubit, GetBranchesState>(
+                builder: (context, state) {
+                  if (state is GetBranchesSuccess) {
+                    List<BranchModel> originalBranches = state.branches;
+
+                    return BlocBuilder<SearchBranchCubit, SearchBranchState>(
+                      builder: (context, searchState) {
+                        List<BranchModel> displayedBranches = originalBranches;
+
+                        if (searchState is SearchBranchSuccess) {
+                          displayedBranches =
+                              searchState.branchesList; // Filtered list
+                        } else if (searchState is SearchBranchFailuer ||
+                            (searchValue != null && searchValue!.isEmpty)) {
+                          displayedBranches =
+                              originalBranches; // Reset list when search is cleared
+                        }
+
+                        if (displayedBranches.isEmpty) {
+                          return SliverFillRemaining(
+                            hasScrollBody: false,
+                            child: Padding(
+                              padding: const EdgeInsets.only(bottom: 20),
+                              child: Center(
+                                child: Text(
+                                  S.of(context).no_branches_found,
+                                  style: TextStyles.font20SemiBold(context)
+                                      .copyWith(
+                                          color: AppColors.mainColorTheme),
+                                ),
+                              ),
+                            ),
+                          );
+                        } else {
+                          return SliverOfContainerOfPickUpCafe(
+                            onBranchSelected: (value) {},
+                            branches: displayedBranches,
+                            onChanged: (value) {
+                              setState(() {
+                                checkPickUp = value;
+                              });
+                            },
+                          );
+                        }
+                      },
+                    );
+                  } else if (state is GetBranchesFailuer) {
+                    return SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: ErrorWidgetForCaffeineApp(),
+                      ),
+                    );
+                  } else {
+                    return SliverFillRemaining(
+                      hasScrollBody: false,
+                      child: const Center(
+                        child: CircularProgressIndicator(
+                          color: AppColors.mainColorTheme,
+                        ),
+                      ),
+                    );
+                  }
                 },
               ),
               SliverToBoxAdapter(
