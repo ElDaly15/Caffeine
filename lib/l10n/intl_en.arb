@@ -138,7 +138,11 @@
     "selectMethod" :"Please choose a payment method",
     "order_placed_success" : "Order Placed Successfully",
     "payment_success" : "Payment Success",
-    "payment_failed" : "Payment Failed"
+    "payment_failed" : "Payment Failed",
+    "confirm" : "Confirm",
+    "enter_number": "Enter Number",
+    "add_valid_number": "Please add a valid number",
+    "invalid_phone_number": "Invalid Phone Number"
 
 
 }

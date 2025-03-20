@@ -11,10 +11,12 @@ class CustomTextField extends StatefulWidget {
       required this.isPassword,
       required this.isObscureText,
       this.onChanged,
-      required this.isInLogin});
+      required this.isInLogin,
+      this.type});
   final String hintTitle;
   final bool isPassword;
   final bool isInLogin;
+  final TextInputType? type;
   late bool isObscureText;
   final Function(String)? onChanged;
   @override
@@ -31,6 +33,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
         selectionHandleColor: AppColors.mainColorTheme,
       ),
       child: TextFormField(
+        keyboardType: widget.type ?? TextInputType.text,
         validator: (value) {
           if (value == null || value.isEmpty) {
             return '${widget.hintTitle} ${S.of(context).is_required}';
@@ -38,6 +41,15 @@ class _CustomTextFieldState extends State<CustomTextField> {
           if (widget.isPassword) {
             if (value.length < 8 && widget.isInLogin == true) {
               return S.of(context).password_min_length;
+            }
+          }
+          if (!widget.isPassword) {
+            // التحقق إذا كان الحقل ليس كلمة مرور
+            final regex = RegExp(r'^(010|011|012|015)[0-9]{8}$');
+            if (!regex.hasMatch(value)) {
+              return S
+                  .of(context)
+                  .invalid_phone_number; // تأكد من أن لديك هذا المفتاح في `l10n`
             }
           }
           return null;

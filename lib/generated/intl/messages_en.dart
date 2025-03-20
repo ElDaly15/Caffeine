@@ -30,6 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_note_to_order": MessageLookupByLibrary.simpleMessage(
       "Add a note to your order",
     ),
+    "add_valid_number": MessageLookupByLibrary.simpleMessage(
+      "Please add a valid number",
+    ),
     "address_add_error": MessageLookupByLibrary.simpleMessage(
       "An error occurred while adding address",
     ),
@@ -59,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Choose Your Payment Method",
     ),
     "city": MessageLookupByLibrary.simpleMessage("City"),
+    "confirm": MessageLookupByLibrary.simpleMessage("Confirm"),
     "contact_us": MessageLookupByLibrary.simpleMessage("Contact Us"),
     "copoun_expired": MessageLookupByLibrary.simpleMessage("Copoun Expired"),
     "copoun_not_found": MessageLookupByLibrary.simpleMessage(
@@ -116,6 +120,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "Enter Your Coupon Code Here",
     ),
+    "enter_number": MessageLookupByLibrary.simpleMessage("Enter Number"),
     "error_occurred": MessageLookupByLibrary.simpleMessage(
       "An error occurred. Please try again.",
     ),
@@ -132,6 +137,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "full_name": MessageLookupByLibrary.simpleMessage("Full Name"),
     "get_started": MessageLookupByLibrary.simpleMessage("Get Started"),
     "hello": MessageLookupByLibrary.simpleMessage("Hello 👋 ,"),
+    "invalid_phone_number": MessageLookupByLibrary.simpleMessage(
+      "Invalid Phone Number",
+    ),
     "is_required": MessageLookupByLibrary.simpleMessage("is required"),
     "item_add_error": MessageLookupByLibrary.simpleMessage(
       "An error occurred while adding item to cart",

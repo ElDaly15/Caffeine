@@ -5,6 +5,7 @@ import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/featuers/home/presentation/views/home_view.dart';
 import 'package:caffeine/featuers/payment/presentation/views/card_view.dart';
+import 'package:caffeine/featuers/payment/presentation/views/enter_number_view.dart';
 import 'package:caffeine/featuers/payment/presentation/views/widgets/list_view_of_payment_gateways.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -57,8 +58,8 @@ class _PaymentViewBodyState extends State<PaymentViewBody> {
                       duration: const Duration(milliseconds: 600));
                 } else if (valueOfPayment == 'Online Wallets') {
                   g.Get.to(
-                      () => CardView(
-                            tprice: widget.totalPrice,
+                      () => EnterNumberView(
+                            price: widget.totalPrice,
                           ),
                       transition: g.Transition.leftToRightWithFade,
                       duration: const Duration(milliseconds: 600));

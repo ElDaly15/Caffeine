@@ -138,7 +138,11 @@
     "selectMethod" :"يرجى اختيار طريقة الدفع",
     "order_placed_success" : "تم تقديم الطلب بنجاح",
     "payment_success" : "نجاح الدفع",
-    "payment_failed" : "فشل الدفع"
+    "payment_failed" : "فشل الدفع",
+    "confirm" : "تأكيد",
+    "enter_number": "ادخل الرقم",
+    "add_valid_number": "يرجى اضافة رقم صحيح",
+    "invalid_phone_number": "رقم الهاتف غير صحيح"
   
 
 }

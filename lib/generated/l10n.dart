@@ -1164,6 +1164,41 @@ class S {
       args: [],
     );
   }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message('Confirm', name: 'confirm', desc: '', args: []);
+  }
+
+  /// `Enter Number`
+  String get enter_number {
+    return Intl.message(
+      'Enter Number',
+      name: 'enter_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Please add a valid number`
+  String get add_valid_number {
+    return Intl.message(
+      'Please add a valid number',
+      name: 'add_valid_number',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Invalid Phone Number`
+  String get invalid_phone_number {
+    return Intl.message(
+      'Invalid Phone Number',
+      name: 'invalid_phone_number',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

@@ -30,6 +30,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "add_note_to_order": MessageLookupByLibrary.simpleMessage(
       "أضف ملاحظة إلى طلبك",
     ),
+    "add_valid_number": MessageLookupByLibrary.simpleMessage(
+      "يرجى اضافة رقم صحيح",
+    ),
     "address_add_error": MessageLookupByLibrary.simpleMessage(
       "حدث خطاء اثناء اضافة العنوان",
     ),
@@ -59,6 +62,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "اختر طريقة الدفع الخاصة بك",
     ),
     "city": MessageLookupByLibrary.simpleMessage("المدينة"),
+    "confirm": MessageLookupByLibrary.simpleMessage("تأكيد"),
     "contact_us": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
     "copoun_expired": MessageLookupByLibrary.simpleMessage(
       "الكوبون منتهي الصلاحية",
@@ -114,6 +118,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "enter_coupon_code": MessageLookupByLibrary.simpleMessage(
       "أدخل رمز القسيمة هنا",
     ),
+    "enter_number": MessageLookupByLibrary.simpleMessage("ادخل الرقم"),
     "error_occurred": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ. يرجى المحاولة مرة أخرى.",
     ),
@@ -132,6 +137,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "full_name": MessageLookupByLibrary.simpleMessage("الاسم الكامل"),
     "get_started": MessageLookupByLibrary.simpleMessage("ابدأ"),
     "hello": MessageLookupByLibrary.simpleMessage("مرحبًا 👋 ,"),
+    "invalid_phone_number": MessageLookupByLibrary.simpleMessage(
+      "رقم الهاتف غير صحيح",
+    ),
     "is_required": MessageLookupByLibrary.simpleMessage("مطلوب"),
     "item_add_error": MessageLookupByLibrary.simpleMessage(
       "حدث خطأ أثناء إضافة العنصر إلى السلة",
