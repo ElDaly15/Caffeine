@@ -101,7 +101,7 @@ class _CartViewBodyState extends State<CartViewBody> {
                       onPressed: () {
                         g.Get.to(() => const CheckoutView(),
                             transition: g.Transition.fade,
-                            duration: const Duration(milliseconds: 400));
+                            duration: const Duration(milliseconds: 500));
                       },
                     ),
                   ],

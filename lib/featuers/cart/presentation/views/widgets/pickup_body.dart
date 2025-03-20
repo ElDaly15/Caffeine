@@ -53,6 +53,21 @@ class _PickupBodyState extends State<PickupBody> {
 
   @override
   Widget build(BuildContext context) {
+    var totalPrice = widget.cartItems.fold<dynamic>(
+      0.0,
+      (sum, item) =>
+          sum +
+          (item.sizeEn == 'L'
+              ? (double.parse(item.productPriceL) * item.quantity).toInt()
+              : item.sizeEn == 'M'
+                  ? (double.parse(item.productPriceM) * item.quantity).toInt()
+                  : (double.parse(item.productPriceS) * item.quantity).toInt()),
+    );
+    num discountTotalPrice = totalPrice;
+    if (couponModel != null) {
+      discountTotalPrice =
+          totalPrice - (totalPrice * (couponModel?.copounValue ?? 0));
+    }
     return Column(
       children: [
         Expanded(
@@ -341,7 +356,10 @@ class _PickupBodyState extends State<PickupBody> {
         ContainerOfProcessToPayment(
           onPressed: checkPickUp && widget.cartItems.isNotEmpty
               ? () {
-                  g.Get.to(() => const PaymentView(),
+                  g.Get.to(
+                      () => PaymentView(
+                            totalPrice: discountTotalPrice.toInt(),
+                          ),
                       transition: g.Transition.fade,
                       duration: const Duration(milliseconds: 350));
                 }

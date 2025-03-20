@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 
 class PaymentView extends StatelessWidget {
-  const PaymentView({super.key});
+  const PaymentView({super.key, required this.totalPrice});
+  final int totalPrice;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +16,9 @@ class PaymentView extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: PaymentViewBody(),
+        body: PaymentViewBody(
+          totalPrice: totalPrice,
+        ),
       ),
     );
   }

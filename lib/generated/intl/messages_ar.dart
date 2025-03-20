@@ -175,6 +175,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "or_continue_with": MessageLookupByLibrary.simpleMessage("أو تابع عبر"),
     "order_id": MessageLookupByLibrary.simpleMessage("رقم الطلب"),
+    "order_placed_success": MessageLookupByLibrary.simpleMessage(
+      "تم تقديم الطلب بنجاح",
+    ),
     "order_status": MessageLookupByLibrary.simpleMessage("حالة الطلب"),
     "order_time": MessageLookupByLibrary.simpleMessage("وقت الطلب"),
     "password": MessageLookupByLibrary.simpleMessage("كلمة المرور"),
@@ -182,7 +185,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "يجب أن تتكون كلمة المرور من 8 أحرف على الأقل",
     ),
     "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
+    "payment_failed": MessageLookupByLibrary.simpleMessage("فشل الدفع"),
     "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
+    "payment_success": MessageLookupByLibrary.simpleMessage("نجاح الدفع"),
     "payment_summary": MessageLookupByLibrary.simpleMessage("ملخص الدفع"),
     "personal_information": MessageLookupByLibrary.simpleMessage(
       "المعلومات الشخصية",
@@ -216,6 +221,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_cafe": MessageLookupByLibrary.simpleMessage("ابحث عن مقهى"),
     "search_coffee": MessageLookupByLibrary.simpleMessage("ابحث عن القهوة"),
     "search_result": MessageLookupByLibrary.simpleMessage("نتيجة البحث"),
+    "selectMethod": MessageLookupByLibrary.simpleMessage(
+      "يرجى اختيار طريقة الدفع",
+    ),
     "select_language": MessageLookupByLibrary.simpleMessage("اختيار اللغة"),
     "select_pickup_cafe": MessageLookupByLibrary.simpleMessage(
       "اختر المقهى للاستلام",

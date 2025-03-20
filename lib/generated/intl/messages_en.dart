@@ -173,6 +173,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Or continue with",
     ),
     "order_id": MessageLookupByLibrary.simpleMessage("Order ID"),
+    "order_placed_success": MessageLookupByLibrary.simpleMessage(
+      "Order Placed Successfully",
+    ),
     "order_status": MessageLookupByLibrary.simpleMessage("Order Status"),
     "order_time": MessageLookupByLibrary.simpleMessage("Order Time"),
     "password": MessageLookupByLibrary.simpleMessage("Password"),
@@ -180,7 +183,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Password must be at least 8 characters",
     ),
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
+    "payment_failed": MessageLookupByLibrary.simpleMessage("Payment Failed"),
     "payment_method": MessageLookupByLibrary.simpleMessage("Payment Method"),
+    "payment_success": MessageLookupByLibrary.simpleMessage("Payment Success"),
     "payment_summary": MessageLookupByLibrary.simpleMessage("Payment Summary"),
     "personal_information": MessageLookupByLibrary.simpleMessage(
       "Personal Information",
@@ -212,6 +217,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "search_cafe": MessageLookupByLibrary.simpleMessage("Search Cafe"),
     "search_coffee": MessageLookupByLibrary.simpleMessage("Search Coffee"),
     "search_result": MessageLookupByLibrary.simpleMessage("Search Result"),
+    "selectMethod": MessageLookupByLibrary.simpleMessage(
+      "Please choose a payment method",
+    ),
     "select_language": MessageLookupByLibrary.simpleMessage("Select Language"),
     "select_pickup_cafe": MessageLookupByLibrary.simpleMessage(
       "Select Pickup Cafe",

@@ -134,7 +134,11 @@
     "copoun_value" : "قيمة الكوبون",
     "copoun_used" : "الكوبون مستخدم",
     "copoun_expired" : "الكوبون منتهي الصلاحية",
-    "no_branches_found" : "لم يتم العثور على فروع"
+    "no_branches_found" : "لم يتم العثور على فروع",
+    "selectMethod" :"يرجى اختيار طريقة الدفع",
+    "order_placed_success" : "تم تقديم الطلب بنجاح",
+    "payment_success" : "نجاح الدفع",
+    "payment_failed" : "فشل الدفع"
   
 
 }

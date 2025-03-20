@@ -1124,6 +1124,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Please choose a payment method`
+  String get selectMethod {
+    return Intl.message(
+      'Please choose a payment method',
+      name: 'selectMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Order Placed Successfully`
+  String get order_placed_success {
+    return Intl.message(
+      'Order Placed Successfully',
+      name: 'order_placed_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Success`
+  String get payment_success {
+    return Intl.message(
+      'Payment Success',
+      name: 'payment_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Failed`
+  String get payment_failed {
+    return Intl.message(
+      'Payment Failed',
+      name: 'payment_failed',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

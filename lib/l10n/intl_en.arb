@@ -134,7 +134,11 @@
     "copoun_value" : "Copoun Value",
     "copoun_used" : "Copoun Used",
     "copoun_expired" : "Copoun Expired",
-    "no_branches_found" : "No Branches Found"
+    "no_branches_found" : "No Branches Found",
+    "selectMethod" :"Please choose a payment method",
+    "order_placed_success" : "Order Placed Successfully",
+    "payment_success" : "Payment Success",
+    "payment_failed" : "Payment Failed"
 
 
 }
