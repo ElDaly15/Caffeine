@@ -64,9 +64,13 @@ class _PaymentViewBodyState extends State<PaymentViewBody> {
                       transition: g.Transition.leftToRightWithFade,
                       duration: const Duration(milliseconds: 600));
                 } else if (valueOfPayment == 'Cash') {
-                  g.Get.off(() => HomeView(),
-                      transition: g.Transition.leftToRightWithFade,
-                      duration: const Duration(milliseconds: 600));
+                  Navigator.pushAndRemoveUntil(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomeView(),
+                    ),
+                    (route) => false,
+                  );
                   CustomSnackBar().showCustomSnackBar(
                       context: context,
                       message: S.of(context).order_placed_success,
