@@ -34,6 +34,7 @@ class PickupBody extends StatefulWidget {
       {super.key, required this.cartItems, required this.userModel});
   final List<CartModel> cartItems;
   final UserModel userModel;
+
   @override
   State<PickupBody> createState() => _PickupBodyState();
 }
@@ -44,6 +45,7 @@ class _PickupBodyState extends State<PickupBody> {
   String copounValue = '';
   CouponModel? couponModel;
   String? searchValue;
+  BranchModel? branchModel;
 
   @override
   void initState() {
@@ -316,7 +318,9 @@ class _PickupBodyState extends State<PickupBody> {
                                 ),
                               )
                             : SliverOfContainerOfPickUpCafe(
-                                onBranchSelected: (value) {},
+                                onBranchSelected: (value) {
+                                  branchModel = value;
+                                },
                                 branches: searchState is SearchBranchInitial
                                     ? state.branches
                                     : displayedBranches,
@@ -358,6 +362,9 @@ class _PickupBodyState extends State<PickupBody> {
               ? () {
                   g.Get.to(
                       () => PaymentView(
+                            branchModel: branchModel,
+                            userModel: widget.userModel,
+                            orderStatus: 'Pickup',
                             totalPrice: discountTotalPrice.toInt(),
                           ),
                       transition: g.Transition.fade,

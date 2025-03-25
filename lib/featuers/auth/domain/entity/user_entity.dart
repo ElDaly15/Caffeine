@@ -2,6 +2,7 @@
 
 import 'package:caffeine/core/models/address_model.dart';
 import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
+import 'package:caffeine/featuers/payment/data/models/order_model.dart';
 
 class UserEntity {
   final String email;
@@ -12,8 +13,10 @@ class UserEntity {
   final String note;
   final List<CartModel> cartItems;
   final List<AddressModel> address;
+  final List<OrderModel> orders;
   UserEntity(
       {required this.email,
+      required this.orders,
       required this.name,
       required this.address,
       required this.uid,
@@ -29,6 +32,7 @@ class UserEntity {
       "notificationToken": notificationToken,
       "uid": uid,
       'image': image,
+      'Orders': orders,
       'note': note,
       'address': address,
       'cartItems': cartItems

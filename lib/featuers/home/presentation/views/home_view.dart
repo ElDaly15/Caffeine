@@ -24,6 +24,7 @@ class _HomeViewState extends State<HomeView> {
   Duration animationDuration = const Duration(milliseconds: 300);
 
   final pageController = PageController(initialPage: 0);
+
   @override
   Widget build(BuildContext context) {
     return OfflineBuilder(

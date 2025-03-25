@@ -250,6 +250,8 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
                 ? () {
                     g.Get.to(
                         () => PaymentView(
+                            userModel: widget.userModel,
+                            orderStatus: 'Delivery',
                             totalPrice: (discountTotalPrice + 25.0).toInt()),
                         transition: g.Transition.fade,
                         duration: const Duration(milliseconds: 350));

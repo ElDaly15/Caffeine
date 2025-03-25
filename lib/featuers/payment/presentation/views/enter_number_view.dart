@@ -1,6 +1,8 @@
 import 'package:caffeine/core/widgets/buttons/custom_big_elevated_btm.dart';
 import 'package:caffeine/core/widgets/headers/header_with_title_and_bk_btm.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_text_field.dart';
+import 'package:caffeine/featuers/auth/data/models/user_model.dart';
+import 'package:caffeine/featuers/cart/data/model/branch_model.dart';
 import 'package:caffeine/featuers/payment/presentation/views/walltet_view.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
@@ -9,8 +11,14 @@ class EnterNumberView extends StatefulWidget {
   const EnterNumberView({
     super.key,
     required this.price,
+    required this.userModel,
+    required this.orderStatus,
+    this.branchModel,
   });
   final int price;
+  final UserModel userModel;
+  final String orderStatus;
+  final BranchModel? branchModel;
 
   @override
   State<EnterNumberView> createState() => _EnterNumberViewState();
@@ -69,6 +77,9 @@ class _EnterNumberViewState extends State<EnterNumberView> {
                         context,
                         MaterialPageRoute(
                           builder: (context) => WalltetView(
+                            branchModel: widget.branchModel,
+                            userModel: widget.userModel,
+                            orderStatus: widget.orderStatus,
                             phoneNumber: number!,
                             tprice: widget.price,
                           ),

@@ -6,20 +6,33 @@ import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
+import 'package:caffeine/featuers/auth/data/models/user_model.dart';
+import 'package:caffeine/featuers/cart/data/model/branch_model.dart';
+import 'package:caffeine/featuers/payment/data/models/order_model.dart';
 import 'package:caffeine/featuers/payment/data/paymob_manger/walltet_manager.dart';
+import 'package:caffeine/featuers/payment/presentation/manager/add_order/add_order_cubit.dart';
 import 'package:caffeine/generated/l10n.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:iconly/iconly.dart';
+import 'package:uuid/uuid.dart';
 
 class WalltetView extends StatefulWidget {
   const WalltetView({
     super.key,
     required this.tprice,
     required this.phoneNumber,
+    required this.userModel,
+    required this.orderStatus,
+    this.branchModel,
   });
   final int tprice;
   final String phoneNumber;
+  final UserModel userModel;
+  final String orderStatus;
+  final BranchModel? branchModel;
 
   @override
   State<WalltetView> createState() => _CardViewState();
@@ -104,6 +117,24 @@ class _CardViewState extends State<WalltetView> {
             if (url != null &&
                 url.queryParameters.containsKey("success") &&
                 url.queryParameters["success"] == "true") {
+              var orderId = Uuid();
+              OrderModel orderModel = OrderModel(
+                totalPrice: widget.tprice,
+                orderId: orderId.v4(),
+                statusOfOrder: 'Pending',
+                date: FieldValue.serverTimestamp(),
+                branchModel: widget.branchModel,
+                userId: widget.userModel.uid,
+                stepperValue: 0,
+                orderedBy: widget.orderStatus,
+                paymentMethod:
+                    isArabic() ? 'المحفظة الإلكترونية' : 'Online Wallets',
+                products: widget.userModel.cartItems,
+                note: widget.userModel.note,
+              );
+
+              BlocProvider.of<AddOrderCubit>(context)
+                  .addOrder(orderModel: orderModel);
               getIt<CustomSnackBar>().showCustomSnackBar(
                   context: context,
                   message: S.of(context).payment_success,
