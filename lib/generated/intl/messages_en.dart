@@ -181,6 +181,9 @@ class MessageLookup extends MessageLookupByLibrary {
       "Or continue with",
     ),
     "order_id": MessageLookupByLibrary.simpleMessage("Order ID"),
+    "order_placed_error": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while placing order",
+    ),
     "order_placed_success": MessageLookupByLibrary.simpleMessage(
       "Order Placed Successfully",
     ),
@@ -193,7 +196,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "payment": MessageLookupByLibrary.simpleMessage("Payment"),
     "payment_failed": MessageLookupByLibrary.simpleMessage("Payment Failed"),
     "payment_method": MessageLookupByLibrary.simpleMessage("Payment Method"),
-    "payment_success": MessageLookupByLibrary.simpleMessage("Payment Success"),
+    "payment_success": MessageLookupByLibrary.simpleMessage(
+      "Payment Success and Order Placed Successfully",
+    ),
     "payment_summary": MessageLookupByLibrary.simpleMessage("Payment Summary"),
     "personal_information": MessageLookupByLibrary.simpleMessage(
       "Personal Information",

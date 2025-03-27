@@ -183,6 +183,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "or_continue_with": MessageLookupByLibrary.simpleMessage("أو تابع عبر"),
     "order_id": MessageLookupByLibrary.simpleMessage("رقم الطلب"),
+    "order_placed_error": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء تقديم الطلب",
+    ),
     "order_placed_success": MessageLookupByLibrary.simpleMessage(
       "تم تقديم الطلب بنجاح",
     ),
@@ -195,7 +198,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "payment": MessageLookupByLibrary.simpleMessage("الدفع"),
     "payment_failed": MessageLookupByLibrary.simpleMessage("فشل الدفع"),
     "payment_method": MessageLookupByLibrary.simpleMessage("طريقة الدفع"),
-    "payment_success": MessageLookupByLibrary.simpleMessage("نجاح الدفع"),
+    "payment_success": MessageLookupByLibrary.simpleMessage(
+      "نجاح الدفع وتم تقديم الطلب بنجاح",
+    ),
     "payment_summary": MessageLookupByLibrary.simpleMessage("ملخص الدفع"),
     "personal_information": MessageLookupByLibrary.simpleMessage(
       "المعلومات الشخصية",

@@ -1145,10 +1145,20 @@ class S {
     );
   }
 
-  /// `Payment Success`
+  /// `An error occurred while placing order`
+  String get order_placed_error {
+    return Intl.message(
+      'An error occurred while placing order',
+      name: 'order_placed_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Success and Order Placed Successfully`
   String get payment_success {
     return Intl.message(
-      'Payment Success',
+      'Payment Success and Order Placed Successfully',
       name: 'payment_success',
       desc: '',
       args: [],
