@@ -145,7 +145,8 @@
     "add_valid_number": "Please add a valid number",
     "invalid_phone_number": "Invalid Phone Number",
     "no_orders_yet": "No Orders Yet",
-    "branch": "Branch"
+    "branch": "Branch",
+    "whishlist_empty": "Your wishlist is empty"
 
 
 }

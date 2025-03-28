@@ -282,6 +282,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome_message_register": MessageLookupByLibrary.simpleMessage(
       "Welcome to our coffee corner, where every cup is a delightful for you.",
     ),
+    "whishlist_empty": MessageLookupByLibrary.simpleMessage(
+      "Your wishlist is empty",
+    ),
     "wishlist": MessageLookupByLibrary.simpleMessage("Wishlist"),
     "your_orders": MessageLookupByLibrary.simpleMessage("Your Orders"),
   };

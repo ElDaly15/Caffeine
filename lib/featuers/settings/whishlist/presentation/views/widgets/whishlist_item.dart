@@ -1,12 +1,16 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/featuers/product/data/model/product_model.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:swipeable_tile/swipeable_tile.dart';
 
 class WhishlistItem extends StatefulWidget {
-  const WhishlistItem({super.key, required this.onSwiped});
+  const WhishlistItem(
+      {super.key, required this.onSwiped, required this.productModel});
   final void Function(SwipeDirection) onSwiped;
+  final ProductModel productModel;
   @override
   State<WhishlistItem> createState() => _WhishlistItemState();
 }
@@ -76,11 +80,15 @@ class _WhishlistItemState extends State<WhishlistItem> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      'Latte Cappuccino',
+                      isArabic()
+                          ? widget.productModel.productNameAr
+                          : widget.productModel.productNameEn,
                       style: TextStyles.font20SemiBold(context),
                     ),
                     Text(
-                      'A latte is a coffee drink made with espresso and steamed milk, topped with light milk foam. It’s smooth, creamy, and mildly strong. ☕ ',
+                      isArabic()
+                          ? widget.productModel.productDescriptionAr
+                          : widget.productModel.productDescriptionEn,
                       style: TextStyles.font18Regular(context).copyWith(),
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
@@ -89,7 +97,7 @@ class _WhishlistItemState extends State<WhishlistItem> {
                     Row(
                       children: [
                         Text(
-                          r'$198.00',
+                          '${widget.productModel.productPriceS} - ${widget.productModel.productPriceL} ${S.of(context).le}',
                           style: TextStyles.font20Bold(context),
                         ),
                         Spacer(),

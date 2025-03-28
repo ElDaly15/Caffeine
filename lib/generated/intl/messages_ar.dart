@@ -280,6 +280,9 @@ class MessageLookup extends MessageLookupByLibrary {
     "welcome_message_register": MessageLookupByLibrary.simpleMessage(
       "مرحبًا بك في ركن القهوة لدينا، حيث كل فنجان هو متعة لك.",
     ),
+    "whishlist_empty": MessageLookupByLibrary.simpleMessage(
+      "قائمة الرغبات فارغة",
+    ),
     "wishlist": MessageLookupByLibrary.simpleMessage("قائمة الرغبات"),
     "your_orders": MessageLookupByLibrary.simpleMessage("طلباتك"),
   };

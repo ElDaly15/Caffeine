@@ -3,6 +3,7 @@
 import 'package:caffeine/core/models/address_model.dart';
 import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
 import 'package:caffeine/featuers/payment/data/models/order_model.dart';
+import 'package:caffeine/featuers/product/data/model/product_model.dart';
 
 class UserEntity {
   final String email;
@@ -14,10 +15,12 @@ class UserEntity {
   final List<CartModel> cartItems;
   final List<AddressModel> address;
   final List<OrderModel> orders;
+  final List<ProductModel> favProducts;
   UserEntity(
       {required this.email,
       required this.orders,
       required this.name,
+      required this.favProducts,
       required this.address,
       required this.uid,
       required this.note,
@@ -35,6 +38,7 @@ class UserEntity {
       'Orders': orders,
       'note': note,
       'address': address,
+      'favoritProduct': favProducts,
       'cartItems': cartItems
     };
   }

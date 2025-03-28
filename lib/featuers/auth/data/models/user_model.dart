@@ -2,6 +2,7 @@ import 'package:caffeine/core/models/address_model.dart';
 import 'package:caffeine/featuers/auth/domain/entity/user_entity.dart';
 import 'package:caffeine/featuers/cart/data/model/cart_model.dart';
 import 'package:caffeine/featuers/payment/data/models/order_model.dart';
+import 'package:caffeine/featuers/product/data/model/product_model.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
 class UserModel extends UserEntity {
@@ -14,6 +15,7 @@ class UserModel extends UserEntity {
       required super.orders,
       required super.notificationToken,
       required super.image,
+      required super.favProducts,
       required super.cartItems});
 
   factory UserModel.fromFirebase(User user, String notificationToken) {
@@ -21,6 +23,7 @@ class UserModel extends UserEntity {
         email: user.email ?? ' ',
         orders: [],
         address: [],
+        favProducts: [],
         name: user.displayName ?? ' ',
         uid: user.uid,
         note: '',
@@ -35,6 +38,9 @@ class UserModel extends UserEntity {
       email: doc['email'],
       image: doc['image'],
       name: doc['name'],
+      favProducts: (doc['favoritProduct'] as List<dynamic>).map((item) {
+        return ProductModel.fromJson(item);
+      }).toList(),
       uid: doc['uid'],
       orders: (doc['Orders'] as List<dynamic>).map((item) {
         return OrderModel.fromMap(item);

@@ -1224,6 +1224,16 @@ class S {
   String get branch {
     return Intl.message('Branch', name: 'branch', desc: '', args: []);
   }
+
+  /// `Your wishlist is empty`
+  String get whishlist_empty {
+    return Intl.message(
+      'Your wishlist is empty',
+      name: 'whishlist_empty',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

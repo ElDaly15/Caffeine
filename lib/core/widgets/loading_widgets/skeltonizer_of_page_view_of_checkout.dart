@@ -49,6 +49,7 @@ class _SkeltonizerOfPageViewOfCheckoutState
                   DeleiverToHomeBody(
                       userModel: UserModel(
                           orders: [],
+                          favProducts: [],
                           address: [],
                           email: 'ads',
                           name: 'sdad',
@@ -63,6 +64,7 @@ class _SkeltonizerOfPageViewOfCheckoutState
                         orders: [],
                         address: [],
                         email: 'ads',
+                        favProducts: [],
                         name: 'sdad',
                         uid: 'asdasd',
                         note: 'sdad',

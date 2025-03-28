@@ -38,6 +38,10 @@ class Assets {
   /// assets/images/emptyOrders.png
   static const String imagesEmptyOrders = "assets/images/emptyOrders.png";
 
+  /// Assets for imagesEmptyWhishlist
+  /// assets/images/emptyWhishlist.png
+  static const String imagesEmptyWhishlist = "assets/images/emptyWhishlist.png";
+
   /// Assets for imagesEn
   /// assets/images/en.png
   static const String imagesEn = "assets/images/en.png";
