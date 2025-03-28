@@ -4,8 +4,8 @@ import 'package:caffeine/core/widgets/headers/custom_header_of_main_caffeine_app
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
-class ErrorWidgetForCaffeineApp extends StatelessWidget {
-  const ErrorWidgetForCaffeineApp({
+class ErrorWidgetWithHeader extends StatelessWidget {
+  const ErrorWidgetWithHeader({
     super.key,
   });
 
@@ -13,10 +13,13 @@ class ErrorWidgetForCaffeineApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Column(
-        mainAxisSize: MainAxisSize.min, // Keep the column compact
-
         children: [
+          Container(
+            height: 10,
+            color: AppColors.mainColorTheme,
+          ),
           CustomHeaderOfCaffeieApp(),
+          Spacer(),
           Icon(
             Icons.error,
             color: AppColors.mainColorTheme,
@@ -30,6 +33,7 @@ class ErrorWidgetForCaffeineApp extends StatelessWidget {
             style: TextStyles.font20SemiBold(context)
                 .copyWith(color: AppColors.mainColorTheme),
           ),
+          Spacer(),
         ],
       ),
     );
