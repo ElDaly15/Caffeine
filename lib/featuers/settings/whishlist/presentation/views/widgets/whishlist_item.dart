@@ -1,9 +1,11 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_images.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/featuers/product/data/model/product_model.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 import 'package:swipeable_tile/swipeable_tile.dart';
 
 class WhishlistItem extends StatefulWidget {
@@ -67,9 +69,32 @@ class _WhishlistItemState extends State<WhishlistItem> {
             children: [
               ClipRRect(
                 borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  Assets.imagesLatte,
-                  scale: 2.5,
+                child: CachedNetworkImage(
+                  placeholder: (context, url) => Skeletonizer(
+                    effect: ShimmerEffect(
+                      baseColor: Colors.grey[300]!,
+                      highlightColor: Colors.grey[100]!,
+                      duration: const Duration(seconds: 1),
+                    ),
+                    enabled: true,
+                    child: Image.asset(Assets.imagesLatte, width: 70),
+                  ),
+                  errorWidget: (context, url, error) => Skeletonizer(
+                    effect: ShimmerEffect(
+                      baseColor: Colors.grey[300]!,
+                      highlightColor: Colors.grey[100]!,
+                      duration: const Duration(seconds: 1),
+                    ),
+                    enabled: false,
+                    child: Image.asset(
+                      Assets.imagesPlaceholderImage,
+                      fit: BoxFit.cover,
+                      width: double.infinity,
+                    ),
+                  ),
+                  imageUrl: widget.productModel.productImage,
+                  fit: BoxFit.cover,
+                  scale: 3.5,
                 ),
               ),
               SizedBox(

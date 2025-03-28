@@ -1,10 +1,11 @@
+import 'package:caffeine/core/models/address_model.dart';
 import 'package:caffeine/featuers/settings/shipping_address/presentation/views/widgets/row_of_address_info.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class ContainerOfAddress extends StatelessWidget {
-  const ContainerOfAddress({super.key});
-
+  const ContainerOfAddress({super.key, required this.addressModel});
+  final AddressModel addressModel;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,28 +27,28 @@ class ContainerOfAddress extends StatelessWidget {
         children: [
           RowOfAddressInfo(
             title: '${S.of(context).street}: ',
-            subTitle: '9 Street - Giza',
+            subTitle: addressModel.street,
           ),
           const SizedBox(
             height: 10,
           ),
           RowOfAddressInfo(
             title: '${S.of(context).city}: ',
-            subTitle: 'Cairo',
+            subTitle: addressModel.city,
           ),
           const SizedBox(
             height: 10,
           ),
           RowOfAddressInfo(
             title: '${S.of(context).phone_number}: ',
-            subTitle: '010005005414',
+            subTitle: addressModel.phoneNumber,
           ),
           const SizedBox(
             height: 10,
           ),
           RowOfAddressInfo(
             title: '${S.of(context).country}: ',
-            subTitle: 'Egypt',
+            subTitle: addressModel.coutry,
           ),
         ],
       ),
