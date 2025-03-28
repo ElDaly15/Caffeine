@@ -3,6 +3,7 @@ import 'package:caffeine/core/service/fire_base_services.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/auth/presentation/views/get_started_view.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
+import 'package:caffeine/featuers/settings/privacy_and_policy/presentation/views/privacy_view.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 // ignore: unused_import
@@ -44,9 +45,9 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
             icon: Icons.privacy_tip,
             title: S.of(context).privacy_policy,
             onTap: () {
-              // g.Get.to(() => const PrivacyView(),
-              //     transition: g.Transition.leftToRightWithFade,
-              //     duration: const Duration(milliseconds: 600));
+              g.Get.to(() => const PrivacyView(),
+                  transition: g.Transition.leftToRightWithFade,
+                  duration: const Duration(milliseconds: 600));
             },
           ),
           const SizedBox(

@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:iconly/iconly.dart';
+import 'package:intl/intl.dart';
 
 class RowOfContainersOfProductDetails extends StatefulWidget {
   const RowOfContainersOfProductDetails(
@@ -161,10 +162,9 @@ class _RowOfContainersOfProductDetailsState
                   ),
                   const SizedBox(width: 2),
                   Text(
-                    (widget.productModel.rating /
-                            widget.productModel.ratingCount)
-                        .toString(),
-                    style: TextStyles.font18Medium(context).copyWith(),
+                    NumberFormat("#.#").format(widget.productModel.rating /
+                        widget.productModel.ratingCount),
+                    style: TextStyles.font18Medium(context),
                   ),
                   SizedBox(
                     width: 6,

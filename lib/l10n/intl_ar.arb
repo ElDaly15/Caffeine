@@ -146,7 +146,8 @@
     "invalid_phone_number": "رقم الهاتف غير صحيح",
     "no_orders_yet": "لا يوجد طلبات بعد",
     "branch": "فرع",
-    "whishlist_empty": "قائمة الرغبات فارغة"
+    "whishlist_empty": "قائمة الرغبات فارغة",
+    "Privacy_Policy": "سياسة الخصوصية"
   
 
 }

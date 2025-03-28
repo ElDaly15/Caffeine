@@ -146,7 +146,8 @@
     "invalid_phone_number": "Invalid Phone Number",
     "no_orders_yet": "No Orders Yet",
     "branch": "Branch",
-    "whishlist_empty": "Your wishlist is empty"
+    "whishlist_empty": "Your wishlist is empty",
+    "Privacy_Policy": "Privacy Policy"
 
 
 }

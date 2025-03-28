@@ -13,6 +13,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart' as g;
 import 'package:iconly/iconly.dart';
+import 'package:intl/intl.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 import 'package:uuid/uuid.dart';
 
@@ -119,9 +120,9 @@ class ContainerOfProduct extends StatelessWidget {
                                       ),
                                       const SizedBox(width: 2),
                                       Text(
-                                        (productModel.rating /
-                                                productModel.ratingCount)
-                                            .toString(),
+                                        NumberFormat("#.#").format(
+                                            productModel.rating /
+                                                productModel.ratingCount),
                                         style: TextStyles.font18Medium(context)
                                             .copyWith(color: Colors.white),
                                       ),
