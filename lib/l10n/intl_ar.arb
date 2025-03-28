@@ -143,7 +143,9 @@
     "confirm" : "تأكيد",
     "enter_number": "ادخل الرقم",
     "add_valid_number": "يرجى اضافة رقم صحيح",
-    "invalid_phone_number": "رقم الهاتف غير صحيح"
+    "invalid_phone_number": "رقم الهاتف غير صحيح",
+    "no_orders_yet": "لا يوجد طلبات بعد",
+    "branch": "فرع"
   
 
 }

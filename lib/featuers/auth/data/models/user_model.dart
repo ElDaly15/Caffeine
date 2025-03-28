@@ -38,7 +38,9 @@ class UserModel extends UserEntity {
       uid: doc['uid'],
       orders: (doc['Orders'] as List<dynamic>).map((item) {
         return OrderModel.fromMap(item);
-      }).toList(),
+      }).toList()
+        ..sort((a, b) =>
+            b.date.compareTo(a.date)), // Sort orders by time (latest first)
       address: (doc['address'] as List<dynamic>).map((item) {
         return AddressModel.fromJson(item);
       }).toList(),

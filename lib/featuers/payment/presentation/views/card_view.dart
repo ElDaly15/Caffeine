@@ -157,8 +157,7 @@ class _CardViewState extends State<CardView> {
                       userId: widget.userModel.uid,
                       stepperValue: 0,
                       orderedBy: widget.orderStatus,
-                      paymentMethod:
-                          isArabic() ? "الدفع بالبطاقة" : 'Payment by card',
+                      paymentMethod: 'Payment by card',
                       products: widget.userModel.cartItems,
                       note: widget.userModel.note,
                     );

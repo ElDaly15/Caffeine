@@ -8,7 +8,7 @@ class MyOrdersLoadingView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 22),
+      padding: const EdgeInsets.symmetric(horizontal: 0),
       child: Column(
         children: [
           const SafeArea(

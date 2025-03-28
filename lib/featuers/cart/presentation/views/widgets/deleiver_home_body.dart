@@ -246,7 +246,8 @@ class _DeleiverToHomeBodyState extends State<DeleiverToHomeBody> {
           ),
         ),
         ContainerOfProcessToPayment(
-            onPressed: widget.cartItems.isNotEmpty
+            onPressed: widget.cartItems.isNotEmpty &&
+                    widget.userModel.address.isNotEmpty
                 ? () {
                     g.Get.to(
                         () => PaymentView(

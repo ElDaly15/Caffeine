@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "هل لديك حساب بالفعل؟",
     ),
+    "branch": MessageLookupByLibrary.simpleMessage("فرع"),
     "buy_now": MessageLookupByLibrary.simpleMessage("اشتري الآن"),
     "caffeine_order": MessageLookupByLibrary.simpleMessage("كفايـــين اوردر"),
     "cancel": MessageLookupByLibrary.simpleMessage("إلغاء"),
@@ -161,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_branches_found": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على فروع",
     ),
+    "no_orders_yet": MessageLookupByLibrary.simpleMessage("لا يوجد طلبات بعد"),
     "no_result_found": MessageLookupByLibrary.simpleMessage(
       "لم يتم العثور على نتائج",
     ),

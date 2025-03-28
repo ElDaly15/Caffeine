@@ -1209,6 +1209,21 @@ class S {
       args: [],
     );
   }
+
+  /// `No Orders Yet`
+  String get no_orders_yet {
+    return Intl.message(
+      'No Orders Yet',
+      name: 'no_orders_yet',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Branch`
+  String get branch {
+    return Intl.message('Branch', name: 'branch', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

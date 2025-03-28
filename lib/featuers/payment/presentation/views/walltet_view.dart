@@ -160,8 +160,7 @@ class _CardViewState extends State<WalltetView> {
                       userId: widget.userModel.uid,
                       stepperValue: 0,
                       orderedBy: widget.orderStatus,
-                      paymentMethod:
-                          isArabic() ? 'المحفظة الإلكترونية' : 'Online Wallets',
+                      paymentMethod: 'Online Wallets',
                       products: widget.userModel.cartItems,
                       note: widget.userModel.note,
                     );

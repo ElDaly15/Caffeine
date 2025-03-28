@@ -123,6 +123,7 @@ class _PaymentViewBodyState extends State<PaymentViewBody> {
                       } else if (valueOfPayment == 'Cash') {
                         var orderId = Uuid();
                         OrderModel orderModel = OrderModel(
+                          branchModel: widget.branchModel,
                           totalPrice: widget.totalPrice,
                           orderId: orderId.v4(),
                           statusOfOrder: 'Pending',
@@ -130,9 +131,7 @@ class _PaymentViewBodyState extends State<PaymentViewBody> {
                           userId: widget.userModel.uid,
                           stepperValue: 0,
                           orderedBy: widget.orderStatus,
-                          paymentMethod: isArabic()
-                              ? "الدفع عند الاستلام"
-                              : 'Cash On Delivery',
+                          paymentMethod: 'Cash On Delivery',
                           products: widget.userModel.cartItems,
                           note: widget.userModel.note,
                         );

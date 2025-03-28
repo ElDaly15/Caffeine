@@ -48,6 +48,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "already_have_account": MessageLookupByLibrary.simpleMessage(
       "Already have an account?",
     ),
+    "branch": MessageLookupByLibrary.simpleMessage("Branch"),
     "buy_now": MessageLookupByLibrary.simpleMessage("Buy Now"),
     "caffeine_order": MessageLookupByLibrary.simpleMessage("Caffeine Order"),
     "cancel": MessageLookupByLibrary.simpleMessage("Cancel"),
@@ -161,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "no_branches_found": MessageLookupByLibrary.simpleMessage(
       "No Branches Found",
     ),
+    "no_orders_yet": MessageLookupByLibrary.simpleMessage("No Orders Yet"),
     "no_result_found": MessageLookupByLibrary.simpleMessage("No Result Found"),
     "note_add_error": MessageLookupByLibrary.simpleMessage(
       "An error occurred while adding note",

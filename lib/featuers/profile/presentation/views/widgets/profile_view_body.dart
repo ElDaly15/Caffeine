@@ -8,8 +8,19 @@ import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_priv
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class ProfileViewBody extends StatelessWidget {
+class ProfileViewBody extends StatefulWidget {
   const ProfileViewBody({super.key});
+
+  @override
+  State<ProfileViewBody> createState() => _ProfileViewBodyState();
+}
+
+class _ProfileViewBodyState extends State<ProfileViewBody> {
+  @override
+  void initState() {
+    super.initState();
+    BlocProvider.of<GetUserDataCubit>(context).getUserData();
+  }
 
   @override
   Widget build(BuildContext context) {
