@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_offline/flutter_offline.dart';
 
 class EditInformationDataView extends StatelessWidget {
-  const EditInformationDataView({super.key});
-
+  const EditInformationDataView({super.key, required this.name});
+  final String name;
   @override
   Widget build(BuildContext context) {
     return OfflineBuilder(
@@ -15,7 +15,9 @@ class EditInformationDataView extends StatelessWidget {
       },
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: EditInformationDataViewBody(),
+        body: EditInformationDataViewBody(
+          name: name,
+        ),
       ),
     );
   }

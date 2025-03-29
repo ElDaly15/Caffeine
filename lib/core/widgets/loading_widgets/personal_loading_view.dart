@@ -34,6 +34,7 @@ class PersonalLoadingView extends StatelessWidget {
             ),
             enabled: true,
             child: AvatarOfUserImageWithEditIcon(
+              image: 'https://example.com/image.jpg',
               onTap: () {},
             ),
           ),
@@ -96,7 +97,10 @@ class PersonalLoadingView extends StatelessWidget {
               alignment: Alignment.centerRight,
               child: IconBtmOfEdit(
                 onPressed: () {
-                  g.Get.to(() => const EditInformationDataView(),
+                  g.Get.to(
+                      () => const EditInformationDataView(
+                            name: 'Mazen Ahmed',
+                          ),
                       transition: g.Transition.leftToRightWithFade,
                       duration: const Duration(milliseconds: 600));
                 },

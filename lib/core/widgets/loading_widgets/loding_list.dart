@@ -21,8 +21,8 @@ List<ProductModel> loadingList() => List.generate(
           productCategory: '',
           productInfo: '',
           favIds: [],
-          rating: 0,
-          ratingCount: 0,
+          rating: 4,
+          ratingCount: 4,
         ));
 
 List<AdsModel> loadingListAds() => List.generate(

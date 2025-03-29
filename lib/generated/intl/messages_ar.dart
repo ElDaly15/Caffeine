@@ -107,6 +107,18 @@ class MessageLookup extends MessageLookupByLibrary {
     "edit_note_text": MessageLookupByLibrary.simpleMessage(
       "قم بتعديل الملاحظة",
     ),
+    "edit_profile_image_error": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء تعديل صورة الملف الشخصي",
+    ),
+    "edit_profile_image_success": MessageLookupByLibrary.simpleMessage(
+      "تم تعديل صورة الملف الشخصي بنجاح",
+    ),
+    "edit_profile_name_error": MessageLookupByLibrary.simpleMessage(
+      "حدث خطأ أثناء تعديل اسم الملف الشخصي",
+    ),
+    "edit_profile_name_success": MessageLookupByLibrary.simpleMessage(
+      "تم تعديل اسم الملف الشخصي بنجاح",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("البريد الإلكتروني"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "الحساب موجود بالفعل لهذا البريد الإلكتروني.",

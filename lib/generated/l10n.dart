@@ -1244,6 +1244,46 @@ class S {
       args: [],
     );
   }
+
+  /// `Edit Profile Name Successfully`
+  String get edit_profile_name_success {
+    return Intl.message(
+      'Edit Profile Name Successfully',
+      name: 'edit_profile_name_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred while editing profile name`
+  String get edit_profile_name_error {
+    return Intl.message(
+      'An error occurred while editing profile name',
+      name: 'edit_profile_name_error',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Profile Image Successfully`
+  String get edit_profile_image_success {
+    return Intl.message(
+      'Edit Profile Image Successfully',
+      name: 'edit_profile_image_success',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `An error occurred while editing profile image`
+  String get edit_profile_image_error {
+    return Intl.message(
+      'An error occurred while editing profile image',
+      name: 'edit_profile_image_error',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

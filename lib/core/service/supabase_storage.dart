@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:caffeine/core/service/storage_services.dart';
+import 'package:caffeine/core/utils/consts.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 // ignore: depend_on_referenced_packages
 import 'package:path/path.dart' as b;
@@ -23,12 +24,12 @@ class SupabaseStorage implements StorageServices {
     }
   }
 
-  // static initSupabase() async {
-  //   _supaClinet = await Supabase.initialize(
-  //     url: KConstants.supabaseProjectUrl,
-  //     anonKey: KConstants.supabaseAPIkey,
-  //   );
-  // }
+  static initSupabase() async {
+    _supaClinet = await Supabase.initialize(
+      url: Consts.supabaseProjectUrl,
+      anonKey: Consts.supabaseProjectApi,
+    );
+  }
 
   @override
   Future<String> uploadImage({required File file, required String path}) async {

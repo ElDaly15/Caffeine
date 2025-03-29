@@ -109,6 +109,18 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "edit_note": MessageLookupByLibrary.simpleMessage("Edit Note"),
     "edit_note_text": MessageLookupByLibrary.simpleMessage("Edit a note"),
+    "edit_profile_image_error": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while editing profile image",
+    ),
+    "edit_profile_image_success": MessageLookupByLibrary.simpleMessage(
+      "Edit Profile Image Successfully",
+    ),
+    "edit_profile_name_error": MessageLookupByLibrary.simpleMessage(
+      "An error occurred while editing profile name",
+    ),
+    "edit_profile_name_success": MessageLookupByLibrary.simpleMessage(
+      "Edit Profile Name Successfully",
+    ),
     "email": MessageLookupByLibrary.simpleMessage("Email"),
     "email_already_in_use": MessageLookupByLibrary.simpleMessage(
       "The account already exists for that email.",

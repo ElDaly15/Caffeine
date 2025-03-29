@@ -147,7 +147,11 @@
     "no_orders_yet": "لا يوجد طلبات بعد",
     "branch": "فرع",
     "whishlist_empty": "قائمة الرغبات فارغة",
-    "Privacy_Policy": "سياسة الخصوصية"
+    "Privacy_Policy": "سياسة الخصوصية",
+    "edit_profile_name_success": "تم تعديل اسم الملف الشخصي بنجاح",
+    "edit_profile_name_error": "حدث خطأ أثناء تعديل اسم الملف الشخصي",
+    "edit_profile_image_success": "تم تعديل صورة الملف الشخصي بنجاح",
+    "edit_profile_image_error": "حدث خطأ أثناء تعديل صورة الملف الشخصي"
   
 
 }

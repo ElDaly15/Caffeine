@@ -4,6 +4,7 @@ import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/manager/get_user_data/get_user_data_cubit.dart';
 import 'package:caffeine/core/manager/manage_language_cubit/manage_language_cubit.dart';
 import 'package:caffeine/core/manager/mange_favourite_products_cubit/manage_favourite_products_cubit.dart';
+import 'package:caffeine/core/service/supabase_storage.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/add_item_to_cart/add_item_to_cart_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/check_copoun/check_copoun_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/get_branches/get_branches_cubit.dart';
@@ -16,6 +17,8 @@ import 'package:caffeine/featuers/payment/presentation/manager/add_order/add_ord
 import 'package:caffeine/featuers/product/presentation/manager/get_product_by_code/get_product_by_code_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/manager/manage_rating/magnage_rating_cubit.dart';
 import 'package:caffeine/featuers/search/presentation/manager/search_products_cubit/search_products_cubit.dart';
+import 'package:caffeine/featuers/settings/personal_information/presentation/manager/edit_profile_cubit/edit_profile_cubit.dart';
+import 'package:caffeine/featuers/settings/personal_information/presentation/manager/update_user_image/update_user_image_cubit.dart';
 import 'package:caffeine/featuers/splash/presentation/views/splash_view.dart';
 import 'package:caffeine/firebase_options.dart';
 import 'package:caffeine/generated/l10n.dart';
@@ -33,6 +36,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await SupabaseStorage.initSupabase();
+  await SupabaseStorage.createBucket(bucketName: 'userImages');
   await CacheHelper().init();
 
   setUpSingleton();
@@ -95,6 +100,12 @@ class CaffeineApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => AddOrderCubit(),
+            ),
+            BlocProvider(
+              create: (context) => EditProfileCubit(),
+            ),
+            BlocProvider(
+              create: (context) => UpdateUserImageCubit(),
             ),
           ],
           child: GetMaterialApp(
