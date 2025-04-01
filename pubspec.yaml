@@ -51,7 +51,7 @@ dependencies:
   flutter_offline: ^4.0.0
   flutter_rating_bar: ^4.0.1
   flutter_svg: ^2.0.17
-  flutter_tawk: ^0.1.0
+  flutter_tawkto: ^0.0.4
   font_awesome_flutter: ^10.8.0
   get: ^4.6.6
   get_it: ^8.0.3

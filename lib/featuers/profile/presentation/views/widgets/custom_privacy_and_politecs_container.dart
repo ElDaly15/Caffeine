@@ -2,6 +2,7 @@ import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/service/fire_base_services.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/featuers/auth/presentation/views/get_started_view.dart';
+import 'package:caffeine/featuers/customer_service/presentation/views/customer_view.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
 import 'package:caffeine/featuers/settings/privacy_and_policy/presentation/views/privacy_view.dart';
 import 'package:caffeine/generated/l10n.dart';
@@ -29,9 +30,9 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
             icon: Icons.chat,
             title: S.of(context).contact_us,
             onTap: () {
-              // g.Get.to(() => const CustomerView(),
-              //     transition: g.Transition.leftToRightWithFade,
-              //     duration: const Duration(milliseconds: 600));
+              g.Get.to(() => const CustomerView(),
+                  transition: g.Transition.leftToRightWithFade,
+                  duration: const Duration(milliseconds: 600));
             },
           ),
           const SizedBox(
