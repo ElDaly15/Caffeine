@@ -1283,6 +1283,33 @@ class S {
       args: [],
     );
   }
+
+  String get no_internet_connection {
+    return Intl.message(
+      'No Internet Connection',
+      name: 'no_internet_connection',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get oops {
+    return Intl.message(
+      'Opps!....',
+      name: 'oops',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get wrong_connection {
+    return Intl.message(
+      'Something wrong with your connection, Please try again after a moment.',
+      name: 'wrong_connection',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

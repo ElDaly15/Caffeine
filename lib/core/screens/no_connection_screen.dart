@@ -1,5 +1,6 @@
 import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class NoconnectionScreen extends StatelessWidget {
@@ -28,9 +29,8 @@ class NoconnectionScreen extends StatelessWidget {
               ),
               const Spacer(flex: 1),
               ErrorInfo(
-                title: "Opps!....",
-                description:
-                    "Something wrong with your connection, Please try again after a moment.",
+                title: S.of(context).oops,
+                description: S.of(context).wrong_connection,
                 // button: you can pass your custom button,
                 // btnText: default is retry, you can pass your custom text,
                 press: () {},

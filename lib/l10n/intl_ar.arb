@@ -153,6 +153,8 @@
     "edit_profile_image_success": "تم تعديل صورة الملف الشخصي بنجاح",
     "edit_profile_image_error": "حدث خطأ أثناء تعديل صورة الملف الشخصي",
     "customer_service": "خدمة العملاء",
-    "No_Internet_Connection": "لا يوجد اتصال بالإنترنت"
+    "No_Internet_Connection": "لا يوجد اتصال بالإنترنت",
+    "Oops": "عذرًا!....",
+    "wrong_connection":"هناك خطأ ما في اتصالك، يرجى المحاولة مرة أخرى بعد قليل."
 }
   
