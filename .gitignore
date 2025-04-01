@@ -32,7 +32,6 @@ migrate_working_dir/
 .pub-cache/
 .pub/
 /build/
-lib/core/utils/consts.dart
 
 
 # Symbolication related
@@ -45,3 +44,7 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+
+# Ignore constants file
+lib/core/utils/consts.dart
