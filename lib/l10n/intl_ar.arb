@@ -155,6 +155,7 @@
     "customer_service": "خدمة العملاء",
     "No_Internet_Connection": "لا يوجد اتصال بالإنترنت",
     "Oops": "عذرًا!....",
-    "wrong_connection":"هناك خطأ ما في اتصالك، يرجى المحاولة مرة أخرى بعد قليل."
+    "wrong_connection":"هناك خطأ ما في اتصالك، يرجى المحاولة مرة أخرى بعد قليل.",
+    "please_check_your_internet_connection": "يرجى التحقق من اتصالك بالإنترنت !" 
 }
   

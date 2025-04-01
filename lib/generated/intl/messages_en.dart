@@ -322,5 +322,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "oops": MessageLookupByLibrary.simpleMessage("Opps!...."),
         "wrong_connection": MessageLookupByLibrary.simpleMessage(
             "Something wrong with your connection, Please try again after a moment."),
+        "please_check_your_internet_connection":
+            MessageLookupByLibrary.simpleMessage(
+                "Please check your internet connection !"),
       };
 }

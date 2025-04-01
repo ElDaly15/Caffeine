@@ -1,5 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -20,12 +21,12 @@ class NetworkController extends GetxController {
       // ...
 
       Get.rawSnackbar(
-          messageText: const Text('PLEASE CONNECT TO THE INTERNET',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontFamily: 'Poppins-Bold',
-                  fontWeight: FontWeight.bold)),
+          messageText: Text(
+              isArabic()
+                  ? 'تحقق من الاتصال بالانترنت'
+                  : 'PLEASE CONNECT TO THE INTERNET',
+              style: TextStyles.font20Medium(Get.context!)
+                  .copyWith(color: Colors.white)),
           isDismissible: false,
           duration: const Duration(days: 1),
           backgroundColor: Colors.red[400]!,

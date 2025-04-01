@@ -312,5 +312,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "oops": MessageLookupByLibrary.simpleMessage("عذرًا!...."),
         "wrong_connection": MessageLookupByLibrary.simpleMessage(
             "هناك خطأ ما في اتصالك، يرجى المحاولة مرة أخرى بعد قليل."),
+        "please_check_your_internet_connection":
+            MessageLookupByLibrary.simpleMessage(
+                "يرجى التحقق من اتصالك بالإنترنت !"),
       };
 }
