@@ -152,6 +152,7 @@
     "edit_profile_name_error": "حدث خطأ أثناء تعديل اسم الملف الشخصي",
     "edit_profile_image_success": "تم تعديل صورة الملف الشخصي بنجاح",
     "edit_profile_image_error": "حدث خطأ أثناء تعديل صورة الملف الشخصي",
-    "customer_service": "خدمة العملاء"
+    "customer_service": "خدمة العملاء",
+    "No_Internet_Connection": "لا يوجد اتصال بالإنترنت"
 }
   

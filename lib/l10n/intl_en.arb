@@ -152,6 +152,6 @@
     "edit_profile_name_error": "An error occurred while editing profile name",
     "edit_profile_image_success": "Edit Profile Image Successfully",
     "edit_profile_image_error": "An error occurred while editing profile image",
-    "customer_service": "Customer Service"
+    "no_internet_connection": "No Internet Connection"
 }
   
