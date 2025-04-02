@@ -155,7 +155,9 @@
     "no_internet_connection": "No Internet Connection",
     "oops": "Opps!....",
     "wrong_connection":"Something wrong with your connection, Please try again after a moment.",
-    "please_check_your_internet_connection": "Please check your internet connection !"
+    "please_check_your_internet_connection": "Please check your internet connection !",
+    "error_while_deleting_account": "Error while deleting account",
+    "account_deleted_successfully": "Account deleted successfully"
     
 }
   

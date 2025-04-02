@@ -22,6 +22,7 @@ import 'package:caffeine/featuers/product/presentation/manager/manage_rating/mag
 import 'package:caffeine/featuers/search/presentation/manager/search_products_cubit/search_products_cubit.dart';
 import 'package:caffeine/featuers/settings/personal_information/presentation/manager/edit_profile_cubit/edit_profile_cubit.dart';
 import 'package:caffeine/featuers/settings/personal_information/presentation/manager/update_user_image/update_user_image_cubit.dart';
+import 'package:caffeine/featuers/settings/settings_section/presentation/manager/delete_account_cubit/delete_account_cubit.dart';
 import 'package:caffeine/featuers/splash/presentation/views/splash_view.dart';
 import 'package:caffeine/firebase_options.dart';
 import 'package:caffeine/generated/l10n.dart';
@@ -116,6 +117,9 @@ class CaffeineApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => UpdateUserImageCubit(),
+            ),
+            BlocProvider(
+              create: (context) => DeleteAccountCubit(),
             ),
           ],
           child: GetMaterialApp(

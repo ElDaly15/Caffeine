@@ -325,5 +325,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "please_check_your_internet_connection":
             MessageLookupByLibrary.simpleMessage(
                 "Please check your internet connection !"),
+        "error_while_deleting_account": MessageLookupByLibrary.simpleMessage(
+            "Error while deleting account"),
+        "account_deleted_successfully": MessageLookupByLibrary.simpleMessage(
+            "Account deleted successfully"),
       };
 }

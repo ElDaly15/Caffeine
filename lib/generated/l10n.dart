@@ -1319,6 +1319,24 @@ class S {
       args: [],
     );
   }
+
+  String get error_while_deleting_account {
+    return Intl.message(
+      'Error while deleting account',
+      name: 'error_while_deleting_account',
+      desc: '',
+      args: [],
+    );
+  }
+
+  String get account_deleted_successfully {
+    return Intl.message(
+      'Account deleted successfully',
+      name: 'account_deleted_successfully',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

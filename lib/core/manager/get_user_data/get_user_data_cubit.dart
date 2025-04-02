@@ -23,7 +23,11 @@ class GetUserDataCubit extends Cubit<GetUserDataState> {
               .map((doc) => UserModel.fromFireStore(doc.data()))
               .toList();
 
-          emit(GetUserDataSuccess(userModel: userModel[0]));
+          if (userModel.isNotEmpty) {
+            emit(GetUserDataSuccess(userModel: userModel[0]));
+          } else {
+            return;
+          }
         },
       );
     } catch (e) {

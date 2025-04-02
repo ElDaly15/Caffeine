@@ -156,6 +156,8 @@
     "No_Internet_Connection": "لا يوجد اتصال بالإنترنت",
     "Oops": "عذرًا!....",
     "wrong_connection":"هناك خطأ ما في اتصالك، يرجى المحاولة مرة أخرى بعد قليل.",
-    "please_check_your_internet_connection": "يرجى التحقق من اتصالك بالإنترنت !" 
+    "please_check_your_internet_connection": "يرجى التحقق من اتصالك بالإنترنت !",
+    "error_while_deleting_account": "خطأ أثناء حذف الحساب",
+    "account_deleted_successfully": "تم حذف الحساب بنجاح"
 }
   

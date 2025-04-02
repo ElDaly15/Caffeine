@@ -3,9 +3,11 @@ import 'package:caffeine/core/utils/app_colors.dart';
 import 'package:caffeine/core/utils/app_styles.dart';
 import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
 import 'package:caffeine/core/widgets/text_fields/custom_text_field.dart';
+import 'package:caffeine/featuers/settings/settings_section/presentation/manager/delete_account_cubit/delete_account_cubit.dart';
 import 'package:caffeine/generated/l10n.dart';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class DeleteConfirmDialog extends StatefulWidget {
   const DeleteConfirmDialog({super.key});
@@ -84,6 +86,8 @@ class _DeleteConfirmDialogState extends State<DeleteConfirmDialog> {
                     onPressed: () async {
                       if (deleteText == 'DELETE') {
                         Navigator.pop(context);
+                        BlocProvider.of<DeleteAccountCubit>(context)
+                            .deleteAccount();
                       } else {
                         CustomSnackBar().showCustomSnackBar(
                           context: context,
