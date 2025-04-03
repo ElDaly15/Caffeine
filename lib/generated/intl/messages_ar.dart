@@ -319,5 +319,7 @@ class MessageLookup extends MessageLookupByLibrary {
             MessageLookupByLibrary.simpleMessage("خطأ أثناء حذف الحساب"),
         "account_deleted_successfully":
             MessageLookupByLibrary.simpleMessage("تم حذف الحساب بنجاح"),
+        "your_account_has_been_banned":
+            MessageLookupByLibrary.simpleMessage("تم حظر حسابك"),
       };
 }

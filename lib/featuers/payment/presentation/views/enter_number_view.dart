@@ -55,6 +55,7 @@ class _EnterNumberViewState extends State<EnterNumberView> {
                 height: 14,
               ),
               CustomTextField(
+                  isPhone: true,
                   type: TextInputType.number,
                   hintTitle: S.of(context).phone_number,
                   isObscureText: false,

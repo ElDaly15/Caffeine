@@ -329,5 +329,7 @@ class MessageLookup extends MessageLookupByLibrary {
             "Error while deleting account"),
         "account_deleted_successfully": MessageLookupByLibrary.simpleMessage(
             "Account deleted successfully"),
+        "your_account_has_been_banned": MessageLookupByLibrary.simpleMessage(
+            "Your account has been banned"),
       };
 }

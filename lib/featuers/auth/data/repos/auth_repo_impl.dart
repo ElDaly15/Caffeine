@@ -1,3 +1,5 @@
+// ignore_for_file: use_build_context_synchronously, unnecessary_null_comparison
+
 import 'dart:convert';
 import 'package:caffeine/core/errors/exceptions.dart';
 import 'package:caffeine/core/errors/failuer.dart';
@@ -8,11 +10,13 @@ import 'package:caffeine/core/service/fire_base_services.dart';
 import 'package:caffeine/featuers/auth/data/models/user_model.dart';
 import 'package:caffeine/featuers/auth/domain/entity/user_entity.dart';
 import 'package:caffeine/featuers/auth/domain/repos/auth_repo.dart';
+import 'package:caffeine/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final FireBaseServices fireBaseServices;
@@ -54,20 +58,26 @@ class AuthRepoImpl extends AuthRepo {
 
   @override
   Future<Either<Failuer, UserEntity>> signInWithEmailAndPassword(
-      String email, String password, context) async {
+      String email, String password, BuildContext context) async {
     try {
       var user = await fireBaseServices.signInWithEmailAndPassword(
         email: email,
         password: password,
         context: context,
       );
+
       final token = await _messaging.getToken();
+
       await FirebaseFirestore.instance
           .collection('UsersData')
-          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .doc(user.uid)
           .update({
         'notificationToken': FieldValue.arrayUnion([token]),
       });
+
+      // Start listening for ban changes
+      fireBaseServices.listenForBan(context);
+
       UserEntity userEntity =
           await getUserData(path: 'UsersData', uid: user.uid);
 
@@ -79,25 +89,48 @@ class AuthRepoImpl extends AuthRepo {
   }
 
   @override
-  Future<Either<Failuer, UserEntity>> signInWithGoogle() async {
+  Future<Either<Failuer, UserEntity>> signInWithGoogle(
+      BuildContext buildContext) async {
     User? user;
     final token = await _messaging.getToken();
+
     try {
       user = await fireBaseServices.signInWithGoogle();
+      if (user == null) {
+        return left(Failuer(message: 'Google sign-in failed.'));
+      }
 
+      // 🔥 Check if the user is banned
+      DocumentSnapshot banDoc = await FirebaseFirestore.instance
+          .collection('banned_users')
+          .doc(user.uid)
+          .get();
+
+      if (banDoc.exists) {
+        await FirebaseAuth.instance.signOut();
+        await GoogleSignIn().disconnect();
+        return left(
+            Failuer(message: S.of(buildContext).your_account_has_been_banned));
+      }
+
+      // ✅ User is not banned, continue with sign-in
       bool checkData = await searchUser(path: 'UsersData', uid: user.uid);
       if (!checkData) {
         await addUserData(userEntity: UserModel.fromFirebase(user, token!));
       }
+
       await FirebaseFirestore.instance
           .collection('UsersData')
-          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .doc(user.uid)
           .update({
         'notificationToken': FieldValue.arrayUnion([token]),
       });
 
       UserEntity userEntity =
           await getUserData(path: 'UsersData', uid: user.uid);
+
+      // 🔥 Start listening for real-time ban updates
+      FireBaseServices().listenForBan(buildContext);
 
       await getIt<AuthRepo>().saveData(userEntity: userEntity);
       return right(userEntity);

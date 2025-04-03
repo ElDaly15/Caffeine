@@ -15,7 +15,8 @@ class RowOfSocialMediaRegestiration extends StatelessWidget {
         ContainerOfSocialMedia(
           image: Assets.imagesGoogle,
           onTap: () async {
-            await BlocProvider.of<LoginUserCubit>(context).signInWithGoogle();
+            await BlocProvider.of<LoginUserCubit>(context)
+                .signInWithGoogle(context: context);
           },
         ),
         const SizedBox(

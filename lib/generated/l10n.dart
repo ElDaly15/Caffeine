@@ -1337,6 +1337,15 @@ class S {
       args: [],
     );
   }
+
+  String get your_account_has_been_banned {
+    return Intl.message(
+      'Your account has been banned',
+      name: 'your_account_has_been_banned',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

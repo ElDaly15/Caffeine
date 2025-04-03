@@ -58,6 +58,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 height: MediaQuery.of(context).size.height * 0.05,
               ),
               CustomTextField(
+                isPhone: false,
                 onChanged: (value) {
                   email = value;
                 },
@@ -70,6 +71,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 height: MediaQuery.of(context).size.height * 0.024,
               ),
               CustomTextField(
+                isPhone: false,
                 onChanged: (value) {
                   fName = value;
                 },
@@ -82,6 +84,7 @@ class _RegisterViewBodyState extends State<RegisterViewBody> {
                 height: MediaQuery.of(context).size.height * 0.024,
               ),
               CustomTextField(
+                isPhone: false,
                 isInLogin: false,
                 onChanged: (value) {
                   password = value;

@@ -64,6 +64,7 @@ class _DeleteConfirmDialogState extends State<DeleteConfirmDialog> {
                 children: [
                   Flexible(
                     child: CustomTextField(
+                      isPhone: false,
                       isObscureText: false,
                       hintTitle: S.of(context).delete_hint,
                       onChanged: (value) {

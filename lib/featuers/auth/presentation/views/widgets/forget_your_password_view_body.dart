@@ -54,6 +54,7 @@ class _ForgetYourPasswordViewBodyState
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 22),
             child: CustomTextField(
+              isPhone: false,
               hintTitle: S.of(context).email,
               isInLogin: true,
               isPassword: false,

@@ -4,6 +4,7 @@ import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:caffeine/core/errors/exceptions.dart';
 import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
+import 'package:caffeine/featuers/auth/presentation/views/get_started_view.dart';
 import 'package:caffeine/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -14,9 +15,39 @@ import 'package:google_sign_in/google_sign_in.dart';
 
 class FireBaseServices {
   final _messaging = FirebaseMessaging.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
   Future deleteAccount() async {
     await FirebaseAuth.instance.currentUser!.delete();
+  }
+
+  /// Listen for ban status in real-time
+  void listenForBan(BuildContext context) {
+    User? user = _auth.currentUser;
+    if (user == null) return;
+
+    _firestore.collection('banned_users').doc(user.uid).snapshots().listen(
+      (snapshot) async {
+        if (snapshot.exists) {
+          await signOut();
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (context.mounted) {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (context) => GetStartedView(),
+                ),
+              );
+            }
+          });
+          getIt<CustomSnackBar>().showCustomSnackBar(
+            message: 'You have been banned.',
+            context: context,
+            type: AnimatedSnackBarType.error,
+          );
+        }
+      },
+    );
   }
 
   Future<User> createUserWithEmailAndPassword({
@@ -60,39 +91,61 @@ class FireBaseServices {
     required BuildContext context,
   }) async {
     try {
-      // Sign in the user
+      // Attempt to sign in with Firebase Auth
       final credential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(email: email, password: password);
 
-      User? user = FirebaseAuth.instance.currentUser;
-      if (user != null && !user.emailVerified) {
-        await user.sendEmailVerification();
-        getIt<CustomSnackBar>().showCustomSnackBar(
-            message: S.of(context).verify_email,
-            // ignore: use_build_context_synchronously
-            context: context,
-            type: AnimatedSnackBarType.warning);
+      User? user = credential.user;
+      if (user == null) {
+        throw CustomException(message: 'User not found.');
       }
 
-      return credential.user!;
+      // Check if user is banned before allowing login
+      DocumentSnapshot banDoc = await FirebaseFirestore.instance
+          .collection('banned_users')
+          .doc(user.uid)
+          .get();
+
+      if (banDoc.exists) {
+        // User is banned, force logout immediately
+        await FirebaseAuth.instance.signOut();
+        throw CustomException(
+            message: S.of(context).your_account_has_been_banned);
+      }
+
+      // If email verification is required
+      if (!user.emailVerified) {
+        await user.sendEmailVerification();
+        getIt<CustomSnackBar>().showCustomSnackBar(
+          message: S.of(context).verify_email,
+          context: context,
+          type: AnimatedSnackBarType.warning,
+        );
+      }
+
+      // Start listening for future bans
+      FireBaseServices().listenForBan(context);
+
+      return user;
     } on FirebaseAuthException catch (e) {
-      if (e.code == e.code &&
-          e.code != 'too-many-requests' &&
-          e.code != 'network-request-failed') {
-        throw CustomException(message: S.of(context).email_password_incorrect);
-      } else if (e.code == 'user-not-found') {
-        throw CustomException(message: S.of(context).user_not_found);
+      if (e.code == 'user-not-found') {
+        throw CustomException(message: 'User not found.');
+      } else if (e.code == 'wrong-password') {
+        throw CustomException(message: 'Incorrect email or password.');
       } else if (e.code == 'too-many-requests') {
-        throw CustomException(message: S.of(context).too_many_requests);
+        throw CustomException(
+            message: 'Too many failed login attempts. Try again later.');
       } else if (e.code == 'network-request-failed') {
-        throw CustomException(message: S.of(context).network_error);
+        throw CustomException(
+            message: 'Network error. Please check your connection.');
       } else {
-        throw CustomException(message: S.of(context).unknown_error);
+        throw CustomException(message: 'An error occurred. Please try again.');
       }
     } on SocketException {
-      throw CustomException(message: S.of(context).network_error);
+      throw CustomException(
+          message: 'No internet connection. Please check your network.');
     } catch (e) {
-      throw CustomException(message: S.of(context).unknown_error);
+      throw CustomException(message: 'An unexpected error occurred.');
     }
   }
 

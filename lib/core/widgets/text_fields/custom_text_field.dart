@@ -12,9 +12,11 @@ class CustomTextField extends StatefulWidget {
       required this.isObscureText,
       this.onChanged,
       required this.isInLogin,
-      this.type});
+      this.type,
+      required this.isPhone});
   final String hintTitle;
   final bool isPassword;
+  final bool isPhone;
   final bool isInLogin;
   final TextInputType? type;
   late bool isObscureText;
@@ -43,7 +45,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
               return S.of(context).password_min_length;
             }
           }
-          if (!widget.isPassword) {
+          if (!widget.isPassword && widget.isPhone) {
             // التحقق إذا كان الحقل ليس كلمة مرور
             final regex = RegExp(r'^(010|011|012|015)[0-9]{8}$');
             if (!regex.hasMatch(value)) {
