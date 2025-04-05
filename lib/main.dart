@@ -16,6 +16,8 @@ import 'package:caffeine/featuers/cart/presentation/manager/manage_cart/manage_c
 import 'package:caffeine/featuers/cart/presentation/manager/manage_note/manage_note_cubit.dart';
 import 'package:caffeine/featuers/cart/presentation/manager/search_branch/search_branch_cubit.dart';
 import 'package:caffeine/featuers/home/presentation/manager/get_ads/get_ads_cubit.dart';
+import 'package:caffeine/featuers/notification/data/notification_helper/firebase_notification.dart';
+import 'package:caffeine/featuers/notification/presentation/manager/get_notification_cubit/get_notifications_cubit.dart';
 import 'package:caffeine/featuers/payment/presentation/manager/add_order/add_order_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/manager/get_product_by_code/get_product_by_code_cubit.dart';
 import 'package:caffeine/featuers/product/presentation/manager/manage_rating/magnage_rating_cubit.dart';
@@ -29,6 +31,7 @@ import 'package:caffeine/generated/l10n.dart';
 import 'package:caffeine/no_internet_app.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -44,9 +47,11 @@ void main() async {
     );
     await SupabaseStorage.initSupabase();
     await SupabaseStorage.createBucket(bucketName: 'userImages');
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+    await messaging.subscribeToTopic("allUsers");
     await CacheHelper().init();
-
     setUpSingleton();
+    NotificationService.instance.initialize();
     runApp(DevicePreview(
         enabled: kReleaseMode ? false : true,
         builder: (context) => BlocProvider(
@@ -120,6 +125,9 @@ class CaffeineApp extends StatelessWidget {
             ),
             BlocProvider(
               create: (context) => DeleteAccountCubit(),
+            ),
+            BlocProvider(
+              create: (context) => GetNotificationsCubit()..getNotifications(),
             ),
           ],
           child: GetMaterialApp(
