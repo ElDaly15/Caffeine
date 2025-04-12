@@ -51,7 +51,7 @@ void main() async {
     await messaging.subscribeToTopic("allUsers");
     await CacheHelper().init();
     setUpSingleton();
-    NotificationService.instance.initialize();
+    await NotificationService.instance.initialize();
     runApp(DevicePreview(
         enabled: kReleaseMode ? false : true,
         builder: (context) => BlocProvider(

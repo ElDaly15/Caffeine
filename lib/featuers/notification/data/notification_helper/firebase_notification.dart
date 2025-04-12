@@ -22,7 +22,7 @@ class NotificationService {
 
   bool get fnotificationsEnabled => notificationsEnabled;
 
-  void toggleNotifications(bool enabled) async {
+  Future<void> toggleNotifications(bool enabled) async {
     notificationsEnabled = enabled;
     await getIt<CacheHelper>()
         .saveData(key: 'notificationsEnabled', value: enabled);
@@ -46,7 +46,6 @@ class NotificationService {
   }
 
   Future<void> _requestPermission() async {
-    // ignore: unused_local_variable
     final settings = await _messaging.requestPermission(
       alert: true,
       badge: true,
@@ -56,12 +55,20 @@ class NotificationService {
       carPlay: false,
       criticalAlert: false,
     );
-    if (settings.authorizationStatus == AuthorizationStatus.denied ||
-        settings.authorizationStatus == AuthorizationStatus.notDetermined) {
-      toggleNotifications(false);
+
+    final saved =
+        await getIt<CacheHelper>().getData(key: 'notificationsEnabled');
+    if (saved == null) {
+      // First time only: set based on user system response
+      if (settings.authorizationStatus == AuthorizationStatus.denied ||
+          settings.authorizationStatus == AuthorizationStatus.notDetermined) {
+        await toggleNotifications(false);
+      } else {
+        await toggleNotifications(true);
+      }
     } else {
-      // If granted, notifications remain enabled
-      toggleNotifications(true);
+      // Use saved value
+      notificationsEnabled = saved;
     }
   }
 

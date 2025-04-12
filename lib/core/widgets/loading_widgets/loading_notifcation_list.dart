@@ -1,5 +1,6 @@
 import 'package:caffeine/featuers/notification/data/model/notification_model.dart';
 import 'package:caffeine/featuers/notification/presentation/views/widgets/notification_container.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
@@ -24,7 +25,7 @@ class ListViewOfNotifications extends StatelessWidget {
             child: NotificationContainer(
               notificationModel: NotificationModel(
                 id: 'sd',
-                date: DateTime.now(),
+                date: Timestamp.now(),
                 titleAr: 'New Product',
                 bodyEn:
                     'New Product Caffe Late With Milk Cold/Hot With Discount 30% Off Now .',

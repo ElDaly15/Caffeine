@@ -1,4 +1,6 @@
+import 'package:caffeine/core/helper/cached_helper.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
+import 'package:caffeine/featuers/notification/data/notification_helper/firebase_notification.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
 import 'package:caffeine/featuers/settings/settings_section/presentation/views/delete_account_view.dart';
 import 'package:caffeine/featuers/settings/settings_section/presentation/views/select_language_view.dart';
@@ -19,7 +21,19 @@ class ContainerOfSettingsSections extends StatefulWidget {
 
 class _ContainerOfSettingsSectionsState
     extends State<ContainerOfSettingsSections> {
-  bool notification = false, darkMode = false;
+  @override
+  void initState() {
+    super.initState();
+    _loadNotificationStatus();
+  }
+
+  Future<void> _loadNotificationStatus() async {
+    notification = await CacheHelper().getData(key: 'notificationsEnabled');
+
+    setState(() {});
+  }
+
+  bool? notification, darkMode = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,11 +60,12 @@ class _ContainerOfSettingsSectionsState
             height: 8,
           ),
           CustomProfileListTile(
-            statusOfNotification: notification,
-            onChangedSwitch: (value) {
-              setState(() {
-                notification = value;
-              });
+            statusOfNotification: notification ?? false,
+            onChangedSwitch: (value) async {
+              notification = value;
+              await NotificationService.instance.toggleNotifications(value);
+              await _loadNotificationStatus();
+              setState(() {});
             },
             hasSwitch: true,
             hasTrailling: true,
