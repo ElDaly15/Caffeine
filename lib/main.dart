@@ -32,7 +32,6 @@ import 'package:caffeine/no_internet_app.dart';
 import 'package:device_preview/device_preview.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get/get.dart';
@@ -52,7 +51,7 @@ void main() async {
     setUpSingleton();
     await NotificationService.instance.initialize();
     runApp(DevicePreview(
-        enabled: kReleaseMode ? false : true,
+        enabled: false,
         builder: (context) => BlocProvider(
               create: (context) => ManageLanguageCubit()..loadSavedLanguage(),
               child: const CaffeineApp(),
@@ -61,7 +60,6 @@ void main() async {
   } on SocketException {
     runApp(NoInternetApp());
   } catch (e) {
-    print(e.toString());
     runApp(ErrorApp());
   }
 }

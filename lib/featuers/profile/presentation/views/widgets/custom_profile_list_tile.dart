@@ -42,7 +42,7 @@ class CustomProfileListTile extends StatelessWidget {
         trailing: hasTrailling
             ? hasSwitch
                 ? Switch(
-                    activeColor: AppColors.mainColorTheme,
+                    activeThumbColor: AppColors.mainColorTheme,
                     value: statusOfNotification,
                     onChanged: onChangedSwitch)
                 : Icon(
