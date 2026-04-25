@@ -2,6 +2,7 @@
 import 'dart:io';
 import 'package:animated_snack_bar/animated_snack_bar.dart';
 import 'package:caffeine/core/errors/exceptions.dart';
+import 'package:caffeine/core/helper/fcm_helper.dart';
 import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/widgets/buttons/custom_snack_bar.dart';
 import 'package:caffeine/featuers/auth/presentation/views/get_started_view.dart';
@@ -9,12 +10,10 @@ import 'package:caffeine/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class FireBaseServices {
-  final _messaging = FirebaseMessaging.instance;
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
@@ -188,14 +187,16 @@ class FireBaseServices {
   }
 
   Future<void> signOut() async {
-    final token = await _messaging.getToken();
+    final token = await getFcmTokenSafe();
 
-    await FirebaseFirestore.instance
-        .collection('UsersData')
-        .doc(FirebaseAuth.instance.currentUser!.uid)
-        .update({
-      'notificationToken': FieldValue.arrayRemove([token]),
-    });
+    if (token != null) {
+      await FirebaseFirestore.instance
+          .collection('UsersData')
+          .doc(FirebaseAuth.instance.currentUser!.uid)
+          .update({
+        'notificationToken': FieldValue.arrayRemove([token]),
+      });
+    }
     await FirebaseAuth.instance.signOut();
     if (await GoogleSignIn().isSignedIn()) {
       await GoogleSignIn().disconnect();

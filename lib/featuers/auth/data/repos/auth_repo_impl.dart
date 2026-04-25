@@ -1,10 +1,10 @@
 // ignore_for_file: use_build_context_synchronously, unnecessary_null_comparison
 
 import 'dart:convert';
-import 'dart:io';
 import 'package:caffeine/core/errors/exceptions.dart';
 import 'package:caffeine/core/errors/failuer.dart';
 import 'package:caffeine/core/helper/cached_helper.dart' show CacheHelper;
+import 'package:caffeine/core/helper/fcm_helper.dart';
 import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/service/dataBase_services.dart';
 import 'package:caffeine/core/service/fire_base_services.dart';
@@ -15,14 +15,12 @@ import 'package:caffeine/generated/l10n.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/widgets.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 class AuthRepoImpl extends AuthRepo {
   final FireBaseServices fireBaseServices;
   final DatabaseServices databaseServices;
-  final _messaging = FirebaseMessaging.instance;
 
   AuthRepoImpl(
       {required this.fireBaseServices, required this.databaseServices});
@@ -39,7 +37,7 @@ class AuthRepoImpl extends AuthRepo {
       user = await fireBaseServices.createUserWithEmailAndPassword(
           email: email, password: password, name: name, context: context);
 
-      final token = await _getFcmTokenSafe();
+      final token = await getFcmTokenSafe();
 
       await addUserData(userEntity: UserModel.fromFirebase(user, token ?? ''));
 
@@ -67,7 +65,7 @@ class AuthRepoImpl extends AuthRepo {
         context: context,
       );
 
-      final token = await _getFcmTokenSafe();
+      final token = await getFcmTokenSafe();
 
       if (token != null) {
         await FirebaseFirestore.instance
@@ -95,7 +93,7 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failuer, UserEntity>> signInWithGoogle(
       BuildContext buildContext) async {
     User? user;
-    final token = await _getFcmTokenSafe();
+    final token = await getFcmTokenSafe();
 
     try {
       user = await fireBaseServices.signInWithGoogle();
@@ -185,26 +183,6 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future deleteData() async {
     await getIt<CacheHelper>().removeData(key: 'userData');
-  }
-
-  Future<String?> _getFcmTokenSafe() async {
-    try {
-      if (Platform.isIOS) {
-        String? apnsToken = await _messaging.getAPNSToken();
-        for (var i = 0; i < 5 && apnsToken == null; i++) {
-          await Future.delayed(const Duration(seconds: 1));
-          apnsToken = await _messaging.getAPNSToken();
-        }
-        if (apnsToken == null) {
-          debugPrint('APNs token unavailable, skipping FCM token fetch.');
-          return null;
-        }
-      }
-      return await _messaging.getToken();
-    } catch (e) {
-      debugPrint('FCM getToken skipped: $e');
-      return null;
-    }
   }
 
   @override
