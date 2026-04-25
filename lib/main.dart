@@ -47,8 +47,7 @@ void main() async {
     );
     await SupabaseStorage.initSupabase();
     await SupabaseStorage.createBucket(bucketName: 'userImages');
-    FirebaseMessaging messaging = FirebaseMessaging.instance;
-    await messaging.subscribeToTopic("allUsers");
+    await _subscribeToAllUsersTopic();
     await CacheHelper().init();
     setUpSingleton();
     await NotificationService.instance.initialize();
@@ -62,7 +61,31 @@ void main() async {
   } on SocketException {
     runApp(NoInternetApp());
   } catch (e) {
+    print(e.toString());
     runApp(ErrorApp());
+  }
+}
+
+Future<void> _subscribeToAllUsersTopic() async {
+  try {
+    final messaging = FirebaseMessaging.instance;
+    await messaging.requestPermission();
+
+    if (Platform.isIOS) {
+      String? apnsToken = await messaging.getAPNSToken();
+      for (var i = 0; i < 5 && apnsToken == null; i++) {
+        await Future.delayed(const Duration(seconds: 1));
+        apnsToken = await messaging.getAPNSToken();
+      }
+      if (apnsToken == null) {
+        debugPrint('APNs token unavailable, skipping subscribeToTopic.');
+        return;
+      }
+    }
+
+    await messaging.subscribeToTopic('allUsers');
+  } catch (e) {
+    debugPrint('subscribeToTopic skipped: $e');
   }
 }
 
