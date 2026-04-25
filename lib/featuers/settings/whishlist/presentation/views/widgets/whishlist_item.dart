@@ -94,7 +94,7 @@ class _WhishlistItemState extends State<WhishlistItem> {
                   ),
                   imageUrl: widget.productModel.productImage,
                   fit: BoxFit.cover,
-                  scale: 3.5,
+                  height: 100,
                 ),
               ),
               SizedBox(
