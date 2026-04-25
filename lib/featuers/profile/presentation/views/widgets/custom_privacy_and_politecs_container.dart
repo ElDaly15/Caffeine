@@ -1,6 +1,8 @@
 import 'package:caffeine/core/helper/singleton_helper.dart';
 import 'package:caffeine/core/service/fire_base_services.dart';
 import 'package:caffeine/core/utils/app_colors.dart';
+import 'package:caffeine/core/utils/app_styles.dart';
+import 'package:caffeine/featuers/ai_barista/presentation/views/ai_barista_view.dart';
 import 'package:caffeine/featuers/auth/presentation/views/get_started_view.dart';
 import 'package:caffeine/featuers/customer_service/presentation/views/customer_view.dart';
 import 'package:caffeine/featuers/profile/presentation/views/widgets/custom_profile_list_tile.dart';
@@ -22,6 +24,22 @@ class CustomPrivacyAndPolitecsContainer extends StatelessWidget {
           borderRadius: BorderRadius.circular(16)),
       child: Column(
         children: [
+          CustomProfileListTile(
+            statusOfNotification: false,
+            onChangedSwitch: (value) {},
+            hasSwitch: false,
+            hasTrailling: false,
+            icon: Icons.auto_awesome,
+            title: isArabic() ? 'الباريستا الذكي' : 'AI Barista',
+            onTap: () {
+              g.Get.to(() => const AiBaristaView(),
+                  transition: g.Transition.leftToRightWithFade,
+                  duration: const Duration(milliseconds: 600));
+            },
+          ),
+          const SizedBox(
+            height: 8,
+          ),
           CustomProfileListTile(
             statusOfNotification: false,
             onChangedSwitch: (value) {},
