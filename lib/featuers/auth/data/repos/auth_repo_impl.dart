@@ -1,6 +1,7 @@
 // ignore_for_file: use_build_context_synchronously, unnecessary_null_comparison
 
 import 'dart:convert';
+import 'dart:io';
 import 'package:caffeine/core/errors/exceptions.dart';
 import 'package:caffeine/core/errors/failuer.dart';
 import 'package:caffeine/core/helper/cached_helper.dart' show CacheHelper;
@@ -38,11 +39,11 @@ class AuthRepoImpl extends AuthRepo {
       user = await fireBaseServices.createUserWithEmailAndPassword(
           email: email, password: password, name: name, context: context);
 
-      final token = await _messaging.getToken();
+      final token = await _getFcmTokenSafe();
 
-      await addUserData(userEntity: UserModel.fromFirebase(user, token!));
+      await addUserData(userEntity: UserModel.fromFirebase(user, token ?? ''));
 
-      return right(UserModel.fromFirebase(user, token));
+      return right(UserModel.fromFirebase(user, token ?? ''));
     } on CustomException catch (e) {
       if (user != null) {
         await fireBaseServices.deleteAccount();
@@ -66,14 +67,16 @@ class AuthRepoImpl extends AuthRepo {
         context: context,
       );
 
-      final token = await _messaging.getToken();
+      final token = await _getFcmTokenSafe();
 
-      await FirebaseFirestore.instance
-          .collection('UsersData')
-          .doc(user.uid)
-          .update({
-        'notificationToken': FieldValue.arrayUnion([token]),
-      });
+      if (token != null) {
+        await FirebaseFirestore.instance
+            .collection('UsersData')
+            .doc(user.uid)
+            .update({
+          'notificationToken': FieldValue.arrayUnion([token]),
+        });
+      }
 
       // Start listening for ban changes
       fireBaseServices.listenForBan(context);
@@ -92,7 +95,7 @@ class AuthRepoImpl extends AuthRepo {
   Future<Either<Failuer, UserEntity>> signInWithGoogle(
       BuildContext buildContext) async {
     User? user;
-    final token = await _messaging.getToken();
+    final token = await _getFcmTokenSafe();
 
     try {
       user = await fireBaseServices.signInWithGoogle();
@@ -116,15 +119,17 @@ class AuthRepoImpl extends AuthRepo {
       // ✅ User is not banned, continue with sign-in
       bool checkData = await searchUser(path: 'UsersData', uid: user.uid);
       if (!checkData) {
-        await addUserData(userEntity: UserModel.fromFirebase(user, token!));
+        await addUserData(userEntity: UserModel.fromFirebase(user, token ?? ''));
       }
 
-      await FirebaseFirestore.instance
-          .collection('UsersData')
-          .doc(user.uid)
-          .update({
-        'notificationToken': FieldValue.arrayUnion([token]),
-      });
+      if (token != null) {
+        await FirebaseFirestore.instance
+            .collection('UsersData')
+            .doc(user.uid)
+            .update({
+          'notificationToken': FieldValue.arrayUnion([token]),
+        });
+      }
 
       UserEntity userEntity =
           await getUserData(path: 'UsersData', uid: user.uid);
@@ -180,6 +185,26 @@ class AuthRepoImpl extends AuthRepo {
   @override
   Future deleteData() async {
     await getIt<CacheHelper>().removeData(key: 'userData');
+  }
+
+  Future<String?> _getFcmTokenSafe() async {
+    try {
+      if (Platform.isIOS) {
+        String? apnsToken = await _messaging.getAPNSToken();
+        for (var i = 0; i < 5 && apnsToken == null; i++) {
+          await Future.delayed(const Duration(seconds: 1));
+          apnsToken = await _messaging.getAPNSToken();
+        }
+        if (apnsToken == null) {
+          debugPrint('APNs token unavailable, skipping FCM token fetch.');
+          return null;
+        }
+      }
+      return await _messaging.getToken();
+    } catch (e) {
+      debugPrint('FCM getToken skipped: $e');
+      return null;
+    }
   }
 
   @override
